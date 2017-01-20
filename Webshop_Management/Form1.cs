@@ -18,6 +18,15 @@ namespace Webshop_Management {
             InitializeComponent();
         }
 
+        /**
+         * Ein neues Produkt kann erzeugt werden.
+         * Dabei stehen dem Benutzer Eingaben für den Namen des Produkts, einer Produktbeschreibung und der Anzahl der verfügbaren Produkte zur Verfügung.
+         * Der Name des Produkts ist eine Pflichteingabe. Leere Produktnamen werden nicht akzeptiert.
+         * Die Eingabe einer Beschreibung oder einer Anzahl ist optional. Allerdings wird vor dem Speichern gefragt, ob das Produkt ohne Beschreibung, bzw. ohne
+         * Anzahl erzeugt werden soll. 
+         * Wenn ein Produkt ohne Anzahl erzeugt wird, wird diese automatisch auf 0 gesetzt.
+         * Negative Werte für die Anzahl sind nicht zulässig. Auf Abfrage wird die Anzahl dann auf 0 gesetzt.
+         */
         private void btnSaveNewItem_Click(object sender, EventArgs e) {
             try {
 
@@ -81,8 +90,23 @@ namespace Webshop_Management {
 
         }
 
+        /**
+         * Beim Wechsel des ausgewählten Elements der ListBox werden die Daten (Name, Beschreibung, Anzahl) des neuen ausgewählten Eintrags in die entsprechenden
+         * Felder des Ausgewählten Produkts übertragen.
+         * Da beim Löschen eines Produkts ggf. der SelectIndex einen ungültigen Wert erreichen kann, wird dann der Index auf 0 gesetzt.
+         */
         private void lstbxItems_SelectedIndexChanged(object sender, EventArgs e) {
-
+            try {
+                this.tbxSelectedItemName.Text = (productList.ElementAt(this.lstbxItems.SelectedIndex)).Name;
+                this.rtbxSelectedItemDescription.Text = (productList.ElementAt(this.lstbxItems.SelectedIndex)).Description;
+                this.tbxSelectedAmount.Text = "" + (productList.ElementAt(this.lstbxItems.SelectedIndex)).Anzahl;
+            }
+            catch (IndexOutOfRangeException) {
+                this.lstbxItems.SelectedIndex = 0;
+            }
+            catch (ArgumentOutOfRangeException) {
+                this.lstbxItems.SelectedIndex = 0;
+            }
         }
 
         private void rbtnSaveChanges_CheckedChanged(object sender, EventArgs e) {

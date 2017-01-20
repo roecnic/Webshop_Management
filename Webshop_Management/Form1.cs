@@ -182,15 +182,15 @@ namespace Webshop_Management {
          */
         private void lstbxItems_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                this.tbxSelectedItemName.Text = (productList.ElementAt(this.lstbxItems.SelectedIndex)).Name;
-                this.rtbxSelectedItemDescription.Text = (productList.ElementAt(this.lstbxItems.SelectedIndex)).Description;
-                this.tbxSelectedAmount.Text = "" + (productList.ElementAt(this.lstbxItems.SelectedIndex)).Anzahl;
+                tbxSelectedItemName.Text = (productList.ElementAt(lstbxItems.SelectedIndex)).Name;
+                rtbxSelectedItemDescription.Text = (productList.ElementAt(lstbxItems.SelectedIndex)).Description;
+                tbxSelectedAmount.Text = "" + (productList.ElementAt(lstbxItems.SelectedIndex)).Anzahl;
             }
             catch (IndexOutOfRangeException) {
-                this.lstbxItems.SelectedIndex = 0;
+                lstbxItems.SelectedIndex = 0;
             }
             catch (ArgumentOutOfRangeException) {
-                this.lstbxItems.SelectedIndex = 0;
+                lstbxItems.SelectedIndex = 0;
             }
         }
 
@@ -214,7 +214,14 @@ namespace Webshop_Management {
         }
 
         private void btnReduceSelectedAmount_Click(object sender, EventArgs e) {
-
+            if (lstbxItems.SelectedIndex >= 0) {
+                if (productList.ElementAt(lstbxItems.SelectedIndex).Anzahl > 0) {
+                    productList.ElementAt(lstbxItems.SelectedIndex).Anzahl--;
+                    tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxItems.SelectedIndex).Anzahl;
+                } else {
+                    MessageBox.Show("Negative Mengen sind nicht zulässig.", "Fehler", MessageBoxButtons.OK);
+                }
+            }
         }
 
         /**
@@ -222,13 +229,13 @@ namespace Webshop_Management {
          * Die ListBox wird geleert und die sortierte Produktliste wird in die ListBox eingetragen.
          */
         private void FillItemList() {
-            this.lstbxItems.Items.Clear();
+            lstbxItems.Items.Clear();
             productList.Sort((x, y) => x.Name.CompareTo(y.Name));
 
             //Einbinden der sortierten Liste in die ListBox.
             for (int i = 0; i < productList.Count; i++) {
-                Product aktuellesProdukt = productList.ElementAt(i);
-                this.lstbxItems.Items.Add(aktuellesProdukt.Name);
+                var aktuellesProdukt = productList.ElementAt(i);
+                lstbxItems.Items.Add(aktuellesProdukt.Name);
             }
         }
     }

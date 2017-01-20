@@ -55,6 +55,7 @@
             this.lstbxItems.Name = "lstbxItems";
             this.lstbxItems.Size = new System.Drawing.Size(228, 485);
             this.lstbxItems.TabIndex = 0;
+            this.lstbxItems.SelectedIndexChanged += new System.EventHandler(this.lstbxItems_SelectedIndexChanged);
             // 
             // grpbxNewItem
             // 
@@ -96,6 +97,7 @@
             this.btnSaveNewItem.TabIndex = 5;
             this.btnSaveNewItem.Text = "Neues Produkt anlegen";
             this.btnSaveNewItem.UseVisualStyleBackColor = true;
+            this.btnSaveNewItem.Click += new System.EventHandler(this.btnSaveNewItem_Click);
             // 
             // rtbxNewItemDescription
             // 
@@ -158,6 +160,7 @@
             this.btnReduceSelectedAmount.TabIndex = 13;
             this.btnReduceSelectedAmount.Text = "-";
             this.btnReduceSelectedAmount.UseVisualStyleBackColor = true;
+            this.btnReduceSelectedAmount.Click += new System.EventHandler(this.btnReduceSelectedAmount_Click);
             // 
             // btnIncreaseSelectedAmount
             // 
@@ -167,6 +170,7 @@
             this.btnIncreaseSelectedAmount.TabIndex = 12;
             this.btnIncreaseSelectedAmount.Text = "+";
             this.btnIncreaseSelectedAmount.UseVisualStyleBackColor = true;
+            this.btnIncreaseSelectedAmount.Click += new System.EventHandler(this.btnIncreaseSelectedAmount_Click);
             // 
             // tbxSelectedAmount
             // 
@@ -192,6 +196,7 @@
             this.tbnSave.TabIndex = 11;
             this.tbnSave.Text = "Anwenden";
             this.tbnSave.UseVisualStyleBackColor = true;
+            this.tbnSave.Click += new System.EventHandler(this.tbnSave_Click);
             // 
             // rbtnRemoveItem
             // 
@@ -203,6 +208,7 @@
             this.rbtnRemoveItem.TabStop = true;
             this.rbtnRemoveItem.Text = "Produkt löschen";
             this.rbtnRemoveItem.UseVisualStyleBackColor = true;
+            this.rbtnRemoveItem.CheckedChanged += new System.EventHandler(this.rbtnRemoveItem_CheckedChanged);
             // 
             // rbtnSaveChanges
             // 
@@ -215,6 +221,7 @@
             this.rbtnSaveChanges.TabStop = true;
             this.rbtnSaveChanges.Text = "Änderungen Speichern";
             this.rbtnSaveChanges.UseVisualStyleBackColor = true;
+            this.rbtnSaveChanges.CheckedChanged += new System.EventHandler(this.rbtnSaveChanges_CheckedChanged);
             // 
             // rtbxSelectedItemDescription
             // 

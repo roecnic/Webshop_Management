@@ -260,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 512);
+            this.ClientSize = new System.Drawing.Size(550, 512);
             this.Controls.Add(this.grpbxSelectedItem);
             this.Controls.Add(this.grpbxNewItem);
             this.Controls.Add(this.lstbxItems);

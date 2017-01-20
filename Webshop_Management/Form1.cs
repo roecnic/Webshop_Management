@@ -195,15 +195,22 @@ namespace Webshop_Management {
         }
 
         private void rbtnSaveChanges_CheckedChanged(object sender, EventArgs e) {
-
+            SelectedRadioButton = 0;
         }
 
         private void rbtnRemoveItem_CheckedChanged(object sender, EventArgs e) {
-
+            SelectedRadioButton = 1;
         }
 
+        /**
+         * Beim Klick auf die Buttons + und - wird die Anzahl des Produkts erhöht oder verringert.
+         * Beim Verringern wird darauf geachtet, dass der Wert nicht unter 0 fällt.
+         */
         private void btnIncreaseSelectedAmount_Click(object sender, EventArgs e) {
-
+            if (lstbxItems.SelectedIndex >= 0) {
+                productList.ElementAt(lstbxItems.SelectedIndex).Anzahl++;
+                tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxItems.SelectedIndex).Anzahl;
+            }
         }
 
         private void btnReduceSelectedAmount_Click(object sender, EventArgs e) {

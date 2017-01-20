@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Webshop_Management {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class From_Management : Form {
+        public From_Management() {
             InitializeComponent();
         }
     }

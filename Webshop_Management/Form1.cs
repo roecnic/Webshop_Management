@@ -35,16 +35,16 @@ namespace Webshop_Management {
                 //Die einzelnen Fälle, wie die Felder befüllt sein können, werden abgefragt.
                 //Entsprechend den leeren Feldern wird eine Abfrage durch eine Messagebox durchgeführt.
                 //Z.B. muss ein Name immer vorhanden sein, während eine Beschreibung oder Anzahl optional ist.
-                if (this.tbxNewItemName.Text == "") {
+                if (tbxNewItemName.Text == "") {
                     MessageBox.Show("Bitte einen Namen für das Produkt eingeben.", "Fehler", MessageBoxButtons.OK);
                     result = DialogResult.No;
-                } else if (this.rtbxNewItemDescription.Text == "" && this.tbxNewAmount.Text == "") {
+                } else if (rtbxNewItemDescription.Text == "" && tbxNewAmount.Text == "") {
                     result = MessageBox.Show("Möchten Sie das Produkt ohne Beschreibung und ohne Anzahl speichern? Die Anzahl wird dabei auf 0 gesetzt.", "Warnung", MessageBoxButtons.YesNo);
-                } else if (this.rtbxNewItemDescription.Text == "") {
+                } else if (rtbxNewItemDescription.Text == "") {
                     result = MessageBox.Show("Möchten Sie das Produkt ohne Beschreibung speichern?", "Warnung", MessageBoxButtons.YesNo);
-                } else if (this.tbxNewAmount.Text == "") {
+                } else if (tbxNewAmount.Text == "") {
                     result = MessageBox.Show("Möchten Sie das Produkt ohne Anzahl speichern? Die Anzahl wird dabei auf 0 gesetzt.", "Warnung", MessageBoxButtons.YesNo);
-                } else if (Convert.ToInt32(this.tbxNewAmount.Text) < 0) {
+                } else if (Convert.ToInt32(tbxNewAmount.Text) < 0) {
                     result = MessageBox.Show("Negative Mengen sind nicht zulässig. Soll die Anzahl auf 0 gesetzt werden?", "Fehler", MessageBoxButtons.YesNo);
                 }
 
@@ -86,8 +86,93 @@ namespace Webshop_Management {
             }
         }
 
+        /**
+         * Es kann ausgewählt werden, ob das Produkt gelöscht werden soll, oder ob die Änderungen, die in den Feldern für das ausgewählte Produkt vorgenommen wurden,
+         * gespeichert werden sollen.
+         * 
+         * Beim Speichern der Änderungen wird überprüft, ob die Eingaben korrekt sind (Name vorhanden; Anzahl >= 0).
+         * Ggf. wird eine entsprechende Fehlermeldung ausgegeben.
+         * Wenn alle Eingaben korrekt sind, werden die Änderungen gespeichert. Die Liste wird dann neu sortiert und das geänderte Produkt bleibt ausgewählt.
+         * 
+         * Wird ein Produkt gelöscht, wird es aus der Liste entfernt.
+         * Die Liste wird dann neu sortiert und ausgegeben.
+         * Es wird dann kein anderes Produkt automatisch ausgewählt.
+         */
         private void tbnSave_Click(object sender, EventArgs e) {
+            try {
 
+                if (lstbxItems.SelectedIndex >= 0) {
+
+                    //Auswahl, welcher Button gedrückt ist (0 = Produkt bearbeiten; 1 = Produkt entfernen).
+                    switch (this.SelectedRadioButton) {
+                        case 0:
+
+                            DialogResult resultChange = DialogResult.No;
+
+                            //Überprüfung, ob die angegebene Anzahl immer noch größer als 0 ist.
+                            //Wenn nicht, wird angeboten, die Anzahl auf 0 zu ändern.
+                            if (Convert.ToInt32(tbxSelectedAmount.Text) < 0) {
+                                resultChange = MessageBox.Show("Negative Menggen sind nicht zulässig. Soll die Anzahl stattdessen auf 0 gesetzt werden?", "Fehler", MessageBoxButtons.YesNo);
+                                if (resultChange == DialogResult.Yes) {
+                                    tbxSelectedAmount.Text = "" + 0;
+                                }
+                                //Überprüfung, ob der Produktname noch vorhanden ist. Wenn nicht, wird ausgegeben, dass ein Name eingegeben werden muss.
+                            } else if (tbxSelectedItemName.Text != "") {
+                                resultChange = MessageBox.Show("Möchten Sie die Änderungen speichern?", "Warnung", MessageBoxButtons.YesNo);
+                            } else {
+                                MessageBox.Show("Bitte geben Sie einen Namen für das Produkt ein.", "Fehler", MessageBoxButtons.OK);
+                                resultChange = DialogResult.No;
+                            }
+
+                            //Das aktuelle Produkt wird in einer Buffer-Instanz gespeichert, damit es nachher in der Liste wieder gefunden werden kann, falls sich der
+                            //Name des Produkts geändert hat.
+                            Product buffer = productList.ElementAt(lstbxItems.SelectedIndex);
+
+                            if (resultChange == DialogResult.Yes) {
+                                (productList.ElementAt(lstbxItems.SelectedIndex)).Name = tbxSelectedItemName.Text;
+                                (productList.ElementAt(lstbxItems.SelectedIndex)).Description = rtbxSelectedItemDescription.Text;
+                                (productList.ElementAt(lstbxItems.SelectedIndex)).Anzahl = Convert.ToInt32(tbxSelectedAmount.Text);
+                            }
+
+                            //Die Liste wird neu sortiert und das Produkt, das vorher in der Buffer-Instanz gespeichert wurde, wird ausgewählt.
+                            FillItemList();
+                            lstbxItems.SelectedIndex = productList.IndexOf(buffer);
+
+                            break;
+
+                        case 1:
+
+                            DialogResult resultRemove = MessageBox.Show("Möchten Sie den ausgewählten Eintrag wirklich löschen?", "Warnung", MessageBoxButtons.YesNo);
+
+                            //Das Produkt wird aus der Liste gelöscht.
+                            //Der Auswahlknopf wird auf "Änderungen speichern" zurück gesetzt, damit nicht versehentlich ein weiteres Produkt gelöscht wird.
+                            if (resultRemove == DialogResult.Yes) {
+                                productList.RemoveAt(lstbxItems.SelectedIndex);
+                                SelectedRadioButton = 0;
+                                rbtnRemoveItem.Checked = false;
+                                rbtnSaveChanges.Checked = true;
+
+                                tbxSelectedAmount.Text = "";
+                                rtbxSelectedItemDescription.Text = "";
+                                tbxSelectedItemName.Text = "";
+
+                                FillItemList();
+                            }
+
+                            break;
+                    }
+
+                } else {
+                    MessageBox.Show("Bitte einen Eintrag auswählen.", "Fehler", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (FormatException) {
+                MessageBox.Show("Bitte einen gültigen Wert als Anzahl eingeben.", "Fehler", MessageBoxButtons.OK);
+            }
+            catch (ArgumentOutOfRangeException) {
+                //
+            }
         }
 
         /**

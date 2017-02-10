@@ -11,6 +11,7 @@ namespace Webshop_Management {
 
         public From_Management() {
             InitializeComponent();
+            cbbxDatabase.SelectedIndex = 0;
         }
 
         /**

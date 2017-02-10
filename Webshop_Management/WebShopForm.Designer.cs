@@ -44,6 +44,8 @@
             this.lblSelectedItemName = new System.Windows.Forms.Label();
             this.tbxSelectedItemName = new System.Windows.Forms.TextBox();
             this.lblSelectedItemDescription = new System.Windows.Forms.Label();
+            this.cbbxDatabase = new System.Windows.Forms.ComboBox();
+            this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.grpbxNewItem.SuspendLayout();
             this.grpbxSelectedItem.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +53,7 @@
             // lstbxItems
             // 
             this.lstbxItems.FormattingEnabled = true;
-            this.lstbxItems.Location = new System.Drawing.Point(13, 13);
+            this.lstbxItems.Location = new System.Drawing.Point(14, 62);
             this.lstbxItems.Name = "lstbxItems";
             this.lstbxItems.Size = new System.Drawing.Size(228, 485);
             this.lstbxItems.TabIndex = 0;
@@ -66,7 +68,7 @@
             this.grpbxNewItem.Controls.Add(this.tbxNewItemName);
             this.grpbxNewItem.Controls.Add(this.lblNewItemDescription);
             this.grpbxNewItem.Controls.Add(this.lblNewItemName);
-            this.grpbxNewItem.Location = new System.Drawing.Point(279, 13);
+            this.grpbxNewItem.Location = new System.Drawing.Point(280, 62);
             this.grpbxNewItem.Name = "grpbxNewItem";
             this.grpbxNewItem.Size = new System.Drawing.Size(258, 236);
             this.grpbxNewItem.TabIndex = 2;
@@ -145,7 +147,7 @@
             this.grpbxSelectedItem.Controls.Add(this.lblSelectedItemName);
             this.grpbxSelectedItem.Controls.Add(this.tbxSelectedItemName);
             this.grpbxSelectedItem.Controls.Add(this.lblSelectedItemDescription);
-            this.grpbxSelectedItem.Location = new System.Drawing.Point(279, 270);
+            this.grpbxSelectedItem.Location = new System.Drawing.Point(280, 319);
             this.grpbxSelectedItem.Name = "grpbxSelectedItem";
             this.grpbxSelectedItem.Size = new System.Drawing.Size(258, 228);
             this.grpbxSelectedItem.TabIndex = 3;
@@ -256,11 +258,37 @@
             this.lblSelectedItemDescription.TabIndex = 5;
             this.lblSelectedItemDescription.Text = "Produktbeschreibung:";
             // 
+            // cbbxDatabase
+            // 
+            this.cbbxDatabase.FormattingEnabled = true;
+            this.cbbxDatabase.Items.AddRange(new object[] {
+            "Produkte",
+            "Kunden",
+            "Aktuelle Bestellungen",
+            "Erledigte Bestellungen",
+            "Lieferanten"});
+            this.cbbxDatabase.Location = new System.Drawing.Point(14, 35);
+            this.cbbxDatabase.Name = "cbbxDatabase";
+            this.cbbxDatabase.Size = new System.Drawing.Size(525, 21);
+            this.cbbxDatabase.TabIndex = 4;
+            this.cbbxDatabase.Text = "Produkte";
+            // 
+            // lblSelectDatabase
+            // 
+            this.lblSelectDatabase.AutoSize = true;
+            this.lblSelectDatabase.Location = new System.Drawing.Point(14, 13);
+            this.lblSelectDatabase.Name = "lblSelectDatabase";
+            this.lblSelectDatabase.Size = new System.Drawing.Size(124, 13);
+            this.lblSelectDatabase.TabIndex = 5;
+            this.lblSelectDatabase.Text = "Zu ändernde Datenbank";
+            // 
             // From_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 512);
+            this.ClientSize = new System.Drawing.Size(550, 564);
+            this.Controls.Add(this.lblSelectDatabase);
+            this.Controls.Add(this.cbbxDatabase);
             this.Controls.Add(this.grpbxSelectedItem);
             this.Controls.Add(this.grpbxNewItem);
             this.Controls.Add(this.lstbxItems);
@@ -271,6 +299,7 @@
             this.grpbxSelectedItem.ResumeLayout(false);
             this.grpbxSelectedItem.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -297,6 +326,8 @@
         private System.Windows.Forms.Label lblSelectedItemName;
         private System.Windows.Forms.TextBox tbxSelectedItemName;
         private System.Windows.Forms.Label lblSelectedItemDescription;
+        private System.Windows.Forms.ComboBox cbbxDatabase;
+        private System.Windows.Forms.Label lblSelectDatabase;
     }
 }
 

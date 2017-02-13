@@ -25,32 +25,34 @@
         private void InitializeComponent() {
             this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.cbbxDatabase = new System.Windows.Forms.ComboBox();
-            this.grpbxSelectedItem = new System.Windows.Forms.GroupBox();
-            this.btnReduceSelectedAmount = new System.Windows.Forms.Button();
-            this.btnIncreaseSelectedAmount = new System.Windows.Forms.Button();
-            this.tbxSelectedAmount = new System.Windows.Forms.TextBox();
-            this.lblSelectedAmount = new System.Windows.Forms.Label();
-            this.tbnSave = new System.Windows.Forms.Button();
-            this.rbtnRemoveItem = new System.Windows.Forms.RadioButton();
-            this.rbtnSaveChanges = new System.Windows.Forms.RadioButton();
-            this.rtbxSelectedItemDescription = new System.Windows.Forms.RichTextBox();
-            this.lblSelectedItemName = new System.Windows.Forms.Label();
-            this.tbxSelectedItemName = new System.Windows.Forms.TextBox();
-            this.lblSelectedItemDescription = new System.Windows.Forms.Label();
+            this.grpbxSelectedCustomer = new System.Windows.Forms.GroupBox();
+            this.tbnCurrentCustomerSave = new System.Windows.Forms.Button();
+            this.rbtnCurrentCustomerRemove = new System.Windows.Forms.RadioButton();
+            this.rbtnCurrentCustomerSaveChanges = new System.Windows.Forms.RadioButton();
             this.grpbxNewCustomer = new System.Windows.Forms.GroupBox();
-            this.lblNewCustomerSex = new System.Windows.Forms.Label();
-            this.cbbxNewCustomerSex = new System.Windows.Forms.ComboBox();
             this.tbxNewCustomerStreet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxNewCustomerLastname = new System.Windows.Forms.TextBox();
             this.tbxNewAmount = new System.Windows.Forms.TextBox();
             this.lblNewCustomerPLZ = new System.Windows.Forms.Label();
-            this.btnSaveNewItem = new System.Windows.Forms.Button();
+            this.btnSaveNewCustomer = new System.Windows.Forms.Button();
             this.tbxNewCustomerFirstname = new System.Windows.Forms.TextBox();
-            this.lblNewItemDescription = new System.Windows.Forms.Label();
+            this.lblNewCustomerLastName = new System.Windows.Forms.Label();
             this.lblNewCustomerFirstname = new System.Windows.Forms.Label();
             this.lstbxItems = new System.Windows.Forms.ListBox();
-            this.grpbxSelectedItem.SuspendLayout();
+            this.lblNewCustomerSex = new System.Windows.Forms.Label();
+            this.cbbxNewCustomerSex = new System.Windows.Forms.ComboBox();
+            this.lblCurrentCustomerSex = new System.Windows.Forms.Label();
+            this.cbxCurrentCustomerSex = new System.Windows.Forms.ComboBox();
+            this.tbxCurrentCustomerAddress = new System.Windows.Forms.TextBox();
+            this.lblCurrentCustomerAddress = new System.Windows.Forms.Label();
+            this.tbxCurrentCustomerLastname = new System.Windows.Forms.TextBox();
+            this.tbxCurrentCustomerPLZ = new System.Windows.Forms.TextBox();
+            this.lblCurrentCustomerPLZ = new System.Windows.Forms.Label();
+            this.tbxCurrentCustomerFirstname = new System.Windows.Forms.TextBox();
+            this.lblCurrentCustomerLastname = new System.Windows.Forms.Label();
+            this.lblCurrentCustomerFirstname = new System.Windows.Forms.Label();
+            this.grpbxSelectedCustomer.SuspendLayout();
             this.grpbxNewCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,124 +80,59 @@
             this.cbbxDatabase.TabIndex = 9;
             this.cbbxDatabase.Text = "Kunden";
             // 
-            // grpbxSelectedItem
+            // grpbxSelectedCustomer
             // 
-            this.grpbxSelectedItem.Controls.Add(this.btnReduceSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.btnIncreaseSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.tbxSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.lblSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.tbnSave);
-            this.grpbxSelectedItem.Controls.Add(this.rbtnRemoveItem);
-            this.grpbxSelectedItem.Controls.Add(this.rbtnSaveChanges);
-            this.grpbxSelectedItem.Controls.Add(this.rtbxSelectedItemDescription);
-            this.grpbxSelectedItem.Controls.Add(this.lblSelectedItemName);
-            this.grpbxSelectedItem.Controls.Add(this.tbxSelectedItemName);
-            this.grpbxSelectedItem.Controls.Add(this.lblSelectedItemDescription);
-            this.grpbxSelectedItem.Location = new System.Drawing.Point(278, 315);
-            this.grpbxSelectedItem.Name = "grpbxSelectedItem";
-            this.grpbxSelectedItem.Size = new System.Drawing.Size(258, 228);
-            this.grpbxSelectedItem.TabIndex = 8;
-            this.grpbxSelectedItem.TabStop = false;
-            this.grpbxSelectedItem.Text = "Ausgewähltes Produkt";
+            this.grpbxSelectedCustomer.Controls.Add(this.lblCurrentCustomerSex);
+            this.grpbxSelectedCustomer.Controls.Add(this.cbxCurrentCustomerSex);
+            this.grpbxSelectedCustomer.Controls.Add(this.tbxCurrentCustomerAddress);
+            this.grpbxSelectedCustomer.Controls.Add(this.lblCurrentCustomerAddress);
+            this.grpbxSelectedCustomer.Controls.Add(this.tbxCurrentCustomerLastname);
+            this.grpbxSelectedCustomer.Controls.Add(this.tbxCurrentCustomerPLZ);
+            this.grpbxSelectedCustomer.Controls.Add(this.lblCurrentCustomerPLZ);
+            this.grpbxSelectedCustomer.Controls.Add(this.tbxCurrentCustomerFirstname);
+            this.grpbxSelectedCustomer.Controls.Add(this.lblCurrentCustomerLastname);
+            this.grpbxSelectedCustomer.Controls.Add(this.lblCurrentCustomerFirstname);
+            this.grpbxSelectedCustomer.Controls.Add(this.tbnCurrentCustomerSave);
+            this.grpbxSelectedCustomer.Controls.Add(this.rbtnCurrentCustomerRemove);
+            this.grpbxSelectedCustomer.Controls.Add(this.rbtnCurrentCustomerSaveChanges);
+            this.grpbxSelectedCustomer.Location = new System.Drawing.Point(278, 315);
+            this.grpbxSelectedCustomer.Name = "grpbxSelectedCustomer";
+            this.grpbxSelectedCustomer.Size = new System.Drawing.Size(258, 254);
+            this.grpbxSelectedCustomer.TabIndex = 8;
+            this.grpbxSelectedCustomer.TabStop = false;
+            this.grpbxSelectedCustomer.Text = "Aktueller Kunde";
             // 
-            // btnReduceSelectedAmount
+            // tbnCurrentCustomerSave
             // 
-            this.btnReduceSelectedAmount.Location = new System.Drawing.Point(209, 156);
-            this.btnReduceSelectedAmount.Name = "btnReduceSelectedAmount";
-            this.btnReduceSelectedAmount.Size = new System.Drawing.Size(43, 20);
-            this.btnReduceSelectedAmount.TabIndex = 13;
-            this.btnReduceSelectedAmount.Text = "-";
-            this.btnReduceSelectedAmount.UseVisualStyleBackColor = true;
+            this.tbnCurrentCustomerSave.Location = new System.Drawing.Point(150, 203);
+            this.tbnCurrentCustomerSave.Name = "tbnCurrentCustomerSave";
+            this.tbnCurrentCustomerSave.Size = new System.Drawing.Size(102, 35);
+            this.tbnCurrentCustomerSave.TabIndex = 11;
+            this.tbnCurrentCustomerSave.Text = "Anwenden";
+            this.tbnCurrentCustomerSave.UseVisualStyleBackColor = true;
             // 
-            // btnIncreaseSelectedAmount
+            // rbtnCurrentCustomerRemove
             // 
-            this.btnIncreaseSelectedAmount.Location = new System.Drawing.Point(149, 156);
-            this.btnIncreaseSelectedAmount.Name = "btnIncreaseSelectedAmount";
-            this.btnIncreaseSelectedAmount.Size = new System.Drawing.Size(45, 20);
-            this.btnIncreaseSelectedAmount.TabIndex = 12;
-            this.btnIncreaseSelectedAmount.Text = "+";
-            this.btnIncreaseSelectedAmount.UseVisualStyleBackColor = true;
+            this.rbtnCurrentCustomerRemove.AutoSize = true;
+            this.rbtnCurrentCustomerRemove.Location = new System.Drawing.Point(9, 221);
+            this.rbtnCurrentCustomerRemove.Name = "rbtnCurrentCustomerRemove";
+            this.rbtnCurrentCustomerRemove.Size = new System.Drawing.Size(102, 17);
+            this.rbtnCurrentCustomerRemove.TabIndex = 10;
+            this.rbtnCurrentCustomerRemove.TabStop = true;
+            this.rbtnCurrentCustomerRemove.Text = "Produkt löschen";
+            this.rbtnCurrentCustomerRemove.UseVisualStyleBackColor = true;
             // 
-            // tbxSelectedAmount
+            // rbtnCurrentCustomerSaveChanges
             // 
-            this.tbxSelectedAmount.Location = new System.Drawing.Point(55, 156);
-            this.tbxSelectedAmount.Name = "tbxSelectedAmount";
-            this.tbxSelectedAmount.Size = new System.Drawing.Size(88, 20);
-            this.tbxSelectedAmount.TabIndex = 8;
-            // 
-            // lblSelectedAmount
-            // 
-            this.lblSelectedAmount.AutoSize = true;
-            this.lblSelectedAmount.Location = new System.Drawing.Point(6, 159);
-            this.lblSelectedAmount.Name = "lblSelectedAmount";
-            this.lblSelectedAmount.Size = new System.Drawing.Size(42, 13);
-            this.lblSelectedAmount.TabIndex = 7;
-            this.lblSelectedAmount.Text = "Anzahl:";
-            // 
-            // tbnSave
-            // 
-            this.tbnSave.Location = new System.Drawing.Point(150, 187);
-            this.tbnSave.Name = "tbnSave";
-            this.tbnSave.Size = new System.Drawing.Size(102, 35);
-            this.tbnSave.TabIndex = 11;
-            this.tbnSave.Text = "Anwenden";
-            this.tbnSave.UseVisualStyleBackColor = true;
-            // 
-            // rbtnRemoveItem
-            // 
-            this.rbtnRemoveItem.AutoSize = true;
-            this.rbtnRemoveItem.Location = new System.Drawing.Point(9, 205);
-            this.rbtnRemoveItem.Name = "rbtnRemoveItem";
-            this.rbtnRemoveItem.Size = new System.Drawing.Size(102, 17);
-            this.rbtnRemoveItem.TabIndex = 10;
-            this.rbtnRemoveItem.TabStop = true;
-            this.rbtnRemoveItem.Text = "Produkt löschen";
-            this.rbtnRemoveItem.UseVisualStyleBackColor = true;
-            // 
-            // rbtnSaveChanges
-            // 
-            this.rbtnSaveChanges.AutoSize = true;
-            this.rbtnSaveChanges.Checked = true;
-            this.rbtnSaveChanges.Location = new System.Drawing.Point(9, 186);
-            this.rbtnSaveChanges.Name = "rbtnSaveChanges";
-            this.rbtnSaveChanges.Size = new System.Drawing.Size(134, 17);
-            this.rbtnSaveChanges.TabIndex = 9;
-            this.rbtnSaveChanges.TabStop = true;
-            this.rbtnSaveChanges.Text = "Änderungen Speichern";
-            this.rbtnSaveChanges.UseVisualStyleBackColor = true;
-            // 
-            // rtbxSelectedItemDescription
-            // 
-            this.rtbxSelectedItemDescription.Location = new System.Drawing.Point(9, 104);
-            this.rtbxSelectedItemDescription.Name = "rtbxSelectedItemDescription";
-            this.rtbxSelectedItemDescription.Size = new System.Drawing.Size(243, 43);
-            this.rtbxSelectedItemDescription.TabIndex = 7;
-            this.rtbxSelectedItemDescription.Text = "";
-            // 
-            // lblSelectedItemName
-            // 
-            this.lblSelectedItemName.AutoSize = true;
-            this.lblSelectedItemName.Location = new System.Drawing.Point(6, 28);
-            this.lblSelectedItemName.Name = "lblSelectedItemName";
-            this.lblSelectedItemName.Size = new System.Drawing.Size(73, 13);
-            this.lblSelectedItemName.TabIndex = 4;
-            this.lblSelectedItemName.Text = "Produktname:";
-            // 
-            // tbxSelectedItemName
-            // 
-            this.tbxSelectedItemName.Location = new System.Drawing.Point(9, 45);
-            this.tbxSelectedItemName.Name = "tbxSelectedItemName";
-            this.tbxSelectedItemName.Size = new System.Drawing.Size(243, 20);
-            this.tbxSelectedItemName.TabIndex = 6;
-            // 
-            // lblSelectedItemDescription
-            // 
-            this.lblSelectedItemDescription.AutoSize = true;
-            this.lblSelectedItemDescription.Location = new System.Drawing.Point(6, 87);
-            this.lblSelectedItemDescription.Name = "lblSelectedItemDescription";
-            this.lblSelectedItemDescription.Size = new System.Drawing.Size(111, 13);
-            this.lblSelectedItemDescription.TabIndex = 5;
-            this.lblSelectedItemDescription.Text = "Produktbeschreibung:";
+            this.rbtnCurrentCustomerSaveChanges.AutoSize = true;
+            this.rbtnCurrentCustomerSaveChanges.Checked = true;
+            this.rbtnCurrentCustomerSaveChanges.Location = new System.Drawing.Point(9, 202);
+            this.rbtnCurrentCustomerSaveChanges.Name = "rbtnCurrentCustomerSaveChanges";
+            this.rbtnCurrentCustomerSaveChanges.Size = new System.Drawing.Size(134, 17);
+            this.rbtnCurrentCustomerSaveChanges.TabIndex = 9;
+            this.rbtnCurrentCustomerSaveChanges.TabStop = true;
+            this.rbtnCurrentCustomerSaveChanges.Text = "Änderungen Speichern";
+            this.rbtnCurrentCustomerSaveChanges.UseVisualStyleBackColor = true;
             // 
             // grpbxNewCustomer
             // 
@@ -206,9 +143,9 @@
             this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerLastname);
             this.grpbxNewCustomer.Controls.Add(this.tbxNewAmount);
             this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerPLZ);
-            this.grpbxNewCustomer.Controls.Add(this.btnSaveNewItem);
+            this.grpbxNewCustomer.Controls.Add(this.btnSaveNewCustomer);
             this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerFirstname);
-            this.grpbxNewCustomer.Controls.Add(this.lblNewItemDescription);
+            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerLastName);
             this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerFirstname);
             this.grpbxNewCustomer.Location = new System.Drawing.Point(278, 58);
             this.grpbxNewCustomer.Name = "grpbxNewCustomer";
@@ -216,26 +153,6 @@
             this.grpbxNewCustomer.TabIndex = 7;
             this.grpbxNewCustomer.TabStop = false;
             this.grpbxNewCustomer.Text = "Neuer Kunde";
-            // 
-            // lblNewCustomerSex
-            // 
-            this.lblNewCustomerSex.AutoSize = true;
-            this.lblNewCustomerSex.Location = new System.Drawing.Point(6, 166);
-            this.lblNewCustomerSex.Name = "lblNewCustomerSex";
-            this.lblNewCustomerSex.Size = new System.Drawing.Size(63, 13);
-            this.lblNewCustomerSex.TabIndex = 10;
-            this.lblNewCustomerSex.Text = "Postleitzahl:";
-            // 
-            // cbbxNewCustomerSex
-            // 
-            this.cbbxNewCustomerSex.FormattingEnabled = true;
-            this.cbbxNewCustomerSex.Items.AddRange(new object[] {
-            "Männlich",
-            "Weiblich"});
-            this.cbbxNewCustomerSex.Location = new System.Drawing.Point(83, 163);
-            this.cbbxNewCustomerSex.Name = "cbbxNewCustomerSex";
-            this.cbbxNewCustomerSex.Size = new System.Drawing.Size(63, 21);
-            this.cbbxNewCustomerSex.TabIndex = 9;
             // 
             // tbxNewCustomerStreet
             // 
@@ -255,14 +172,14 @@
             // 
             // tbxNewCustomerLastname
             // 
-            this.tbxNewCustomerLastname.Location = new System.Drawing.Point(6, 89);
+            this.tbxNewCustomerLastname.Location = new System.Drawing.Point(9, 89);
             this.tbxNewCustomerLastname.Name = "tbxNewCustomerLastname";
-            this.tbxNewCustomerLastname.Size = new System.Drawing.Size(243, 20);
+            this.tbxNewCustomerLastname.Size = new System.Drawing.Size(240, 20);
             this.tbxNewCustomerLastname.TabIndex = 6;
             // 
             // tbxNewAmount
             // 
-            this.tbxNewAmount.Location = new System.Drawing.Point(6, 137);
+            this.tbxNewAmount.Location = new System.Drawing.Point(9, 137);
             this.tbxNewAmount.Name = "tbxNewAmount";
             this.tbxNewAmount.Size = new System.Drawing.Size(57, 20);
             this.tbxNewAmount.TabIndex = 4;
@@ -276,14 +193,14 @@
             this.lblNewCustomerPLZ.TabIndex = 5;
             this.lblNewCustomerPLZ.Text = "Postleitzahl:";
             // 
-            // btnSaveNewItem
+            // btnSaveNewCustomer
             // 
-            this.btnSaveNewItem.Location = new System.Drawing.Point(9, 193);
-            this.btnSaveNewItem.Name = "btnSaveNewItem";
-            this.btnSaveNewItem.Size = new System.Drawing.Size(243, 37);
-            this.btnSaveNewItem.TabIndex = 5;
-            this.btnSaveNewItem.Text = "Neues Produkt anlegen";
-            this.btnSaveNewItem.UseVisualStyleBackColor = true;
+            this.btnSaveNewCustomer.Location = new System.Drawing.Point(9, 193);
+            this.btnSaveNewCustomer.Name = "btnSaveNewCustomer";
+            this.btnSaveNewCustomer.Size = new System.Drawing.Size(243, 37);
+            this.btnSaveNewCustomer.TabIndex = 5;
+            this.btnSaveNewCustomer.Text = "Neues Produkt anlegen";
+            this.btnSaveNewCustomer.UseVisualStyleBackColor = true;
             // 
             // tbxNewCustomerFirstname
             // 
@@ -292,14 +209,14 @@
             this.tbxNewCustomerFirstname.Size = new System.Drawing.Size(243, 20);
             this.tbxNewCustomerFirstname.TabIndex = 2;
             // 
-            // lblNewItemDescription
+            // lblNewCustomerLastName
             // 
-            this.lblNewItemDescription.AutoSize = true;
-            this.lblNewItemDescription.Location = new System.Drawing.Point(6, 73);
-            this.lblNewItemDescription.Name = "lblNewItemDescription";
-            this.lblNewItemDescription.Size = new System.Drawing.Size(111, 13);
-            this.lblNewItemDescription.TabIndex = 1;
-            this.lblNewItemDescription.Text = "Produktbeschreibung:";
+            this.lblNewCustomerLastName.AutoSize = true;
+            this.lblNewCustomerLastName.Location = new System.Drawing.Point(6, 73);
+            this.lblNewCustomerLastName.Name = "lblNewCustomerLastName";
+            this.lblNewCustomerLastName.Size = new System.Drawing.Size(62, 13);
+            this.lblNewCustomerLastName.TabIndex = 1;
+            this.lblNewCustomerLastName.Text = "Nachname:";
             // 
             // lblNewCustomerFirstname
             // 
@@ -315,23 +232,129 @@
             this.lstbxItems.FormattingEnabled = true;
             this.lstbxItems.Location = new System.Drawing.Point(12, 58);
             this.lstbxItems.Name = "lstbxItems";
-            this.lstbxItems.Size = new System.Drawing.Size(228, 485);
+            this.lstbxItems.Size = new System.Drawing.Size(228, 511);
             this.lstbxItems.TabIndex = 6;
+            // 
+            // lblNewCustomerSex
+            // 
+            this.lblNewCustomerSex.AutoSize = true;
+            this.lblNewCustomerSex.Location = new System.Drawing.Point(6, 166);
+            this.lblNewCustomerSex.Name = "lblNewCustomerSex";
+            this.lblNewCustomerSex.Size = new System.Drawing.Size(64, 13);
+            this.lblNewCustomerSex.TabIndex = 10;
+            this.lblNewCustomerSex.Text = "Geschlecht:";
+            // 
+            // cbbxNewCustomerSex
+            // 
+            this.cbbxNewCustomerSex.FormattingEnabled = true;
+            this.cbbxNewCustomerSex.Items.AddRange(new object[] {
+            "Männlich",
+            "Weiblich"});
+            this.cbbxNewCustomerSex.Location = new System.Drawing.Point(83, 163);
+            this.cbbxNewCustomerSex.Name = "cbbxNewCustomerSex";
+            this.cbbxNewCustomerSex.Size = new System.Drawing.Size(93, 21);
+            this.cbbxNewCustomerSex.TabIndex = 9;
+            this.cbbxNewCustomerSex.Text = "Männlich";
+            // 
+            // lblCurrentCustomerSex
+            // 
+            this.lblCurrentCustomerSex.AutoSize = true;
+            this.lblCurrentCustomerSex.Location = new System.Drawing.Point(6, 167);
+            this.lblCurrentCustomerSex.Name = "lblCurrentCustomerSex";
+            this.lblCurrentCustomerSex.Size = new System.Drawing.Size(64, 13);
+            this.lblCurrentCustomerSex.TabIndex = 21;
+            this.lblCurrentCustomerSex.Text = "Geschlecht:";
+            // 
+            // cbxCurrentCustomerSex
+            // 
+            this.cbxCurrentCustomerSex.FormattingEnabled = true;
+            this.cbxCurrentCustomerSex.Items.AddRange(new object[] {
+            "Männlich",
+            "Weiblich"});
+            this.cbxCurrentCustomerSex.Location = new System.Drawing.Point(83, 164);
+            this.cbxCurrentCustomerSex.Name = "cbxCurrentCustomerSex";
+            this.cbxCurrentCustomerSex.Size = new System.Drawing.Size(93, 21);
+            this.cbxCurrentCustomerSex.TabIndex = 20;
+            this.cbxCurrentCustomerSex.Text = "Männlich";
+            // 
+            // tbxCurrentCustomerAddress
+            // 
+            this.tbxCurrentCustomerAddress.Location = new System.Drawing.Point(81, 138);
+            this.tbxCurrentCustomerAddress.Name = "tbxCurrentCustomerAddress";
+            this.tbxCurrentCustomerAddress.Size = new System.Drawing.Size(168, 20);
+            this.tbxCurrentCustomerAddress.TabIndex = 19;
+            // 
+            // lblCurrentCustomerAddress
+            // 
+            this.lblCurrentCustomerAddress.AutoSize = true;
+            this.lblCurrentCustomerAddress.Location = new System.Drawing.Point(80, 122);
+            this.lblCurrentCustomerAddress.Name = "lblCurrentCustomerAddress";
+            this.lblCurrentCustomerAddress.Size = new System.Drawing.Size(127, 13);
+            this.lblCurrentCustomerAddress.TabIndex = 18;
+            this.lblCurrentCustomerAddress.Text = "Straße und Hausnummer:";
+            // 
+            // tbxCurrentCustomerLastname
+            // 
+            this.tbxCurrentCustomerLastname.Location = new System.Drawing.Point(9, 90);
+            this.tbxCurrentCustomerLastname.Name = "tbxCurrentCustomerLastname";
+            this.tbxCurrentCustomerLastname.Size = new System.Drawing.Size(240, 20);
+            this.tbxCurrentCustomerLastname.TabIndex = 17;
+            // 
+            // tbxCurrentCustomerPLZ
+            // 
+            this.tbxCurrentCustomerPLZ.Location = new System.Drawing.Point(9, 138);
+            this.tbxCurrentCustomerPLZ.Name = "tbxCurrentCustomerPLZ";
+            this.tbxCurrentCustomerPLZ.Size = new System.Drawing.Size(57, 20);
+            this.tbxCurrentCustomerPLZ.TabIndex = 15;
+            // 
+            // lblCurrentCustomerPLZ
+            // 
+            this.lblCurrentCustomerPLZ.AutoSize = true;
+            this.lblCurrentCustomerPLZ.Location = new System.Drawing.Point(6, 122);
+            this.lblCurrentCustomerPLZ.Name = "lblCurrentCustomerPLZ";
+            this.lblCurrentCustomerPLZ.Size = new System.Drawing.Size(63, 13);
+            this.lblCurrentCustomerPLZ.TabIndex = 16;
+            this.lblCurrentCustomerPLZ.Text = "Postleitzahl:";
+            // 
+            // tbxCurrentCustomerFirstname
+            // 
+            this.tbxCurrentCustomerFirstname.Location = new System.Drawing.Point(9, 42);
+            this.tbxCurrentCustomerFirstname.Name = "tbxCurrentCustomerFirstname";
+            this.tbxCurrentCustomerFirstname.Size = new System.Drawing.Size(243, 20);
+            this.tbxCurrentCustomerFirstname.TabIndex = 14;
+            // 
+            // lblCurrentCustomerLastname
+            // 
+            this.lblCurrentCustomerLastname.AutoSize = true;
+            this.lblCurrentCustomerLastname.Location = new System.Drawing.Point(6, 74);
+            this.lblCurrentCustomerLastname.Name = "lblCurrentCustomerLastname";
+            this.lblCurrentCustomerLastname.Size = new System.Drawing.Size(62, 13);
+            this.lblCurrentCustomerLastname.TabIndex = 13;
+            this.lblCurrentCustomerLastname.Text = "Nachname:";
+            // 
+            // lblCurrentCustomerFirstname
+            // 
+            this.lblCurrentCustomerFirstname.AutoSize = true;
+            this.lblCurrentCustomerFirstname.Location = new System.Drawing.Point(6, 25);
+            this.lblCurrentCustomerFirstname.Name = "lblCurrentCustomerFirstname";
+            this.lblCurrentCustomerFirstname.Size = new System.Drawing.Size(52, 13);
+            this.lblCurrentCustomerFirstname.TabIndex = 12;
+            this.lblCurrentCustomerFirstname.Text = "Vorname:";
             // 
             // WebShopForm_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 562);
+            this.ClientSize = new System.Drawing.Size(551, 581);
             this.Controls.Add(this.lblSelectDatabase);
             this.Controls.Add(this.cbbxDatabase);
-            this.Controls.Add(this.grpbxSelectedItem);
+            this.Controls.Add(this.grpbxSelectedCustomer);
             this.Controls.Add(this.grpbxNewCustomer);
             this.Controls.Add(this.lstbxItems);
             this.Name = "WebShopForm_Customer";
             this.Text = "WebShopForm_Customer";
-            this.grpbxSelectedItem.ResumeLayout(false);
-            this.grpbxSelectedItem.PerformLayout();
+            this.grpbxSelectedCustomer.ResumeLayout(false);
+            this.grpbxSelectedCustomer.PerformLayout();
             this.grpbxNewCustomer.ResumeLayout(false);
             this.grpbxNewCustomer.PerformLayout();
             this.ResumeLayout(false);
@@ -343,30 +366,32 @@
 
         private System.Windows.Forms.Label lblSelectDatabase;
         private System.Windows.Forms.ComboBox cbbxDatabase;
-        private System.Windows.Forms.GroupBox grpbxSelectedItem;
-        private System.Windows.Forms.Button btnReduceSelectedAmount;
-        private System.Windows.Forms.Button btnIncreaseSelectedAmount;
-        private System.Windows.Forms.TextBox tbxSelectedAmount;
-        private System.Windows.Forms.Label lblSelectedAmount;
-        private System.Windows.Forms.Button tbnSave;
-        private System.Windows.Forms.RadioButton rbtnRemoveItem;
-        private System.Windows.Forms.RadioButton rbtnSaveChanges;
-        private System.Windows.Forms.RichTextBox rtbxSelectedItemDescription;
-        private System.Windows.Forms.Label lblSelectedItemName;
-        private System.Windows.Forms.TextBox tbxSelectedItemName;
-        private System.Windows.Forms.Label lblSelectedItemDescription;
+        private System.Windows.Forms.GroupBox grpbxSelectedCustomer;
+        private System.Windows.Forms.Button tbnCurrentCustomerSave;
+        private System.Windows.Forms.RadioButton rbtnCurrentCustomerRemove;
+        private System.Windows.Forms.RadioButton rbtnCurrentCustomerSaveChanges;
         private System.Windows.Forms.GroupBox grpbxNewCustomer;
-        private System.Windows.Forms.Label lblNewCustomerSex;
-        private System.Windows.Forms.ComboBox cbbxNewCustomerSex;
         private System.Windows.Forms.TextBox tbxNewCustomerStreet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxNewCustomerLastname;
         private System.Windows.Forms.TextBox tbxNewAmount;
         private System.Windows.Forms.Label lblNewCustomerPLZ;
-        private System.Windows.Forms.Button btnSaveNewItem;
+        private System.Windows.Forms.Button btnSaveNewCustomer;
         private System.Windows.Forms.TextBox tbxNewCustomerFirstname;
-        private System.Windows.Forms.Label lblNewItemDescription;
+        private System.Windows.Forms.Label lblNewCustomerLastName;
         private System.Windows.Forms.Label lblNewCustomerFirstname;
         private System.Windows.Forms.ListBox lstbxItems;
+        private System.Windows.Forms.Label lblCurrentCustomerSex;
+        private System.Windows.Forms.ComboBox cbxCurrentCustomerSex;
+        private System.Windows.Forms.TextBox tbxCurrentCustomerAddress;
+        private System.Windows.Forms.Label lblCurrentCustomerAddress;
+        private System.Windows.Forms.TextBox tbxCurrentCustomerLastname;
+        private System.Windows.Forms.TextBox tbxCurrentCustomerPLZ;
+        private System.Windows.Forms.Label lblCurrentCustomerPLZ;
+        private System.Windows.Forms.TextBox tbxCurrentCustomerFirstname;
+        private System.Windows.Forms.Label lblCurrentCustomerLastname;
+        private System.Windows.Forms.Label lblCurrentCustomerFirstname;
+        private System.Windows.Forms.Label lblNewCustomerSex;
+        private System.Windows.Forms.ComboBox cbbxNewCustomerSex;
     }
 }

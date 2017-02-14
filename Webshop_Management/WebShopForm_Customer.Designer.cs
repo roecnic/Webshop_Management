@@ -26,22 +26,6 @@
             this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.cbbxDatabase = new System.Windows.Forms.ComboBox();
             this.grpbxSelectedCustomer = new System.Windows.Forms.GroupBox();
-            this.tbnCurrentCustomerSave = new System.Windows.Forms.Button();
-            this.rbtnCurrentCustomerRemove = new System.Windows.Forms.RadioButton();
-            this.rbtnCurrentCustomerSaveChanges = new System.Windows.Forms.RadioButton();
-            this.grpbxNewCustomer = new System.Windows.Forms.GroupBox();
-            this.tbxNewCustomerStreet = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbxNewCustomerLastname = new System.Windows.Forms.TextBox();
-            this.tbxNewAmount = new System.Windows.Forms.TextBox();
-            this.lblNewCustomerPLZ = new System.Windows.Forms.Label();
-            this.btnSaveNewCustomer = new System.Windows.Forms.Button();
-            this.tbxNewCustomerFirstname = new System.Windows.Forms.TextBox();
-            this.lblNewCustomerLastName = new System.Windows.Forms.Label();
-            this.lblNewCustomerFirstname = new System.Windows.Forms.Label();
-            this.lstbxItems = new System.Windows.Forms.ListBox();
-            this.lblNewCustomerSex = new System.Windows.Forms.Label();
-            this.cbbxNewCustomerSex = new System.Windows.Forms.ComboBox();
             this.lblCurrentCustomerSex = new System.Windows.Forms.Label();
             this.cbxCurrentCustomerSex = new System.Windows.Forms.ComboBox();
             this.tbxCurrentCustomerAddress = new System.Windows.Forms.TextBox();
@@ -52,6 +36,22 @@
             this.tbxCurrentCustomerFirstname = new System.Windows.Forms.TextBox();
             this.lblCurrentCustomerLastname = new System.Windows.Forms.Label();
             this.lblCurrentCustomerFirstname = new System.Windows.Forms.Label();
+            this.tbnCurrentCustomerSave = new System.Windows.Forms.Button();
+            this.rbtnCurrentCustomerRemove = new System.Windows.Forms.RadioButton();
+            this.rbtnCurrentCustomerSaveChanges = new System.Windows.Forms.RadioButton();
+            this.grpbxNewCustomer = new System.Windows.Forms.GroupBox();
+            this.lblNewCustomerSex = new System.Windows.Forms.Label();
+            this.cbbxNewCustomerSex = new System.Windows.Forms.ComboBox();
+            this.tbxNewCustomerStreet = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbxNewCustomerLastname = new System.Windows.Forms.TextBox();
+            this.tbxNewCustomerPLZ = new System.Windows.Forms.TextBox();
+            this.lblNewCustomerPLZ = new System.Windows.Forms.Label();
+            this.btnSaveNewCustomer = new System.Windows.Forms.Button();
+            this.tbxNewCustomerFirstname = new System.Windows.Forms.TextBox();
+            this.lblNewCustomerLastName = new System.Windows.Forms.Label();
+            this.lblNewCustomerFirstname = new System.Windows.Forms.Label();
+            this.lstbxCustomers = new System.Windows.Forms.ListBox();
             this.grpbxSelectedCustomer.SuspendLayout();
             this.grpbxNewCustomer.SuspendLayout();
             this.SuspendLayout();
@@ -101,160 +101,6 @@
             this.grpbxSelectedCustomer.TabIndex = 8;
             this.grpbxSelectedCustomer.TabStop = false;
             this.grpbxSelectedCustomer.Text = "Aktueller Kunde";
-            // 
-            // tbnCurrentCustomerSave
-            // 
-            this.tbnCurrentCustomerSave.Location = new System.Drawing.Point(150, 203);
-            this.tbnCurrentCustomerSave.Name = "tbnCurrentCustomerSave";
-            this.tbnCurrentCustomerSave.Size = new System.Drawing.Size(102, 35);
-            this.tbnCurrentCustomerSave.TabIndex = 11;
-            this.tbnCurrentCustomerSave.Text = "Anwenden";
-            this.tbnCurrentCustomerSave.UseVisualStyleBackColor = true;
-            // 
-            // rbtnCurrentCustomerRemove
-            // 
-            this.rbtnCurrentCustomerRemove.AutoSize = true;
-            this.rbtnCurrentCustomerRemove.Location = new System.Drawing.Point(9, 221);
-            this.rbtnCurrentCustomerRemove.Name = "rbtnCurrentCustomerRemove";
-            this.rbtnCurrentCustomerRemove.Size = new System.Drawing.Size(102, 17);
-            this.rbtnCurrentCustomerRemove.TabIndex = 10;
-            this.rbtnCurrentCustomerRemove.TabStop = true;
-            this.rbtnCurrentCustomerRemove.Text = "Produkt löschen";
-            this.rbtnCurrentCustomerRemove.UseVisualStyleBackColor = true;
-            // 
-            // rbtnCurrentCustomerSaveChanges
-            // 
-            this.rbtnCurrentCustomerSaveChanges.AutoSize = true;
-            this.rbtnCurrentCustomerSaveChanges.Checked = true;
-            this.rbtnCurrentCustomerSaveChanges.Location = new System.Drawing.Point(9, 202);
-            this.rbtnCurrentCustomerSaveChanges.Name = "rbtnCurrentCustomerSaveChanges";
-            this.rbtnCurrentCustomerSaveChanges.Size = new System.Drawing.Size(134, 17);
-            this.rbtnCurrentCustomerSaveChanges.TabIndex = 9;
-            this.rbtnCurrentCustomerSaveChanges.TabStop = true;
-            this.rbtnCurrentCustomerSaveChanges.Text = "Änderungen Speichern";
-            this.rbtnCurrentCustomerSaveChanges.UseVisualStyleBackColor = true;
-            // 
-            // grpbxNewCustomer
-            // 
-            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerSex);
-            this.grpbxNewCustomer.Controls.Add(this.cbbxNewCustomerSex);
-            this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerStreet);
-            this.grpbxNewCustomer.Controls.Add(this.label1);
-            this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerLastname);
-            this.grpbxNewCustomer.Controls.Add(this.tbxNewAmount);
-            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerPLZ);
-            this.grpbxNewCustomer.Controls.Add(this.btnSaveNewCustomer);
-            this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerFirstname);
-            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerLastName);
-            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerFirstname);
-            this.grpbxNewCustomer.Location = new System.Drawing.Point(278, 58);
-            this.grpbxNewCustomer.Name = "grpbxNewCustomer";
-            this.grpbxNewCustomer.Size = new System.Drawing.Size(258, 236);
-            this.grpbxNewCustomer.TabIndex = 7;
-            this.grpbxNewCustomer.TabStop = false;
-            this.grpbxNewCustomer.Text = "Neuer Kunde";
-            // 
-            // tbxNewCustomerStreet
-            // 
-            this.tbxNewCustomerStreet.Location = new System.Drawing.Point(81, 137);
-            this.tbxNewCustomerStreet.Name = "tbxNewCustomerStreet";
-            this.tbxNewCustomerStreet.Size = new System.Drawing.Size(168, 20);
-            this.tbxNewCustomerStreet.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Straße und Hausnummer:";
-            // 
-            // tbxNewCustomerLastname
-            // 
-            this.tbxNewCustomerLastname.Location = new System.Drawing.Point(9, 89);
-            this.tbxNewCustomerLastname.Name = "tbxNewCustomerLastname";
-            this.tbxNewCustomerLastname.Size = new System.Drawing.Size(240, 20);
-            this.tbxNewCustomerLastname.TabIndex = 6;
-            // 
-            // tbxNewAmount
-            // 
-            this.tbxNewAmount.Location = new System.Drawing.Point(9, 137);
-            this.tbxNewAmount.Name = "tbxNewAmount";
-            this.tbxNewAmount.Size = new System.Drawing.Size(57, 20);
-            this.tbxNewAmount.TabIndex = 4;
-            // 
-            // lblNewCustomerPLZ
-            // 
-            this.lblNewCustomerPLZ.AutoSize = true;
-            this.lblNewCustomerPLZ.Location = new System.Drawing.Point(6, 121);
-            this.lblNewCustomerPLZ.Name = "lblNewCustomerPLZ";
-            this.lblNewCustomerPLZ.Size = new System.Drawing.Size(63, 13);
-            this.lblNewCustomerPLZ.TabIndex = 5;
-            this.lblNewCustomerPLZ.Text = "Postleitzahl:";
-            // 
-            // btnSaveNewCustomer
-            // 
-            this.btnSaveNewCustomer.Location = new System.Drawing.Point(9, 193);
-            this.btnSaveNewCustomer.Name = "btnSaveNewCustomer";
-            this.btnSaveNewCustomer.Size = new System.Drawing.Size(243, 37);
-            this.btnSaveNewCustomer.TabIndex = 5;
-            this.btnSaveNewCustomer.Text = "Neues Produkt anlegen";
-            this.btnSaveNewCustomer.UseVisualStyleBackColor = true;
-            // 
-            // tbxNewCustomerFirstname
-            // 
-            this.tbxNewCustomerFirstname.Location = new System.Drawing.Point(9, 41);
-            this.tbxNewCustomerFirstname.Name = "tbxNewCustomerFirstname";
-            this.tbxNewCustomerFirstname.Size = new System.Drawing.Size(243, 20);
-            this.tbxNewCustomerFirstname.TabIndex = 2;
-            // 
-            // lblNewCustomerLastName
-            // 
-            this.lblNewCustomerLastName.AutoSize = true;
-            this.lblNewCustomerLastName.Location = new System.Drawing.Point(6, 73);
-            this.lblNewCustomerLastName.Name = "lblNewCustomerLastName";
-            this.lblNewCustomerLastName.Size = new System.Drawing.Size(62, 13);
-            this.lblNewCustomerLastName.TabIndex = 1;
-            this.lblNewCustomerLastName.Text = "Nachname:";
-            // 
-            // lblNewCustomerFirstname
-            // 
-            this.lblNewCustomerFirstname.AutoSize = true;
-            this.lblNewCustomerFirstname.Location = new System.Drawing.Point(6, 24);
-            this.lblNewCustomerFirstname.Name = "lblNewCustomerFirstname";
-            this.lblNewCustomerFirstname.Size = new System.Drawing.Size(52, 13);
-            this.lblNewCustomerFirstname.TabIndex = 0;
-            this.lblNewCustomerFirstname.Text = "Vorname:";
-            // 
-            // lstbxItems
-            // 
-            this.lstbxItems.FormattingEnabled = true;
-            this.lstbxItems.Location = new System.Drawing.Point(12, 58);
-            this.lstbxItems.Name = "lstbxItems";
-            this.lstbxItems.Size = new System.Drawing.Size(228, 511);
-            this.lstbxItems.TabIndex = 6;
-            // 
-            // lblNewCustomerSex
-            // 
-            this.lblNewCustomerSex.AutoSize = true;
-            this.lblNewCustomerSex.Location = new System.Drawing.Point(6, 166);
-            this.lblNewCustomerSex.Name = "lblNewCustomerSex";
-            this.lblNewCustomerSex.Size = new System.Drawing.Size(64, 13);
-            this.lblNewCustomerSex.TabIndex = 10;
-            this.lblNewCustomerSex.Text = "Geschlecht:";
-            // 
-            // cbbxNewCustomerSex
-            // 
-            this.cbbxNewCustomerSex.FormattingEnabled = true;
-            this.cbbxNewCustomerSex.Items.AddRange(new object[] {
-            "Männlich",
-            "Weiblich"});
-            this.cbbxNewCustomerSex.Location = new System.Drawing.Point(83, 163);
-            this.cbbxNewCustomerSex.Name = "cbbxNewCustomerSex";
-            this.cbbxNewCustomerSex.Size = new System.Drawing.Size(93, 21);
-            this.cbbxNewCustomerSex.TabIndex = 9;
-            this.cbbxNewCustomerSex.Text = "Männlich";
             // 
             // lblCurrentCustomerSex
             // 
@@ -341,6 +187,160 @@
             this.lblCurrentCustomerFirstname.TabIndex = 12;
             this.lblCurrentCustomerFirstname.Text = "Vorname:";
             // 
+            // tbnCurrentCustomerSave
+            // 
+            this.tbnCurrentCustomerSave.Location = new System.Drawing.Point(150, 203);
+            this.tbnCurrentCustomerSave.Name = "tbnCurrentCustomerSave";
+            this.tbnCurrentCustomerSave.Size = new System.Drawing.Size(102, 35);
+            this.tbnCurrentCustomerSave.TabIndex = 11;
+            this.tbnCurrentCustomerSave.Text = "Anwenden";
+            this.tbnCurrentCustomerSave.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCurrentCustomerRemove
+            // 
+            this.rbtnCurrentCustomerRemove.AutoSize = true;
+            this.rbtnCurrentCustomerRemove.Location = new System.Drawing.Point(9, 221);
+            this.rbtnCurrentCustomerRemove.Name = "rbtnCurrentCustomerRemove";
+            this.rbtnCurrentCustomerRemove.Size = new System.Drawing.Size(110, 17);
+            this.rbtnCurrentCustomerRemove.TabIndex = 10;
+            this.rbtnCurrentCustomerRemove.TabStop = true;
+            this.rbtnCurrentCustomerRemove.Text = "Kunden entfernen";
+            this.rbtnCurrentCustomerRemove.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCurrentCustomerSaveChanges
+            // 
+            this.rbtnCurrentCustomerSaveChanges.AutoSize = true;
+            this.rbtnCurrentCustomerSaveChanges.Checked = true;
+            this.rbtnCurrentCustomerSaveChanges.Location = new System.Drawing.Point(9, 202);
+            this.rbtnCurrentCustomerSaveChanges.Name = "rbtnCurrentCustomerSaveChanges";
+            this.rbtnCurrentCustomerSaveChanges.Size = new System.Drawing.Size(134, 17);
+            this.rbtnCurrentCustomerSaveChanges.TabIndex = 9;
+            this.rbtnCurrentCustomerSaveChanges.TabStop = true;
+            this.rbtnCurrentCustomerSaveChanges.Text = "Änderungen Speichern";
+            this.rbtnCurrentCustomerSaveChanges.UseVisualStyleBackColor = true;
+            // 
+            // grpbxNewCustomer
+            // 
+            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerSex);
+            this.grpbxNewCustomer.Controls.Add(this.cbbxNewCustomerSex);
+            this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerStreet);
+            this.grpbxNewCustomer.Controls.Add(this.label1);
+            this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerLastname);
+            this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerPLZ);
+            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerPLZ);
+            this.grpbxNewCustomer.Controls.Add(this.btnSaveNewCustomer);
+            this.grpbxNewCustomer.Controls.Add(this.tbxNewCustomerFirstname);
+            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerLastName);
+            this.grpbxNewCustomer.Controls.Add(this.lblNewCustomerFirstname);
+            this.grpbxNewCustomer.Location = new System.Drawing.Point(278, 58);
+            this.grpbxNewCustomer.Name = "grpbxNewCustomer";
+            this.grpbxNewCustomer.Size = new System.Drawing.Size(258, 236);
+            this.grpbxNewCustomer.TabIndex = 7;
+            this.grpbxNewCustomer.TabStop = false;
+            this.grpbxNewCustomer.Text = "Neuer Kunde";
+            // 
+            // lblNewCustomerSex
+            // 
+            this.lblNewCustomerSex.AutoSize = true;
+            this.lblNewCustomerSex.Location = new System.Drawing.Point(6, 166);
+            this.lblNewCustomerSex.Name = "lblNewCustomerSex";
+            this.lblNewCustomerSex.Size = new System.Drawing.Size(64, 13);
+            this.lblNewCustomerSex.TabIndex = 10;
+            this.lblNewCustomerSex.Text = "Geschlecht:";
+            // 
+            // cbbxNewCustomerSex
+            // 
+            this.cbbxNewCustomerSex.FormattingEnabled = true;
+            this.cbbxNewCustomerSex.Items.AddRange(new object[] {
+            "Männlich",
+            "Weiblich"});
+            this.cbbxNewCustomerSex.Location = new System.Drawing.Point(83, 163);
+            this.cbbxNewCustomerSex.Name = "cbbxNewCustomerSex";
+            this.cbbxNewCustomerSex.Size = new System.Drawing.Size(93, 21);
+            this.cbbxNewCustomerSex.TabIndex = 9;
+            this.cbbxNewCustomerSex.Text = "Männlich";
+            // 
+            // tbxNewCustomerStreet
+            // 
+            this.tbxNewCustomerStreet.Location = new System.Drawing.Point(81, 137);
+            this.tbxNewCustomerStreet.Name = "tbxNewCustomerStreet";
+            this.tbxNewCustomerStreet.Size = new System.Drawing.Size(168, 20);
+            this.tbxNewCustomerStreet.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(80, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Straße und Hausnummer:";
+            // 
+            // tbxNewCustomerLastname
+            // 
+            this.tbxNewCustomerLastname.Location = new System.Drawing.Point(9, 89);
+            this.tbxNewCustomerLastname.Name = "tbxNewCustomerLastname";
+            this.tbxNewCustomerLastname.Size = new System.Drawing.Size(240, 20);
+            this.tbxNewCustomerLastname.TabIndex = 6;
+            // 
+            // tbxNewCustomerPLZ
+            // 
+            this.tbxNewCustomerPLZ.Location = new System.Drawing.Point(9, 137);
+            this.tbxNewCustomerPLZ.Name = "tbxNewCustomerPLZ";
+            this.tbxNewCustomerPLZ.Size = new System.Drawing.Size(57, 20);
+            this.tbxNewCustomerPLZ.TabIndex = 4;
+            // 
+            // lblNewCustomerPLZ
+            // 
+            this.lblNewCustomerPLZ.AutoSize = true;
+            this.lblNewCustomerPLZ.Location = new System.Drawing.Point(6, 121);
+            this.lblNewCustomerPLZ.Name = "lblNewCustomerPLZ";
+            this.lblNewCustomerPLZ.Size = new System.Drawing.Size(63, 13);
+            this.lblNewCustomerPLZ.TabIndex = 5;
+            this.lblNewCustomerPLZ.Text = "Postleitzahl:";
+            // 
+            // btnSaveNewCustomer
+            // 
+            this.btnSaveNewCustomer.Location = new System.Drawing.Point(9, 193);
+            this.btnSaveNewCustomer.Name = "btnSaveNewCustomer";
+            this.btnSaveNewCustomer.Size = new System.Drawing.Size(243, 37);
+            this.btnSaveNewCustomer.TabIndex = 5;
+            this.btnSaveNewCustomer.Text = "Neuen Kunden anlegen";
+            this.btnSaveNewCustomer.UseVisualStyleBackColor = true;
+            // 
+            // tbxNewCustomerFirstname
+            // 
+            this.tbxNewCustomerFirstname.Location = new System.Drawing.Point(9, 41);
+            this.tbxNewCustomerFirstname.Name = "tbxNewCustomerFirstname";
+            this.tbxNewCustomerFirstname.Size = new System.Drawing.Size(243, 20);
+            this.tbxNewCustomerFirstname.TabIndex = 2;
+            // 
+            // lblNewCustomerLastName
+            // 
+            this.lblNewCustomerLastName.AutoSize = true;
+            this.lblNewCustomerLastName.Location = new System.Drawing.Point(6, 73);
+            this.lblNewCustomerLastName.Name = "lblNewCustomerLastName";
+            this.lblNewCustomerLastName.Size = new System.Drawing.Size(62, 13);
+            this.lblNewCustomerLastName.TabIndex = 1;
+            this.lblNewCustomerLastName.Text = "Nachname:";
+            // 
+            // lblNewCustomerFirstname
+            // 
+            this.lblNewCustomerFirstname.AutoSize = true;
+            this.lblNewCustomerFirstname.Location = new System.Drawing.Point(6, 24);
+            this.lblNewCustomerFirstname.Name = "lblNewCustomerFirstname";
+            this.lblNewCustomerFirstname.Size = new System.Drawing.Size(52, 13);
+            this.lblNewCustomerFirstname.TabIndex = 0;
+            this.lblNewCustomerFirstname.Text = "Vorname:";
+            // 
+            // lstbxCustomers
+            // 
+            this.lstbxCustomers.FormattingEnabled = true;
+            this.lstbxCustomers.Location = new System.Drawing.Point(12, 58);
+            this.lstbxCustomers.Name = "lstbxCustomers";
+            this.lstbxCustomers.Size = new System.Drawing.Size(228, 511);
+            this.lstbxCustomers.TabIndex = 6;
+            // 
             // WebShopForm_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,7 +350,7 @@
             this.Controls.Add(this.cbbxDatabase);
             this.Controls.Add(this.grpbxSelectedCustomer);
             this.Controls.Add(this.grpbxNewCustomer);
-            this.Controls.Add(this.lstbxItems);
+            this.Controls.Add(this.lstbxCustomers);
             this.Name = "WebShopForm_Customer";
             this.Text = "WebShopForm_Customer";
             this.grpbxSelectedCustomer.ResumeLayout(false);
@@ -374,13 +374,13 @@
         private System.Windows.Forms.TextBox tbxNewCustomerStreet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxNewCustomerLastname;
-        private System.Windows.Forms.TextBox tbxNewAmount;
+        private System.Windows.Forms.TextBox tbxNewCustomerPLZ;
         private System.Windows.Forms.Label lblNewCustomerPLZ;
         private System.Windows.Forms.Button btnSaveNewCustomer;
         private System.Windows.Forms.TextBox tbxNewCustomerFirstname;
         private System.Windows.Forms.Label lblNewCustomerLastName;
         private System.Windows.Forms.Label lblNewCustomerFirstname;
-        private System.Windows.Forms.ListBox lstbxItems;
+        private System.Windows.Forms.ListBox lstbxCustomers;
         private System.Windows.Forms.Label lblCurrentCustomerSex;
         private System.Windows.Forms.ComboBox cbxCurrentCustomerSex;
         private System.Windows.Forms.TextBox tbxCurrentCustomerAddress;

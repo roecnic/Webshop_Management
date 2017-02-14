@@ -49,6 +49,18 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Supplier.cs" />
+    <Compile Include="WebShopForm_ClosedOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebShopForm_ClosedOrders.Designer.cs">
+      <DependentUpon>WebShopForm_ClosedOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebShopForm_OpenOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebShopForm_OpenOrders.Designer.cs">
+      <DependentUpon>WebShopForm_OpenOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebShopForm_Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +76,20 @@
     <Compile Include="WebShopForm_Customer.Designer.cs">
       <DependentUpon>WebShopForm_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebShopForm_Suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebShopForm_Suppliers.Designer.cs">
+      <DependentUpon>WebShopForm_Suppliers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WebShopForm_ClosedOrders.resx">
+      <DependentUpon>WebShopForm_ClosedOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WebShopForm_Customer.resx">
       <DependentUpon>WebShopForm_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebShopForm_OpenOrders.resx">
+      <DependentUpon>WebShopForm_OpenOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WebShopForm_Products.resx">
       <DependentUpon>WebShopForm_Products.cs</DependentUpon>
@@ -79,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WebShopForm_Suppliers.resx">
+      <DependentUpon>WebShopForm_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

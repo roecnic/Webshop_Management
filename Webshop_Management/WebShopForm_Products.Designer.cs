@@ -23,7 +23,7 @@
         /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
         /// </summary>
         private void InitializeComponent() {
-            this.lstbxItems = new System.Windows.Forms.ListBox();
+            this.lstbxProducts = new System.Windows.Forms.ListBox();
             this.grpbxNewItem = new System.Windows.Forms.GroupBox();
             this.tbxNewAmount = new System.Windows.Forms.TextBox();
             this.lblNewAmount = new System.Windows.Forms.Label();
@@ -50,14 +50,14 @@
             this.grpbxSelectedItem.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstbxItems
+            // lstbxProducts
             // 
-            this.lstbxItems.FormattingEnabled = true;
-            this.lstbxItems.Location = new System.Drawing.Point(14, 62);
-            this.lstbxItems.Name = "lstbxItems";
-            this.lstbxItems.Size = new System.Drawing.Size(228, 485);
-            this.lstbxItems.TabIndex = 0;
-            this.lstbxItems.SelectedIndexChanged += new System.EventHandler(this.lstbxItems_SelectedIndexChanged);
+            this.lstbxProducts.FormattingEnabled = true;
+            this.lstbxProducts.Location = new System.Drawing.Point(14, 62);
+            this.lstbxProducts.Name = "lstbxProducts";
+            this.lstbxProducts.Size = new System.Drawing.Size(228, 485);
+            this.lstbxProducts.TabIndex = 0;
+            this.lstbxProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxItems_SelectedIndexChanged);
             // 
             // grpbxNewItem
             // 
@@ -291,7 +291,7 @@
             this.Controls.Add(this.cbbxDatabase);
             this.Controls.Add(this.grpbxSelectedItem);
             this.Controls.Add(this.grpbxNewItem);
-            this.Controls.Add(this.lstbxItems);
+            this.Controls.Add(this.lstbxProducts);
             this.Name = "From_Management";
             this.Text = "Shopmanagement";
             this.grpbxNewItem.ResumeLayout(false);
@@ -305,7 +305,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstbxItems;
+        private System.Windows.Forms.ListBox lstbxProducts;
         private System.Windows.Forms.GroupBox grpbxNewItem;
         private System.Windows.Forms.TextBox tbxNewAmount;
         private System.Windows.Forms.Label lblNewAmount;

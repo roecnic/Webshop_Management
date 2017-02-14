@@ -37,13 +37,26 @@ namespace Webshop_Management {
             get { return pOrderDate; }
         }
 
+        private String pCompletedDate;
 
-        public Order(int fID, int fProductID, int fCustomerID, int fBillingNumber, String fOrderDate) {
+        public String CompletedDate {
+            get { return pCompletedDate; }
+            set { pCompletedDate = value; }
+        }
+
+        private char pClosed;
+
+        public char Closed {
+            get { return pClosed; }
+            set { pClosed = value; }
+        }
+
+        public Order(int fID, int fProductID, int fCustomerID, int fBillingNumber) {
             pID = fID;
             pProductID = fProductID;
             pCustomerID = fCustomerID;
             pBillingNumber = fBillingNumber;
-            pOrderDate = fOrderDate;
+            pOrderDate = "" + DateTime.Now;
         }
     }
 }

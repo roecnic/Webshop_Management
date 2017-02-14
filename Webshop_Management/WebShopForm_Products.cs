@@ -73,7 +73,7 @@ namespace Webshop_Management {
                     FillItemList();
 
                     var selectIndex = productList.IndexOf(buffer);
-                    lstbxItems.SelectedIndex = selectIndex;
+                    lstbxProducts.SelectedIndex = selectIndex;
                 }
 
             }
@@ -97,7 +97,7 @@ namespace Webshop_Management {
         private void tbnSave_Click(object sender, EventArgs e) {
             try {
 
-                if (lstbxItems.SelectedIndex >= 0) {
+                if (lstbxProducts.SelectedIndex >= 0) {
 
                     //Auswahl, welcher Button gedrückt ist (0 = Produkt bearbeiten; 1 = Produkt entfernen).
                     switch (this.SelectedRadioButton) {
@@ -122,17 +122,17 @@ namespace Webshop_Management {
 
                             //Das aktuelle Produkt wird in einer Buffer-Instanz gespeichert, damit es nachher in der Liste wieder gefunden werden kann, falls sich der
                             //Name des Produkts geändert hat.
-                            Product buffer = productList.ElementAt(lstbxItems.SelectedIndex);
+                            Product buffer = productList.ElementAt(lstbxProducts.SelectedIndex);
 
                             if (resultChange == DialogResult.Yes) {
-                                (productList.ElementAt(lstbxItems.SelectedIndex)).Name = tbxSelectedItemName.Text;
-                                (productList.ElementAt(lstbxItems.SelectedIndex)).Description = rtbxSelectedItemDescription.Text;
-                                (productList.ElementAt(lstbxItems.SelectedIndex)).Anzahl = Convert.ToInt32(tbxSelectedAmount.Text);
+                                (productList.ElementAt(lstbxProducts.SelectedIndex)).Name = tbxSelectedItemName.Text;
+                                (productList.ElementAt(lstbxProducts.SelectedIndex)).Description = rtbxSelectedItemDescription.Text;
+                                (productList.ElementAt(lstbxProducts.SelectedIndex)).Anzahl = Convert.ToInt32(tbxSelectedAmount.Text);
                             }
 
                             //Die Liste wird neu sortiert und das Produkt, das vorher in der Buffer-Instanz gespeichert wurde, wird ausgewählt.
                             FillItemList();
-                            lstbxItems.SelectedIndex = productList.IndexOf(buffer);
+                            lstbxProducts.SelectedIndex = productList.IndexOf(buffer);
 
                             break;
 
@@ -143,7 +143,7 @@ namespace Webshop_Management {
                             //Das Produkt wird aus der Liste gelöscht.
                             //Der Auswahlknopf wird auf "Änderungen speichern" zurück gesetzt, damit nicht versehentlich ein weiteres Produkt gelöscht wird.
                             if (resultRemove == DialogResult.Yes) {
-                                productList.RemoveAt(lstbxItems.SelectedIndex);
+                                productList.RemoveAt(lstbxProducts.SelectedIndex);
                                 SelectedRadioButton = 0;
                                 rbtnRemoveItem.Checked = false;
                                 rbtnSaveChanges.Checked = true;
@@ -178,15 +178,15 @@ namespace Webshop_Management {
          */
         private void lstbxItems_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                tbxSelectedItemName.Text = (productList.ElementAt(lstbxItems.SelectedIndex)).Name;
-                rtbxSelectedItemDescription.Text = (productList.ElementAt(lstbxItems.SelectedIndex)).Description;
-                tbxSelectedAmount.Text = "" + (productList.ElementAt(lstbxItems.SelectedIndex)).Anzahl;
+                tbxSelectedItemName.Text = (productList.ElementAt(lstbxProducts.SelectedIndex)).Name;
+                rtbxSelectedItemDescription.Text = (productList.ElementAt(lstbxProducts.SelectedIndex)).Description;
+                tbxSelectedAmount.Text = "" + (productList.ElementAt(lstbxProducts.SelectedIndex)).Anzahl;
             }
             catch (IndexOutOfRangeException) {
-                lstbxItems.SelectedIndex = 0;
+                lstbxProducts.SelectedIndex = 0;
             }
             catch (ArgumentOutOfRangeException) {
-                lstbxItems.SelectedIndex = 0;
+                lstbxProducts.SelectedIndex = 0;
             }
         }
 
@@ -203,17 +203,17 @@ namespace Webshop_Management {
          * Beim Verringern wird darauf geachtet, dass der Wert nicht unter 0 fällt.
          */
         private void btnIncreaseSelectedAmount_Click(object sender, EventArgs e) {
-            if (lstbxItems.SelectedIndex >= 0) {
-                productList.ElementAt(lstbxItems.SelectedIndex).Anzahl++;
-                tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxItems.SelectedIndex).Anzahl;
+            if (lstbxProducts.SelectedIndex >= 0) {
+                productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl++;
+                tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl;
             }
         }
 
         private void btnReduceSelectedAmount_Click(object sender, EventArgs e) {
-            if (lstbxItems.SelectedIndex >= 0) {
-                if (productList.ElementAt(lstbxItems.SelectedIndex).Anzahl > 0) {
-                    productList.ElementAt(lstbxItems.SelectedIndex).Anzahl--;
-                    tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxItems.SelectedIndex).Anzahl;
+            if (lstbxProducts.SelectedIndex >= 0) {
+                if (productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl > 0) {
+                    productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl--;
+                    tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl;
                 } else {
                     MessageBox.Show("Negative Mengen sind nicht zulässig.", "Fehler", MessageBoxButtons.OK);
                 }
@@ -225,13 +225,13 @@ namespace Webshop_Management {
          * Die ListBox wird geleert und die sortierte Produktliste wird in die ListBox eingetragen.
          */
         private void FillItemList() {
-            lstbxItems.Items.Clear();
+            lstbxProducts.Items.Clear();
             productList.Sort((x, y) => x.Name.CompareTo(y.Name));
 
             //Einbinden der sortierten Liste in die ListBox.
             for (int i = 0; i < productList.Count; i++) {
                 var aktuellesProdukt = productList.ElementAt(i);
-                lstbxItems.Items.Add(aktuellesProdukt.Name);
+                lstbxProducts.Items.Add(aktuellesProdukt.Name);
             }
         }
     }

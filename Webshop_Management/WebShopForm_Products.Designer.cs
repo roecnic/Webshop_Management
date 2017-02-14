@@ -1,5 +1,5 @@
 ﻿namespace Webshop_Management {
-    partial class Form_Management {
+    partial class WebShopForm_Products {
         /// <summary>
         /// Erforderliche Designervariable.
         /// </summary>
@@ -25,25 +25,22 @@
         private void InitializeComponent() {
             this.lstbxProducts = new System.Windows.Forms.ListBox();
             this.grpbxNewItem = new System.Windows.Forms.GroupBox();
-            this.tbxNewAmount = new System.Windows.Forms.TextBox();
-            this.lblNewAmount = new System.Windows.Forms.Label();
+            this.tbxNewProductAmount = new System.Windows.Forms.TextBox();
+            this.lblNewProductAmount = new System.Windows.Forms.Label();
             this.btnSaveNewItem = new System.Windows.Forms.Button();
-            this.rtbxNewItemDescription = new System.Windows.Forms.RichTextBox();
-            this.tbxNewItemName = new System.Windows.Forms.TextBox();
-            this.lblNewItemDescription = new System.Windows.Forms.Label();
-            this.lblNewItemName = new System.Windows.Forms.Label();
+            this.tbxNewProductDescription = new System.Windows.Forms.RichTextBox();
+            this.tbxNewProductName = new System.Windows.Forms.TextBox();
+            this.lblNewProductDescription = new System.Windows.Forms.Label();
+            this.lblNewProductName = new System.Windows.Forms.Label();
             this.grpbxSelectedItem = new System.Windows.Forms.GroupBox();
-            this.btnReduceSelectedAmount = new System.Windows.Forms.Button();
-            this.btnIncreaseSelectedAmount = new System.Windows.Forms.Button();
-            this.tbxSelectedAmount = new System.Windows.Forms.TextBox();
-            this.lblSelectedAmount = new System.Windows.Forms.Label();
-            this.tbnSave = new System.Windows.Forms.Button();
-            this.rbtnRemoveItem = new System.Windows.Forms.RadioButton();
-            this.rbtnSaveChanges = new System.Windows.Forms.RadioButton();
-            this.rtbxSelectedItemDescription = new System.Windows.Forms.RichTextBox();
-            this.lblSelectedItemName = new System.Windows.Forms.Label();
-            this.tbxSelectedItemName = new System.Windows.Forms.TextBox();
-            this.lblSelectedItemDescription = new System.Windows.Forms.Label();
+            this.btnCurrentProductDelete = new System.Windows.Forms.Button();
+            this.tbxCurrentProductAmount = new System.Windows.Forms.TextBox();
+            this.lblCurrentProductAmount = new System.Windows.Forms.Label();
+            this.tbnSaveChanges = new System.Windows.Forms.Button();
+            this.tbxCurrentProductDescription = new System.Windows.Forms.RichTextBox();
+            this.lblCurrentProductName = new System.Windows.Forms.Label();
+            this.tbxCurrentProductName = new System.Windows.Forms.TextBox();
+            this.lblCurrentProductDescription = new System.Windows.Forms.Label();
             this.cbbxDatabase = new System.Windows.Forms.ComboBox();
             this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.grpbxNewItem.SuspendLayout();
@@ -61,13 +58,13 @@
             // 
             // grpbxNewItem
             // 
-            this.grpbxNewItem.Controls.Add(this.tbxNewAmount);
-            this.grpbxNewItem.Controls.Add(this.lblNewAmount);
+            this.grpbxNewItem.Controls.Add(this.tbxNewProductAmount);
+            this.grpbxNewItem.Controls.Add(this.lblNewProductAmount);
             this.grpbxNewItem.Controls.Add(this.btnSaveNewItem);
-            this.grpbxNewItem.Controls.Add(this.rtbxNewItemDescription);
-            this.grpbxNewItem.Controls.Add(this.tbxNewItemName);
-            this.grpbxNewItem.Controls.Add(this.lblNewItemDescription);
-            this.grpbxNewItem.Controls.Add(this.lblNewItemName);
+            this.grpbxNewItem.Controls.Add(this.tbxNewProductDescription);
+            this.grpbxNewItem.Controls.Add(this.tbxNewProductName);
+            this.grpbxNewItem.Controls.Add(this.lblNewProductDescription);
+            this.grpbxNewItem.Controls.Add(this.lblNewProductName);
             this.grpbxNewItem.Location = new System.Drawing.Point(280, 62);
             this.grpbxNewItem.Name = "grpbxNewItem";
             this.grpbxNewItem.Size = new System.Drawing.Size(258, 236);
@@ -75,21 +72,21 @@
             this.grpbxNewItem.TabStop = false;
             this.grpbxNewItem.Text = "Neues Produkt";
             // 
-            // tbxNewAmount
+            // tbxNewProductAmount
             // 
-            this.tbxNewAmount.Location = new System.Drawing.Point(55, 159);
-            this.tbxNewAmount.Name = "tbxNewAmount";
-            this.tbxNewAmount.Size = new System.Drawing.Size(197, 20);
-            this.tbxNewAmount.TabIndex = 4;
+            this.tbxNewProductAmount.Location = new System.Drawing.Point(55, 159);
+            this.tbxNewProductAmount.Name = "tbxNewProductAmount";
+            this.tbxNewProductAmount.Size = new System.Drawing.Size(197, 20);
+            this.tbxNewProductAmount.TabIndex = 4;
             // 
-            // lblNewAmount
+            // lblNewProductAmount
             // 
-            this.lblNewAmount.AutoSize = true;
-            this.lblNewAmount.Location = new System.Drawing.Point(6, 162);
-            this.lblNewAmount.Name = "lblNewAmount";
-            this.lblNewAmount.Size = new System.Drawing.Size(42, 13);
-            this.lblNewAmount.TabIndex = 5;
-            this.lblNewAmount.Text = "Anzahl:";
+            this.lblNewProductAmount.AutoSize = true;
+            this.lblNewProductAmount.Location = new System.Drawing.Point(6, 162);
+            this.lblNewProductAmount.Name = "lblNewProductAmount";
+            this.lblNewProductAmount.Size = new System.Drawing.Size(42, 13);
+            this.lblNewProductAmount.TabIndex = 5;
+            this.lblNewProductAmount.Text = "Anzahl:";
             // 
             // btnSaveNewItem
             // 
@@ -101,52 +98,49 @@
             this.btnSaveNewItem.UseVisualStyleBackColor = true;
             this.btnSaveNewItem.Click += new System.EventHandler(this.btnSaveNewItem_Click);
             // 
-            // rtbxNewItemDescription
+            // tbxNewProductDescription
             // 
-            this.rtbxNewItemDescription.Location = new System.Drawing.Point(9, 106);
-            this.rtbxNewItemDescription.Name = "rtbxNewItemDescription";
-            this.rtbxNewItemDescription.Size = new System.Drawing.Size(243, 43);
-            this.rtbxNewItemDescription.TabIndex = 3;
-            this.rtbxNewItemDescription.Text = "";
+            this.tbxNewProductDescription.Location = new System.Drawing.Point(9, 106);
+            this.tbxNewProductDescription.Name = "tbxNewProductDescription";
+            this.tbxNewProductDescription.Size = new System.Drawing.Size(243, 43);
+            this.tbxNewProductDescription.TabIndex = 3;
+            this.tbxNewProductDescription.Text = "";
             // 
-            // tbxNewItemName
+            // tbxNewProductName
             // 
-            this.tbxNewItemName.Location = new System.Drawing.Point(9, 47);
-            this.tbxNewItemName.Name = "tbxNewItemName";
-            this.tbxNewItemName.Size = new System.Drawing.Size(243, 20);
-            this.tbxNewItemName.TabIndex = 2;
+            this.tbxNewProductName.Location = new System.Drawing.Point(9, 47);
+            this.tbxNewProductName.Name = "tbxNewProductName";
+            this.tbxNewProductName.Size = new System.Drawing.Size(243, 20);
+            this.tbxNewProductName.TabIndex = 2;
             // 
-            // lblNewItemDescription
+            // lblNewProductDescription
             // 
-            this.lblNewItemDescription.AutoSize = true;
-            this.lblNewItemDescription.Location = new System.Drawing.Point(6, 89);
-            this.lblNewItemDescription.Name = "lblNewItemDescription";
-            this.lblNewItemDescription.Size = new System.Drawing.Size(111, 13);
-            this.lblNewItemDescription.TabIndex = 1;
-            this.lblNewItemDescription.Text = "Produktbeschreibung:";
+            this.lblNewProductDescription.AutoSize = true;
+            this.lblNewProductDescription.Location = new System.Drawing.Point(6, 89);
+            this.lblNewProductDescription.Name = "lblNewProductDescription";
+            this.lblNewProductDescription.Size = new System.Drawing.Size(111, 13);
+            this.lblNewProductDescription.TabIndex = 1;
+            this.lblNewProductDescription.Text = "Produktbeschreibung:";
             // 
-            // lblNewItemName
+            // lblNewProductName
             // 
-            this.lblNewItemName.AutoSize = true;
-            this.lblNewItemName.Location = new System.Drawing.Point(6, 30);
-            this.lblNewItemName.Name = "lblNewItemName";
-            this.lblNewItemName.Size = new System.Drawing.Size(73, 13);
-            this.lblNewItemName.TabIndex = 0;
-            this.lblNewItemName.Text = "Produktname:";
+            this.lblNewProductName.AutoSize = true;
+            this.lblNewProductName.Location = new System.Drawing.Point(6, 30);
+            this.lblNewProductName.Name = "lblNewProductName";
+            this.lblNewProductName.Size = new System.Drawing.Size(73, 13);
+            this.lblNewProductName.TabIndex = 0;
+            this.lblNewProductName.Text = "Produktname:";
             // 
             // grpbxSelectedItem
             // 
-            this.grpbxSelectedItem.Controls.Add(this.btnReduceSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.btnIncreaseSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.tbxSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.lblSelectedAmount);
-            this.grpbxSelectedItem.Controls.Add(this.tbnSave);
-            this.grpbxSelectedItem.Controls.Add(this.rbtnRemoveItem);
-            this.grpbxSelectedItem.Controls.Add(this.rbtnSaveChanges);
-            this.grpbxSelectedItem.Controls.Add(this.rtbxSelectedItemDescription);
-            this.grpbxSelectedItem.Controls.Add(this.lblSelectedItemName);
-            this.grpbxSelectedItem.Controls.Add(this.tbxSelectedItemName);
-            this.grpbxSelectedItem.Controls.Add(this.lblSelectedItemDescription);
+            this.grpbxSelectedItem.Controls.Add(this.btnCurrentProductDelete);
+            this.grpbxSelectedItem.Controls.Add(this.tbxCurrentProductAmount);
+            this.grpbxSelectedItem.Controls.Add(this.lblCurrentProductAmount);
+            this.grpbxSelectedItem.Controls.Add(this.tbnSaveChanges);
+            this.grpbxSelectedItem.Controls.Add(this.tbxCurrentProductDescription);
+            this.grpbxSelectedItem.Controls.Add(this.lblCurrentProductName);
+            this.grpbxSelectedItem.Controls.Add(this.tbxCurrentProductName);
+            this.grpbxSelectedItem.Controls.Add(this.lblCurrentProductDescription);
             this.grpbxSelectedItem.Location = new System.Drawing.Point(280, 319);
             this.grpbxSelectedItem.Name = "grpbxSelectedItem";
             this.grpbxSelectedItem.Size = new System.Drawing.Size(258, 228);
@@ -154,109 +148,74 @@
             this.grpbxSelectedItem.TabStop = false;
             this.grpbxSelectedItem.Text = "Ausgewähltes Produkt";
             // 
-            // btnReduceSelectedAmount
+            // btnCurrentProductDelete
             // 
-            this.btnReduceSelectedAmount.Location = new System.Drawing.Point(209, 156);
-            this.btnReduceSelectedAmount.Name = "btnReduceSelectedAmount";
-            this.btnReduceSelectedAmount.Size = new System.Drawing.Size(43, 20);
-            this.btnReduceSelectedAmount.TabIndex = 13;
-            this.btnReduceSelectedAmount.Text = "-";
-            this.btnReduceSelectedAmount.UseVisualStyleBackColor = true;
-            this.btnReduceSelectedAmount.Click += new System.EventHandler(this.btnReduceSelectedAmount_Click);
+            this.btnCurrentProductDelete.Location = new System.Drawing.Point(140, 187);
+            this.btnCurrentProductDelete.Name = "btnCurrentProductDelete";
+            this.btnCurrentProductDelete.Size = new System.Drawing.Size(112, 35);
+            this.btnCurrentProductDelete.TabIndex = 12;
+            this.btnCurrentProductDelete.Text = "Produkt löschen";
+            this.btnCurrentProductDelete.UseVisualStyleBackColor = true;
+            this.btnCurrentProductDelete.Click += new System.EventHandler(this.btnCurrentProductDelete_Click);
             // 
-            // btnIncreaseSelectedAmount
+            // tbxCurrentProductAmount
             // 
-            this.btnIncreaseSelectedAmount.Location = new System.Drawing.Point(149, 156);
-            this.btnIncreaseSelectedAmount.Name = "btnIncreaseSelectedAmount";
-            this.btnIncreaseSelectedAmount.Size = new System.Drawing.Size(45, 20);
-            this.btnIncreaseSelectedAmount.TabIndex = 12;
-            this.btnIncreaseSelectedAmount.Text = "+";
-            this.btnIncreaseSelectedAmount.UseVisualStyleBackColor = true;
-            this.btnIncreaseSelectedAmount.Click += new System.EventHandler(this.btnIncreaseSelectedAmount_Click);
+            this.tbxCurrentProductAmount.Location = new System.Drawing.Point(55, 156);
+            this.tbxCurrentProductAmount.Name = "tbxCurrentProductAmount";
+            this.tbxCurrentProductAmount.Size = new System.Drawing.Size(88, 20);
+            this.tbxCurrentProductAmount.TabIndex = 8;
             // 
-            // tbxSelectedAmount
+            // lblCurrentProductAmount
             // 
-            this.tbxSelectedAmount.Location = new System.Drawing.Point(55, 156);
-            this.tbxSelectedAmount.Name = "tbxSelectedAmount";
-            this.tbxSelectedAmount.Size = new System.Drawing.Size(88, 20);
-            this.tbxSelectedAmount.TabIndex = 8;
+            this.lblCurrentProductAmount.AutoSize = true;
+            this.lblCurrentProductAmount.Location = new System.Drawing.Point(6, 159);
+            this.lblCurrentProductAmount.Name = "lblCurrentProductAmount";
+            this.lblCurrentProductAmount.Size = new System.Drawing.Size(42, 13);
+            this.lblCurrentProductAmount.TabIndex = 7;
+            this.lblCurrentProductAmount.Text = "Anzahl:";
             // 
-            // lblSelectedAmount
+            // tbnSaveChanges
             // 
-            this.lblSelectedAmount.AutoSize = true;
-            this.lblSelectedAmount.Location = new System.Drawing.Point(6, 159);
-            this.lblSelectedAmount.Name = "lblSelectedAmount";
-            this.lblSelectedAmount.Size = new System.Drawing.Size(42, 13);
-            this.lblSelectedAmount.TabIndex = 7;
-            this.lblSelectedAmount.Text = "Anzahl:";
+            this.tbnSaveChanges.Location = new System.Drawing.Point(9, 187);
+            this.tbnSaveChanges.Name = "tbnSaveChanges";
+            this.tbnSaveChanges.Size = new System.Drawing.Size(108, 35);
+            this.tbnSaveChanges.TabIndex = 11;
+            this.tbnSaveChanges.Text = "Änderungen speichern";
+            this.tbnSaveChanges.UseVisualStyleBackColor = true;
+            this.tbnSaveChanges.Click += new System.EventHandler(this.tbnSaveChanges_Click);
             // 
-            // tbnSave
+            // tbxCurrentProductDescription
             // 
-            this.tbnSave.Location = new System.Drawing.Point(150, 187);
-            this.tbnSave.Name = "tbnSave";
-            this.tbnSave.Size = new System.Drawing.Size(102, 35);
-            this.tbnSave.TabIndex = 11;
-            this.tbnSave.Text = "Anwenden";
-            this.tbnSave.UseVisualStyleBackColor = true;
-            this.tbnSave.Click += new System.EventHandler(this.tbnSave_Click);
+            this.tbxCurrentProductDescription.Location = new System.Drawing.Point(9, 104);
+            this.tbxCurrentProductDescription.Name = "tbxCurrentProductDescription";
+            this.tbxCurrentProductDescription.Size = new System.Drawing.Size(243, 43);
+            this.tbxCurrentProductDescription.TabIndex = 7;
+            this.tbxCurrentProductDescription.Text = "";
             // 
-            // rbtnRemoveItem
+            // lblCurrentProductName
             // 
-            this.rbtnRemoveItem.AutoSize = true;
-            this.rbtnRemoveItem.Location = new System.Drawing.Point(9, 205);
-            this.rbtnRemoveItem.Name = "rbtnRemoveItem";
-            this.rbtnRemoveItem.Size = new System.Drawing.Size(102, 17);
-            this.rbtnRemoveItem.TabIndex = 10;
-            this.rbtnRemoveItem.TabStop = true;
-            this.rbtnRemoveItem.Text = "Produkt löschen";
-            this.rbtnRemoveItem.UseVisualStyleBackColor = true;
-            this.rbtnRemoveItem.CheckedChanged += new System.EventHandler(this.rbtnRemoveItem_CheckedChanged);
+            this.lblCurrentProductName.AutoSize = true;
+            this.lblCurrentProductName.Location = new System.Drawing.Point(6, 28);
+            this.lblCurrentProductName.Name = "lblCurrentProductName";
+            this.lblCurrentProductName.Size = new System.Drawing.Size(73, 13);
+            this.lblCurrentProductName.TabIndex = 4;
+            this.lblCurrentProductName.Text = "Produktname:";
             // 
-            // rbtnSaveChanges
+            // tbxCurrentProductName
             // 
-            this.rbtnSaveChanges.AutoSize = true;
-            this.rbtnSaveChanges.Checked = true;
-            this.rbtnSaveChanges.Location = new System.Drawing.Point(9, 186);
-            this.rbtnSaveChanges.Name = "rbtnSaveChanges";
-            this.rbtnSaveChanges.Size = new System.Drawing.Size(134, 17);
-            this.rbtnSaveChanges.TabIndex = 9;
-            this.rbtnSaveChanges.TabStop = true;
-            this.rbtnSaveChanges.Text = "Änderungen Speichern";
-            this.rbtnSaveChanges.UseVisualStyleBackColor = true;
-            this.rbtnSaveChanges.CheckedChanged += new System.EventHandler(this.rbtnSaveChanges_CheckedChanged);
+            this.tbxCurrentProductName.Location = new System.Drawing.Point(9, 45);
+            this.tbxCurrentProductName.Name = "tbxCurrentProductName";
+            this.tbxCurrentProductName.Size = new System.Drawing.Size(243, 20);
+            this.tbxCurrentProductName.TabIndex = 6;
             // 
-            // rtbxSelectedItemDescription
+            // lblCurrentProductDescription
             // 
-            this.rtbxSelectedItemDescription.Location = new System.Drawing.Point(9, 104);
-            this.rtbxSelectedItemDescription.Name = "rtbxSelectedItemDescription";
-            this.rtbxSelectedItemDescription.Size = new System.Drawing.Size(243, 43);
-            this.rtbxSelectedItemDescription.TabIndex = 7;
-            this.rtbxSelectedItemDescription.Text = "";
-            // 
-            // lblSelectedItemName
-            // 
-            this.lblSelectedItemName.AutoSize = true;
-            this.lblSelectedItemName.Location = new System.Drawing.Point(6, 28);
-            this.lblSelectedItemName.Name = "lblSelectedItemName";
-            this.lblSelectedItemName.Size = new System.Drawing.Size(73, 13);
-            this.lblSelectedItemName.TabIndex = 4;
-            this.lblSelectedItemName.Text = "Produktname:";
-            // 
-            // tbxSelectedItemName
-            // 
-            this.tbxSelectedItemName.Location = new System.Drawing.Point(9, 45);
-            this.tbxSelectedItemName.Name = "tbxSelectedItemName";
-            this.tbxSelectedItemName.Size = new System.Drawing.Size(243, 20);
-            this.tbxSelectedItemName.TabIndex = 6;
-            // 
-            // lblSelectedItemDescription
-            // 
-            this.lblSelectedItemDescription.AutoSize = true;
-            this.lblSelectedItemDescription.Location = new System.Drawing.Point(6, 87);
-            this.lblSelectedItemDescription.Name = "lblSelectedItemDescription";
-            this.lblSelectedItemDescription.Size = new System.Drawing.Size(111, 13);
-            this.lblSelectedItemDescription.TabIndex = 5;
-            this.lblSelectedItemDescription.Text = "Produktbeschreibung:";
+            this.lblCurrentProductDescription.AutoSize = true;
+            this.lblCurrentProductDescription.Location = new System.Drawing.Point(6, 87);
+            this.lblCurrentProductDescription.Name = "lblCurrentProductDescription";
+            this.lblCurrentProductDescription.Size = new System.Drawing.Size(111, 13);
+            this.lblCurrentProductDescription.TabIndex = 5;
+            this.lblCurrentProductDescription.Text = "Produktbeschreibung:";
             // 
             // cbbxDatabase
             // 
@@ -272,6 +231,7 @@
             this.cbbxDatabase.Size = new System.Drawing.Size(525, 21);
             this.cbbxDatabase.TabIndex = 4;
             this.cbbxDatabase.Text = "Produkte";
+            this.cbbxDatabase.SelectedIndexChanged += new System.EventHandler(this.cbbxDatabase_SelectedIndexChanged);
             // 
             // lblSelectDatabase
             // 
@@ -307,27 +267,24 @@
 
         private System.Windows.Forms.ListBox lstbxProducts;
         private System.Windows.Forms.GroupBox grpbxNewItem;
-        private System.Windows.Forms.TextBox tbxNewAmount;
-        private System.Windows.Forms.Label lblNewAmount;
+        private System.Windows.Forms.TextBox tbxNewProductAmount;
+        private System.Windows.Forms.Label lblNewProductAmount;
         private System.Windows.Forms.Button btnSaveNewItem;
-        private System.Windows.Forms.RichTextBox rtbxNewItemDescription;
-        private System.Windows.Forms.TextBox tbxNewItemName;
-        private System.Windows.Forms.Label lblNewItemDescription;
-        private System.Windows.Forms.Label lblNewItemName;
+        private System.Windows.Forms.RichTextBox tbxNewProductDescription;
+        private System.Windows.Forms.TextBox tbxNewProductName;
+        private System.Windows.Forms.Label lblNewProductDescription;
+        private System.Windows.Forms.Label lblNewProductName;
         private System.Windows.Forms.GroupBox grpbxSelectedItem;
-        private System.Windows.Forms.Button btnReduceSelectedAmount;
-        private System.Windows.Forms.Button btnIncreaseSelectedAmount;
-        private System.Windows.Forms.TextBox tbxSelectedAmount;
-        private System.Windows.Forms.Label lblSelectedAmount;
-        private System.Windows.Forms.Button tbnSave;
-        private System.Windows.Forms.RadioButton rbtnRemoveItem;
-        private System.Windows.Forms.RadioButton rbtnSaveChanges;
-        private System.Windows.Forms.RichTextBox rtbxSelectedItemDescription;
-        private System.Windows.Forms.Label lblSelectedItemName;
-        private System.Windows.Forms.TextBox tbxSelectedItemName;
-        private System.Windows.Forms.Label lblSelectedItemDescription;
+        private System.Windows.Forms.TextBox tbxCurrentProductAmount;
+        private System.Windows.Forms.Label lblCurrentProductAmount;
+        private System.Windows.Forms.Button tbnSaveChanges;
+        private System.Windows.Forms.RichTextBox tbxCurrentProductDescription;
+        private System.Windows.Forms.Label lblCurrentProductName;
+        private System.Windows.Forms.TextBox tbxCurrentProductName;
+        private System.Windows.Forms.Label lblCurrentProductDescription;
         private System.Windows.Forms.ComboBox cbbxDatabase;
         private System.Windows.Forms.Label lblSelectDatabase;
+        private System.Windows.Forms.Button btnCurrentProductDelete;
     }
 }
 

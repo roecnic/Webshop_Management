@@ -13,7 +13,7 @@ namespace Webshop_Management {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Management());
+            Application.Run(new WebShopForm_Products());
         }
     }
 }

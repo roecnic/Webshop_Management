@@ -3,45 +3,49 @@
 namespace Webshop_Management {
     class Product {
 
-        String description = "";
-        String name = "";
-        int anzahl = 0;
+        private int pID;
+
+        public int ID {
+            get { return pID; }
+        }
+
+        private String pDescription;
 
         public String Description {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return pDescription; }
+            set { pDescription = value; }
         }
+
+        private String pName;
 
         public String Name {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return pName; }
+            set { pName = value; }
         }
 
-        public int Anzahl {
-            get { return this.anzahl; }
-            set { this.anzahl = value; }
+        private int pAmount;
+
+        public int Amount {
+            get { return pAmount; }
+            set { pAmount = value; }
+        }
+
+        private Boolean pRemoved;
+        
+        public Boolean Removed {
+            get { return pRemoved; }
+            set { pRemoved = value; }
         }
 
 
         //CONSTRUCTOR
-        public Product(String pName) {
-            this.name = pName;
-        }
+        public Product(int fID, String fName, String fDescription, int fAmount) {
+            pID = fID;
+            pName = fName;
+            pDescription = fDescription;
+            pAmount = fAmount;
 
-        public Product(String pName, int pAnzahl) {
-            this.name = pName;
-            this.anzahl = pAnzahl;
-        }
-
-        public Product(String pName, String pDescription) {
-            this.name = pName;
-            this.description = pDescription;
-        }
-
-        public Product(String pName, String pDescription, int pAnzahl) {
-            this.name = pName;
-            this.description = pDescription;
-            this.anzahl = pAnzahl;
+            pRemoved = false;
         }
     }
 }

@@ -4,164 +4,83 @@ using System.Linq;
 using System.Windows.Forms;
 
 namespace Webshop_Management {
-    public partial class Form_Management : Form {
+    public partial class WebShopForm_Products : Form {
 
         List<Product> productList = new List<Product>();
-        int SelectedRadioButton = 0; //0 = Save changes; 1 = Remove
 
-        public Form_Management() {
+        public WebShopForm_Products () {
             InitializeComponent();
             cbbxDatabase.SelectedIndex = 0;
+
+            if (lstbxProducts.Items.Count > 0) {
+                lstbxProducts.SelectedIndex = 0;
+            }
+
+            //LOAD PRODUCT LIST FROM SQL
+
+            FillItemList();
         }
 
-        /**
-         * Ein neues Produkt kann erzeugt werden.
-         * Dabei stehen dem Benutzer Eingaben für den Namen des Produkts, einer Produktbeschreibung und der Anzahl der verfügbaren Produkte zur Verfügung.
-         * Der Name des Produkts ist eine Pflichteingabe. Leere Produktnamen werden nicht akzeptiert.
-         * Die Eingabe einer Beschreibung oder einer Anzahl ist optional. Allerdings wird vor dem Speichern gefragt, ob das Produkt ohne Beschreibung, bzw. ohne
-         * Anzahl erzeugt werden soll. 
-         * Wenn ein Produkt ohne Anzahl erzeugt wird, wird diese automatisch auf 0 gesetzt.
-         * Negative Werte für die Anzahl sind nicht zulässig. Auf Abfrage wird die Anzahl dann auf 0 gesetzt.
-         */
-        private void btnSaveNewItem_Click(object sender, EventArgs e) {
+        private void btnSaveNewItem_Click (object sender, EventArgs e) {
             try {
 
-                DialogResult result = DialogResult.Yes;
+                var vItemName = "";
+                var vItemDescription = "";
+                int vItemAmount = 0;
+                var result = DialogResult.Yes;
 
-                //Die einzelnen Fälle, wie die Felder befüllt sein können, werden abgefragt.
-                //Entsprechend den leeren Feldern wird eine Abfrage durch eine Messagebox durchgeführt.
-                //Z.B. muss ein Name immer vorhanden sein, während eine Beschreibung oder Anzahl optional ist.
-                if (tbxNewItemName.Text == "") {
-                    MessageBox.Show("Bitte einen Namen für das Produkt eingeben.", "Fehler", MessageBoxButtons.OK);
-                    result = DialogResult.No;
-                } else if (rtbxNewItemDescription.Text == "" && tbxNewAmount.Text == "") {
-                    result = MessageBox.Show("Möchten Sie das Produkt ohne Beschreibung und ohne Anzahl speichern? Die Anzahl wird dabei auf 0 gesetzt.", "Warnung", MessageBoxButtons.YesNo);
-                } else if (rtbxNewItemDescription.Text == "") {
-                    result = MessageBox.Show("Möchten Sie das Produkt ohne Beschreibung speichern?", "Warnung", MessageBoxButtons.YesNo);
-                } else if (tbxNewAmount.Text == "") {
-                    result = MessageBox.Show("Möchten Sie das Produkt ohne Anzahl speichern? Die Anzahl wird dabei auf 0 gesetzt.", "Warnung", MessageBoxButtons.YesNo);
-                } else if (Convert.ToInt32(tbxNewAmount.Text) < 0) {
-                    result = MessageBox.Show("Negative Mengen sind nicht zulässig. Soll die Anzahl auf 0 gesetzt werden?", "Fehler", MessageBoxButtons.YesNo);
-                }
+                if (tbxNewProductName.Text != "") {
+                    vItemName = "" + tbxNewProductName.Text;
 
-                //Wenn der Name vorhanden ist, werden die übrigen Fälle abgefragt. Die Produkte werden entsprechend erzeugt und in der Liste angehangen.
-                if (result == DialogResult.Yes) {
-
-                    //Anzahl und Beschreibung fehlen; nur Produktname wird eingegeben.
-                    if (this.rtbxNewItemDescription.Text == "" && tbxNewAmount.Text == "") {
-                        productList.Add(new Product(tbxNewItemName.Text));
-                        //Anzahl fehlt; Produktname und Beschreibung wird eingegeben.
-                    } else if (tbxNewAmount.Text == "" || (Convert.ToInt32(tbxNewAmount.Text) < 0)) {
-                        productList.Add(new Product(tbxNewItemName.Text, this.rtbxNewItemDescription.Text));
-                        //Beschreibung fehlt; Produktname und Anzahl wird eingegeben.
-                    } else if (rtbxNewItemDescription.Text == "") {
-                        productList.Add(new Product(tbxNewItemName.Text, Convert.ToInt32(tbxNewAmount.Text)));
-                        //Alles vorhanden; Produktname, Beschreibung und Anzahl wird eingegeben.
-                    } else {
-                        productList.Add(new Product(tbxNewItemName.Text, rtbxNewItemDescription.Text, Convert.ToInt32(tbxNewAmount.Text)));
+                    if (tbxNewProductDescription.Text == "") {
+                        result = MessageBox.Show("Soll das Produkt ohne Beschreibung gespeichert werden?", "Warnung", MessageBoxButtons.YesNo);
                     }
 
-                    //Das erzeugte Produkt wird in einem Buffer gespeichert.
-                    //Die Felder für das neue Produkt werden geleert.
-                    //Die Liste wird sortiert. Nach der Sortierung wird der Index des vorher erzeugten Produkts aus der Liste anhand des Buffers gesucht.
-                    //Der Auswahlindex der ListBox wird entsprechend gesetzt; --> Das neue Produkt wird automatisch ausgewählt.
-                    Product buffer = productList.Last();
+                    if (result == DialogResult.Yes) {
+                        vItemDescription = "" + tbxNewProductDescription.Text;
 
-                    tbxNewItemName.Text = "";
-                    rtbxNewItemDescription.Text = "";
-                    tbxNewAmount.Text = "";
-                    FillItemList();
+                        if (tbxNewProductAmount.Text != "") {
+                            vItemAmount = Convert.ToInt32(tbxNewProductAmount.Text);
+                        } else {
+                            result = MessageBox.Show("Soll das Produkt ohne Anzahl gespeichert werden? Der Wert wird dann auf 0 gesetzt.", "Hinweis", MessageBoxButtons.YesNo);
+                            if (result == DialogResult.Yes) {
+                                vItemAmount = 0;
+                            }
+                        }
+                    }
 
-                    var selectIndex = productList.IndexOf(buffer);
-                    lstbxProducts.SelectedIndex = selectIndex;
+                    if (result == DialogResult.Yes) {
+                        var newProduct = new Product(productList.Count, vItemName, vItemDescription, vItemAmount);
+                        productList.Add(newProduct);
+                        //ADD ITEM TO SQL
+
+                        tbxNewProductAmount.Text = "";
+                        tbxNewProductDescription.Text = "";
+                        tbxNewProductName.Text = "";
+                        FillItemList();
+
+                        lstbxProducts.SelectedIndex = productList.IndexOf(newProduct);
+                    }
+                } else {
+                    MessageBox.Show("Bitte einen Namen für das Produkt eingeben.", "Fehler", MessageBoxButtons.OK);
                 }
-
             }
             catch (FormatException) {
                 MessageBox.Show("Bitte einen gültigen Wert als Anzahl eingeben.", "Fehler", MessageBoxButtons.OK);
+                tbxNewProductAmount.Text = "";
             }
         }
 
-        /**
-         * Es kann ausgewählt werden, ob das Produkt gelöscht werden soll, oder ob die Änderungen, die in den Feldern für das ausgewählte Produkt vorgenommen wurden,
-         * gespeichert werden sollen.
-         * 
-         * Beim Speichern der Änderungen wird überprüft, ob die Eingaben korrekt sind (Name vorhanden; Anzahl >= 0).
-         * Ggf. wird eine entsprechende Fehlermeldung ausgegeben.
-         * Wenn alle Eingaben korrekt sind, werden die Änderungen gespeichert. Die Liste wird dann neu sortiert und das geänderte Produkt bleibt ausgewählt.
-         * 
-         * Wird ein Produkt gelöscht, wird es aus der Liste entfernt.
-         * Die Liste wird dann neu sortiert und ausgegeben.
-         * Es wird dann kein anderes Produkt automatisch ausgewählt.
-         */
-        private void tbnSave_Click(object sender, EventArgs e) {
+
+        private void tbnSaveChanges_Click (object sender, EventArgs e) {
             try {
+                var currentProduct = productList.ElementAt(lstbxProducts.SelectedIndex);
+                currentProduct.Name = tbxCurrentProductName.Text;
+                currentProduct.Description = tbxCurrentProductDescription.Text;
+                currentProduct.Amount = Convert.ToInt32(tbxCurrentProductAmount.Text);
+                //EDIT ITEM IN SQL
 
-                if (lstbxProducts.SelectedIndex >= 0) {
-
-                    //Auswahl, welcher Button gedrückt ist (0 = Produkt bearbeiten; 1 = Produkt entfernen).
-                    switch (this.SelectedRadioButton) {
-                        case 0:
-
-                            DialogResult resultChange = DialogResult.No;
-
-                            //Überprüfung, ob die angegebene Anzahl immer noch größer als 0 ist.
-                            //Wenn nicht, wird angeboten, die Anzahl auf 0 zu ändern.
-                            if (Convert.ToInt32(tbxSelectedAmount.Text) < 0) {
-                                resultChange = MessageBox.Show("Negative Menggen sind nicht zulässig. Soll die Anzahl stattdessen auf 0 gesetzt werden?", "Fehler", MessageBoxButtons.YesNo);
-                                if (resultChange == DialogResult.Yes) {
-                                    tbxSelectedAmount.Text = "" + 0;
-                                }
-                                //Überprüfung, ob der Produktname noch vorhanden ist. Wenn nicht, wird ausgegeben, dass ein Name eingegeben werden muss.
-                            } else if (tbxSelectedItemName.Text != "") {
-                                resultChange = MessageBox.Show("Möchten Sie die Änderungen speichern?", "Warnung", MessageBoxButtons.YesNo);
-                            } else {
-                                MessageBox.Show("Bitte geben Sie einen Namen für das Produkt ein.", "Fehler", MessageBoxButtons.OK);
-                                resultChange = DialogResult.No;
-                            }
-
-                            //Das aktuelle Produkt wird in einer Buffer-Instanz gespeichert, damit es nachher in der Liste wieder gefunden werden kann, falls sich der
-                            //Name des Produkts geändert hat.
-                            Product buffer = productList.ElementAt(lstbxProducts.SelectedIndex);
-
-                            if (resultChange == DialogResult.Yes) {
-                                (productList.ElementAt(lstbxProducts.SelectedIndex)).Name = tbxSelectedItemName.Text;
-                                (productList.ElementAt(lstbxProducts.SelectedIndex)).Description = rtbxSelectedItemDescription.Text;
-                                (productList.ElementAt(lstbxProducts.SelectedIndex)).Anzahl = Convert.ToInt32(tbxSelectedAmount.Text);
-                            }
-
-                            //Die Liste wird neu sortiert und das Produkt, das vorher in der Buffer-Instanz gespeichert wurde, wird ausgewählt.
-                            FillItemList();
-                            lstbxProducts.SelectedIndex = productList.IndexOf(buffer);
-
-                            break;
-
-                        case 1:
-
-                            DialogResult resultRemove = MessageBox.Show("Möchten Sie den ausgewählten Eintrag wirklich löschen?", "Warnung", MessageBoxButtons.YesNo);
-
-                            //Das Produkt wird aus der Liste gelöscht.
-                            //Der Auswahlknopf wird auf "Änderungen speichern" zurück gesetzt, damit nicht versehentlich ein weiteres Produkt gelöscht wird.
-                            if (resultRemove == DialogResult.Yes) {
-                                productList.RemoveAt(lstbxProducts.SelectedIndex);
-                                SelectedRadioButton = 0;
-                                rbtnRemoveItem.Checked = false;
-                                rbtnSaveChanges.Checked = true;
-
-                                tbxSelectedAmount.Text = "";
-                                rtbxSelectedItemDescription.Text = "";
-                                tbxSelectedItemName.Text = "";
-
-                                FillItemList();
-                            }
-
-                            break;
-                    }
-
-                } else {
-                    MessageBox.Show("Bitte einen Eintrag auswählen.", "Fehler", MessageBoxButtons.OK);
-                }
-
+                FillItemList();
             }
             catch (FormatException) {
                 MessageBox.Show("Bitte einen gültigen Wert als Anzahl eingeben.", "Fehler", MessageBoxButtons.OK);
@@ -171,16 +90,13 @@ namespace Webshop_Management {
             }
         }
 
-        /**
-         * Beim Wechsel des ausgewählten Elements der ListBox werden die Daten (Name, Beschreibung, Anzahl) des neuen ausgewählten Eintrags in die entsprechenden
-         * Felder des Ausgewählten Produkts übertragen.
-         * Da beim Löschen eines Produkts ggf. der SelectIndex einen ungültigen Wert erreichen kann, wird dann der Index auf 0 gesetzt.
-         */
-        private void lstbxItems_SelectedIndexChanged(object sender, EventArgs e) {
+
+        private void lstbxItems_SelectedIndexChanged (object sender, EventArgs e) {
             try {
-                tbxSelectedItemName.Text = (productList.ElementAt(lstbxProducts.SelectedIndex)).Name;
-                rtbxSelectedItemDescription.Text = (productList.ElementAt(lstbxProducts.SelectedIndex)).Description;
-                tbxSelectedAmount.Text = "" + (productList.ElementAt(lstbxProducts.SelectedIndex)).Anzahl;
+                var currentProduct = productList.ElementAt(lstbxProducts.SelectedIndex);
+                tbxCurrentProductAmount.Text = "" + currentProduct.Amount;
+                tbxCurrentProductDescription.Text = currentProduct.Description;
+                tbxCurrentProductName.Text = currentProduct.Name;
             }
             catch (IndexOutOfRangeException) {
                 lstbxProducts.SelectedIndex = 0;
@@ -190,49 +106,74 @@ namespace Webshop_Management {
             }
         }
 
-        private void rbtnSaveChanges_CheckedChanged(object sender, EventArgs e) {
-            SelectedRadioButton = 0;
-        }
 
-        private void rbtnRemoveItem_CheckedChanged(object sender, EventArgs e) {
-            SelectedRadioButton = 1;
-        }
+        private void btnCurrentProductDelete_Click (object sender, EventArgs e) {
+            try {
+                var result = MessageBox.Show("Möchten Sie den Eintrag wirklich löschen?", "Hinweis", MessageBoxButtons.YesNo);
 
-        /**
-         * Beim Klick auf die Buttons + und - wird die Anzahl des Produkts erhöht oder verringert.
-         * Beim Verringern wird darauf geachtet, dass der Wert nicht unter 0 fällt.
-         */
-        private void btnIncreaseSelectedAmount_Click(object sender, EventArgs e) {
-            if (lstbxProducts.SelectedIndex >= 0) {
-                productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl++;
-                tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl;
-            }
-        }
+                if (result == DialogResult.Yes) {
+                    var currentProduct = productList.ElementAt(lstbxProducts.SelectedIndex);
+                    //SET REMOVE FLAG FOR ITEM IN SQL
+                    currentProduct.Removed = true;
 
-        private void btnReduceSelectedAmount_Click(object sender, EventArgs e) {
-            if (lstbxProducts.SelectedIndex >= 0) {
-                if (productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl > 0) {
-                    productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl--;
-                    tbxSelectedAmount.Text = "" + productList.ElementAt(lstbxProducts.SelectedIndex).Anzahl;
-                } else {
-                    MessageBox.Show("Negative Mengen sind nicht zulässig.", "Fehler", MessageBoxButtons.OK);
+                    FillItemList();
+                    lstbxProducts.SelectedIndex = 0;
                 }
             }
+            catch (ArgumentOutOfRangeException) {
+                tbxCurrentProductAmount.Text = "";
+                tbxCurrentProductDescription.Text = "";
+                tbxCurrentProductName.Text = "";
+            }
+        }
+    
+
+       private void cbbxDatabase_SelectedIndexChanged (object sender, EventArgs e) {
+            switch (cbbxDatabase.SelectedIndex) {
+                case 0:
+                    break;
+                case 1:
+                    var newForm_Customers = new WebShopForm_Customer();
+                    this.Hide();
+                    newForm_Customers.ShowDialog();
+                    this.Close();
+                    break;
+                case 2:
+                    var newForm_OpenOrders = new WebShopForm_OpenOrders();
+                    this.Hide();
+                    newForm_OpenOrders.ShowDialog();
+                    this.Close();
+                    break;
+                case 3:
+                    var newForm_ClosedOrders = new WebShopForm_ClosedOrders();
+                    this.Hide();
+                    newForm_ClosedOrders.ShowDialog();
+                    this.Close();
+                    break;
+                case 4:
+                    var newForm_Suppliers = new WebShopForm_Suppliers();
+                    this.Hide();
+                    newForm_Suppliers.ShowDialog();
+                    this.Close();
+                    break;
+            }
         }
 
-        /**
-         * Die Produktliste wird mit der Sortiermethode der Klasse List sortiert (siehe produktliste.Sort()).
-         * Die ListBox wird geleert und die sortierte Produktliste wird in die ListBox eingetragen.
-         */
-        private void FillItemList() {
+
+        private void FillItemList () {
             lstbxProducts.Items.Clear();
             productList.Sort((x, y) => x.Name.CompareTo(y.Name));
 
             //Einbinden der sortierten Liste in die ListBox.
-            for (int i = 0; i < productList.Count; i++) {
-                var aktuellesProdukt = productList.ElementAt(i);
-                lstbxProducts.Items.Add(aktuellesProdukt.Name);
+            foreach (var currentProduct in productList) {
+                if (!currentProduct.Removed)
+                    lstbxProducts.Items.Add(currentProduct.Name);
             }
+        }
+
+
+        private void LoadItemsFromSQL () {
+            //LOAD ENTRIES FROM SQL
         }
     }
 }

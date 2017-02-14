@@ -1,5 +1,5 @@
 ﻿namespace Webshop_Management {
-    partial class From_Management {
+    partial class Form_Management {
         /// <summary>
         /// Erforderliche Designervariable.
         /// </summary>

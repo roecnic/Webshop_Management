@@ -4,12 +4,12 @@ using System.Linq;
 using System.Windows.Forms;
 
 namespace Webshop_Management {
-    public partial class From_Management : Form {
+    public partial class Form_Management : Form {
 
         List<Product> productList = new List<Product>();
         int SelectedRadioButton = 0; //0 = Save changes; 1 = Remove
 
-        public From_Management() {
+        public Form_Management() {
             InitializeComponent();
             cbbxDatabase.SelectedIndex = 0;
         }

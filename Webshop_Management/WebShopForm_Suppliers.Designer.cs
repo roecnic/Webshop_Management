@@ -26,6 +26,7 @@
             this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.cbbxDatabase = new System.Windows.Forms.ComboBox();
             this.grpbxSelectedSupplier = new System.Windows.Forms.GroupBox();
+            this.tbxCurrentSupplierPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblCurrentSupplierPhoneNumber = new System.Windows.Forms.Label();
             this.tbxCurrentSupplierAddress = new System.Windows.Forms.TextBox();
             this.lblCurrentSupplierAddress = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.rbtnCurrentSupplierRemove = new System.Windows.Forms.RadioButton();
             this.rbtnCurrentSupplierSaveChanges = new System.Windows.Forms.RadioButton();
             this.grpbxNewSupplier = new System.Windows.Forms.GroupBox();
+            this.tbxNewSupplierPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblNewSupplierPhoneNumber = new System.Windows.Forms.Label();
             this.tbxNewSupplierStreet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.lblNewSupplierContact = new System.Windows.Forms.Label();
             this.lblNewSupplierName = new System.Windows.Forms.Label();
             this.lstbxOrders = new System.Windows.Forms.ListBox();
-            this.tbxNewSupplierPhoneNumber = new System.Windows.Forms.TextBox();
-            this.tbxCurrentSupplierPhoneNumber = new System.Windows.Forms.TextBox();
             this.grpbxSelectedSupplier.SuspendLayout();
             this.grpbxNewSupplier.SuspendLayout();
             this.SuspendLayout();
@@ -101,6 +101,13 @@
             this.grpbxSelectedSupplier.TabIndex = 13;
             this.grpbxSelectedSupplier.TabStop = false;
             this.grpbxSelectedSupplier.Text = "Aktueller Lieferant";
+            // 
+            // tbxCurrentSupplierPhoneNumber
+            // 
+            this.tbxCurrentSupplierPhoneNumber.Location = new System.Drawing.Point(95, 164);
+            this.tbxCurrentSupplierPhoneNumber.Name = "tbxCurrentSupplierPhoneNumber";
+            this.tbxCurrentSupplierPhoneNumber.Size = new System.Drawing.Size(154, 20);
+            this.tbxCurrentSupplierPhoneNumber.TabIndex = 22;
             // 
             // lblCurrentSupplierPhoneNumber
             // 
@@ -227,6 +234,13 @@
             this.grpbxNewSupplier.TabStop = false;
             this.grpbxNewSupplier.Text = "Neuer Lieferant";
             // 
+            // tbxNewSupplierPhoneNumber
+            // 
+            this.tbxNewSupplierPhoneNumber.Location = new System.Drawing.Point(95, 163);
+            this.tbxNewSupplierPhoneNumber.Name = "tbxNewSupplierPhoneNumber";
+            this.tbxNewSupplierPhoneNumber.Size = new System.Drawing.Size(154, 20);
+            this.tbxNewSupplierPhoneNumber.TabIndex = 11;
+            // 
             // lblNewSupplierPhoneNumber
             // 
             this.lblNewSupplierPhoneNumber.AutoSize = true;
@@ -314,22 +328,8 @@
             this.lstbxOrders.FormattingEnabled = true;
             this.lstbxOrders.Location = new System.Drawing.Point(12, 58);
             this.lstbxOrders.Name = "lstbxOrders";
-            this.lstbxOrders.Size = new System.Drawing.Size(228, 511);
+            this.lstbxOrders.Size = new System.Drawing.Size(260, 511);
             this.lstbxOrders.TabIndex = 11;
-            // 
-            // tbxNewSupplierPhoneNumber
-            // 
-            this.tbxNewSupplierPhoneNumber.Location = new System.Drawing.Point(95, 163);
-            this.tbxNewSupplierPhoneNumber.Name = "tbxNewSupplierPhoneNumber";
-            this.tbxNewSupplierPhoneNumber.Size = new System.Drawing.Size(154, 20);
-            this.tbxNewSupplierPhoneNumber.TabIndex = 11;
-            // 
-            // tbxCurrentSupplierPhoneNumber
-            // 
-            this.tbxCurrentSupplierPhoneNumber.Location = new System.Drawing.Point(95, 164);
-            this.tbxCurrentSupplierPhoneNumber.Name = "tbxCurrentSupplierPhoneNumber";
-            this.tbxCurrentSupplierPhoneNumber.Size = new System.Drawing.Size(154, 20);
-            this.tbxCurrentSupplierPhoneNumber.TabIndex = 22;
             // 
             // WebShopForm_Suppliers
             // 

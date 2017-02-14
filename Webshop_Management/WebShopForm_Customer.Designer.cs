@@ -338,7 +338,7 @@
             this.lstbxCustomers.FormattingEnabled = true;
             this.lstbxCustomers.Location = new System.Drawing.Point(12, 58);
             this.lstbxCustomers.Name = "lstbxCustomers";
-            this.lstbxCustomers.Size = new System.Drawing.Size(228, 511);
+            this.lstbxCustomers.Size = new System.Drawing.Size(260, 511);
             this.lstbxCustomers.TabIndex = 6;
             // 
             // WebShopForm_Customer

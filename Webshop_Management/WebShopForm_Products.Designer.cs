@@ -55,7 +55,7 @@
             this.lstbxProducts.FormattingEnabled = true;
             this.lstbxProducts.Location = new System.Drawing.Point(14, 62);
             this.lstbxProducts.Name = "lstbxProducts";
-            this.lstbxProducts.Size = new System.Drawing.Size(228, 485);
+            this.lstbxProducts.Size = new System.Drawing.Size(260, 485);
             this.lstbxProducts.TabIndex = 0;
             this.lstbxProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxItems_SelectedIndexChanged);
             // 
@@ -282,7 +282,7 @@
             this.lblSelectDatabase.TabIndex = 5;
             this.lblSelectDatabase.Text = "Zu ändernde Datenbank";
             // 
-            // From_Management
+            // Form_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,7 +292,7 @@
             this.Controls.Add(this.grpbxSelectedItem);
             this.Controls.Add(this.grpbxNewItem);
             this.Controls.Add(this.lstbxProducts);
-            this.Name = "From_Management";
+            this.Name = "Form_Management";
             this.Text = "Shopmanagement";
             this.grpbxNewItem.ResumeLayout(false);
             this.grpbxNewItem.PerformLayout();

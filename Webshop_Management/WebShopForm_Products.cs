@@ -12,12 +12,10 @@ namespace Webshop_Management {
             InitializeComponent();
             cbbxDatabase.SelectedIndex = 0;
 
-            if (lstbxProducts.Items.Count > 0) {
+            if (lstbxProducts.Items.Count > 0) 
                 lstbxProducts.SelectedIndex = 0;
-            }
 
-            //LOAD PRODUCT LIST FROM SQL
-
+            LoadItemsFromSQL();
             FillItemList();
         }
 
@@ -131,6 +129,7 @@ namespace Webshop_Management {
        private void cbbxDatabase_SelectedIndexChanged (object sender, EventArgs e) {
             switch (cbbxDatabase.SelectedIndex) {
                 case 0:
+                    //THIS FORM
                     break;
                 case 1:
                     var newForm_Customers = new WebShopForm_Customer();

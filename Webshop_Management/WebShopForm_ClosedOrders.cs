@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace Webshop_Management {
     public partial class WebShopForm_ClosedOrders : Form {
 
-        List<Order> completetOrderList = new List<Order>();
+        List<Order> completedOrderList = new List<Order>();
 
         public WebShopForm_ClosedOrders () {
             InitializeComponent();
@@ -54,8 +54,8 @@ namespace Webshop_Management {
 
 
         private void lstbxCompletedOrders_SelectedIndexChanged (object sender, EventArgs e) {
-            var currentOrder = completetOrderList.ElementAt(lstbxCompletedOrders.SelectedIndex);
-            var customerID = Convert.ToInt32(tbxCurrentCompletedOrderCustomer.Text);
+            var currentOrder = completedOrderList.ElementAt(lstbxCompletedOrders.SelectedIndex);
+            var customerID = Convert.ToInt32(currentOrder.CustomerID);
 
             //SEARCH CUSTOMER FROM SQL VIA ID
 
@@ -67,9 +67,9 @@ namespace Webshop_Management {
 
         private void FillItemList () {
             lstbxCompletedOrders.Items.Clear();
-            completetOrderList.Sort((x, y) => x.BillingNumber.CompareTo(y.BillingNumber));
+            completedOrderList.Sort((x, y) => x.BillingNumber.CompareTo(y.BillingNumber));
 
-            foreach (var currentOrder in completetOrderList)
+            foreach (var currentOrder in completedOrderList)
                 lstbxCompletedOrders.Items.Add(currentOrder.BillingNumber);
         }
 

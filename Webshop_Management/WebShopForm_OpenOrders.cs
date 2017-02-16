@@ -35,5 +35,15 @@ namespace Webshop_Management {
         private void LoadItemsFromSQL () {
             //LOAD COMPLETED ORDERS FROM SQL
         }
+
+        private void lstbxOrders_SelectedIndexChanged (object sender, EventArgs e) {
+            var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);
+            tbxCurrentOrderCustomer.Text = "" + currentOrder.CustomerID; //Replace with Customer Name from SQL
+            tbxCurrentOrderCreateTime.Text = currentOrder.OrderDate;
+
+            for (int i = 0; i < currentOrder.ProductIDListLength(); i++) {
+                clstbxCurrentOrderCart.Items.Add(currentOrder.GetProductID(i)); //Replace with Product Name from SQL
+            }
+        }
     }
 }

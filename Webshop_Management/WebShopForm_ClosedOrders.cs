@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Webshop_Management {
@@ -64,7 +59,7 @@ namespace Webshop_Management {
 
             //SEARCH CUSTOMER FROM SQL VIA ID
 
-            tbxCurrentCompletedOrderCustomer.Text = "" + customerID;
+            tbxCurrentCompletedOrderCustomer.Text = "" + customerID; //Replace with Customer Name when SQL connection has been implemented
             tbxCurrentCompletedOrderDate.Text = currentOrder.CompletedDate;
             tbxCompletedOrdersBillingNumber.Text = "" + currentOrder.BillingNumber;
         }

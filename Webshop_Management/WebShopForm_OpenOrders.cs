@@ -12,6 +12,8 @@ namespace Webshop_Management {
     public partial class WebShopForm_OpenOrders : Form {
 
         List<Order> openOrderList = new List<Order>();
+        List<Product> productList = new List<Product>();
+        List<Customer> customerList = new List<Customer>();
 
         public WebShopForm_OpenOrders () {
             InitializeComponent();
@@ -21,6 +23,7 @@ namespace Webshop_Management {
                 lstbxOrders.SelectedIndex = 0;
 
             LoadItemsFromSQL();
+
             FillItemList();
         }
 
@@ -30,10 +33,23 @@ namespace Webshop_Management {
 
             foreach (var currentOrder in openOrderList)
                 lstbxOrders.Items.Add(currentOrder.BillingNumber);
+
+            cbbxNewOrderProduct.Items.Clear();
+            cbbxNewOrderProduct.Items.Add(productList.ElementAt(0).Name);
+            cbbxNewOrderProduct.Items.Add(productList.ElementAt(1).Name);
+
+            cbxNewOrderCustomer.Items.Clear();
+            cbxNewOrderCustomer.Items.Add(customerList.ElementAt(0).Lastname + ", " + customerList.ElementAt(0).Firstname);
+            cbxNewOrderCustomer.Items.Add(customerList.ElementAt(1).Lastname + ", " + customerList.ElementAt(1).Firstname);
         }
 
         private void LoadItemsFromSQL () {
-            //LOAD COMPLETED ORDERS FROM SQL
+            //LOAD ORDERS FROM SQL
+            productList.Add(new Product(0, "Obst", "Es ist Obst im Haus!", 5));
+            productList.Add(new Product(1, "Gemüse", "GRÜÜÜÜN", 4));
+
+            customerList.Add(new Customer(0, "Bernhard", "Hoecker", 48653, "Am Stockkamp 24a", 'M'));
+            customerList.Add(new Customer(1, "Peter", "Sommer", 45612, "Vreden", 'M'));
         }
 
         private void lstbxOrders_SelectedIndexChanged (object sender, EventArgs e) {
@@ -44,6 +60,72 @@ namespace Webshop_Management {
             for (int i = 0; i < currentOrder.ProductIDListLength(); i++) {
                 clstbxCurrentOrderCart.Items.Add(currentOrder.GetProductID(i)); //Replace with Product Name from SQL
             }
+        }
+
+        private void btnNewOrderAddProduct_Click (object sender, EventArgs e) {
+            try {
+                var newOrderCustomerID = cbxNewOrderCustomer.SelectedIndex;
+                var newOrderCustomer = cbxNewOrderCustomer.Text;
+                var newOrderProductID = cbbxNewOrderProduct.SelectedIndex;
+                var newOrderProduct = cbbxNewOrderProduct.Text;
+                var newOrderProductAmount = Convert.ToInt32(tbxNewOrderProductAmount.Text);
+                var currentProductAlreadyInCart = false;
+
+                if (!newOrderCustomer.Equals("<Bitte auswählen>") && !newOrderProduct.Equals("<Bitte auswählen>")) {
+                    for (int i = 0; i < clstbxShoppingCart.Items.Count; i++) {
+                        clstbxShoppingCart.SelectedIndex = i;
+                        var currentEntry = clstbxShoppingCart.SelectedItem;
+                        var currentEntryString = currentEntry.ToString();
+
+                        if (currentEntryString.StartsWith(newOrderProduct)) {
+                            var subStringStart = currentEntryString.LastIndexOf(' ');
+                            var currentEntryAmount = Convert.ToInt32(currentEntryString.Substring(subStringStart));
+
+                            var result = MessageBox.Show("Das Produkt ist bereits " + currentEntryAmount + " Mal im Warenkorb. Möchten Sie die Anzahl addieren?",
+                                "Hinweis", MessageBoxButtons.YesNo);
+
+                            if (result == DialogResult.Yes) {
+                                newOrderProductAmount += currentEntryAmount;
+                                clstbxShoppingCart.Items.RemoveAt(i);
+
+                                clstbxShoppingCart.Refresh();
+
+                                clstbxShoppingCart.Items.Insert(i, newOrderProduct + " - " + newOrderProductAmount);
+                                currentProductAlreadyInCart = true;
+                            }
+                        }
+                    }
+
+                    if (clstbxShoppingCart.Items.Count == 0 || currentProductAlreadyInCart == false) {
+                        clstbxShoppingCart.Items.Add(newOrderProduct + " - " + newOrderProductAmount);
+                    }
+
+                    //var newOrder = new Order(openOrderList.Count, newOrderProduct, newOrderCustomer, 100002);
+
+                    tbxNewOrderProductAmount.Text = "";
+
+                } else
+                    MessageBox.Show("Bitte einen Kunden und ein Produkt auswählen.", "Hinweis", MessageBoxButtons.OK);
+
+            }
+            catch (FormatException) {
+                MessageBox.Show("Bitte eine gültige Anzahl eingeben.", "Hinweis", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnRemoveSelectedProducts_Click (object sender, EventArgs e) {
+            List<object> deleteList = new List<object>();
+
+            foreach (var checkedItem in clstbxShoppingCart.CheckedItems) {
+                deleteList.Add(checkedItem);
+            }
+
+            foreach (var checkedItem in deleteList) {
+                clstbxShoppingCart.Items.Remove(checkedItem);
+            }
+
+            deleteList = null;
+            clstbxShoppingCart.Refresh();
         }
     }
 }

@@ -26,26 +26,26 @@
             this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.cbbxDatabase = new System.Windows.Forms.ComboBox();
             this.grpbxSelectedOrder = new System.Windows.Forms.GroupBox();
+            this.tbxCurrentOrderCreateTime = new System.Windows.Forms.TextBox();
+            this.lblCurrentOrderCreateTime = new System.Windows.Forms.Label();
+            this.btnCurrentOrderClose = new System.Windows.Forms.Button();
+            this.btnCurrentOrderDelete = new System.Windows.Forms.Button();
+            this.btnCurrentOrderRemoveProduct = new System.Windows.Forms.Button();
+            this.tbxCurrentOrderCustomer = new System.Windows.Forms.TextBox();
+            this.clstbxCurrentOrderCart = new System.Windows.Forms.CheckedListBox();
+            this.lblCurrentOrderCustomer = new System.Windows.Forms.Label();
             this.grpbxNewOrder = new System.Windows.Forms.GroupBox();
+            this.btnRemoveSelectedProducts = new System.Windows.Forms.Button();
+            this.clstbxShoppingCart = new System.Windows.Forms.CheckedListBox();
+            this.btnNewOrderAddProduct = new System.Windows.Forms.Button();
+            this.tbxNewOrderProductAmount = new System.Windows.Forms.TextBox();
+            this.lblNewOrderProductAmount = new System.Windows.Forms.Label();
+            this.cbxNewOrderCustomer = new System.Windows.Forms.ComboBox();
+            this.lblNewOrderCustomer = new System.Windows.Forms.Label();
             this.lblNewOrderProduct = new System.Windows.Forms.Label();
             this.cbbxNewOrderProduct = new System.Windows.Forms.ComboBox();
             this.btnCreateNewOrder = new System.Windows.Forms.Button();
             this.lstbxOrders = new System.Windows.Forms.ListBox();
-            this.lblNewOrderCustomer = new System.Windows.Forms.Label();
-            this.cbxNewOrderCustomer = new System.Windows.Forms.ComboBox();
-            this.lblNewOrderProductAmount = new System.Windows.Forms.Label();
-            this.tbxNewOrderProductAmount = new System.Windows.Forms.TextBox();
-            this.btnNewOrderAddProduct = new System.Windows.Forms.Button();
-            this.clstbxShoppingCart = new System.Windows.Forms.CheckedListBox();
-            this.btnRemoveSelectedProducts = new System.Windows.Forms.Button();
-            this.clstbxCurrentOrderCart = new System.Windows.Forms.CheckedListBox();
-            this.lblCurrentOrderCustomer = new System.Windows.Forms.Label();
-            this.tbxCurrentOrderCustomer = new System.Windows.Forms.TextBox();
-            this.btnCurrentOrderRemoveProduct = new System.Windows.Forms.Button();
-            this.btnCurrentOrderDelete = new System.Windows.Forms.Button();
-            this.btnCurrentOrderClose = new System.Windows.Forms.Button();
-            this.lblCurrentOrderCreateTime = new System.Windows.Forms.Label();
-            this.tbxCurrentOrderCreateTime = new System.Windows.Forms.TextBox();
             this.grpbxSelectedOrder.SuspendLayout();
             this.grpbxNewOrder.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,75 @@
             this.grpbxSelectedOrder.TabStop = false;
             this.grpbxSelectedOrder.Text = "Aktuelle Bestellung";
             // 
+            // tbxCurrentOrderCreateTime
+            // 
+            this.tbxCurrentOrderCreateTime.Location = new System.Drawing.Point(70, 48);
+            this.tbxCurrentOrderCreateTime.Name = "tbxCurrentOrderCreateTime";
+            this.tbxCurrentOrderCreateTime.ReadOnly = true;
+            this.tbxCurrentOrderCreateTime.Size = new System.Drawing.Size(98, 20);
+            this.tbxCurrentOrderCreateTime.TabIndex = 33;
+            // 
+            // lblCurrentOrderCreateTime
+            // 
+            this.lblCurrentOrderCreateTime.AutoSize = true;
+            this.lblCurrentOrderCreateTime.Location = new System.Drawing.Point(6, 51);
+            this.lblCurrentOrderCreateTime.Name = "lblCurrentOrderCreateTime";
+            this.lblCurrentOrderCreateTime.Size = new System.Drawing.Size(58, 13);
+            this.lblCurrentOrderCreateTime.TabIndex = 32;
+            this.lblCurrentOrderCreateTime.Text = "Erstellt am:";
+            // 
+            // btnCurrentOrderClose
+            // 
+            this.btnCurrentOrderClose.Location = new System.Drawing.Point(312, 191);
+            this.btnCurrentOrderClose.Name = "btnCurrentOrderClose";
+            this.btnCurrentOrderClose.Size = new System.Drawing.Size(128, 37);
+            this.btnCurrentOrderClose.TabIndex = 31;
+            this.btnCurrentOrderClose.Text = "Bestellung abschließen";
+            this.btnCurrentOrderClose.UseVisualStyleBackColor = true;
+            // 
+            // btnCurrentOrderDelete
+            // 
+            this.btnCurrentOrderDelete.Location = new System.Drawing.Point(163, 191);
+            this.btnCurrentOrderDelete.Name = "btnCurrentOrderDelete";
+            this.btnCurrentOrderDelete.Size = new System.Drawing.Size(143, 37);
+            this.btnCurrentOrderDelete.TabIndex = 30;
+            this.btnCurrentOrderDelete.Text = "Bestellung stornieren";
+            this.btnCurrentOrderDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnCurrentOrderRemoveProduct
+            // 
+            this.btnCurrentOrderRemoveProduct.Location = new System.Drawing.Point(9, 191);
+            this.btnCurrentOrderRemoveProduct.Name = "btnCurrentOrderRemoveProduct";
+            this.btnCurrentOrderRemoveProduct.Size = new System.Drawing.Size(148, 37);
+            this.btnCurrentOrderRemoveProduct.TabIndex = 29;
+            this.btnCurrentOrderRemoveProduct.Text = "Ausgewählte Produkte entfernen";
+            this.btnCurrentOrderRemoveProduct.UseVisualStyleBackColor = true;
+            // 
+            // tbxCurrentOrderCustomer
+            // 
+            this.tbxCurrentOrderCustomer.Location = new System.Drawing.Point(59, 22);
+            this.tbxCurrentOrderCustomer.Name = "tbxCurrentOrderCustomer";
+            this.tbxCurrentOrderCustomer.ReadOnly = true;
+            this.tbxCurrentOrderCustomer.Size = new System.Drawing.Size(381, 20);
+            this.tbxCurrentOrderCustomer.TabIndex = 28;
+            // 
+            // clstbxCurrentOrderCart
+            // 
+            this.clstbxCurrentOrderCart.FormattingEnabled = true;
+            this.clstbxCurrentOrderCart.Location = new System.Drawing.Point(9, 76);
+            this.clstbxCurrentOrderCart.Name = "clstbxCurrentOrderCart";
+            this.clstbxCurrentOrderCart.Size = new System.Drawing.Size(431, 109);
+            this.clstbxCurrentOrderCart.TabIndex = 25;
+            // 
+            // lblCurrentOrderCustomer
+            // 
+            this.lblCurrentOrderCustomer.AutoSize = true;
+            this.lblCurrentOrderCustomer.Location = new System.Drawing.Point(6, 25);
+            this.lblCurrentOrderCustomer.Name = "lblCurrentOrderCustomer";
+            this.lblCurrentOrderCustomer.Size = new System.Drawing.Size(41, 13);
+            this.lblCurrentOrderCustomer.TabIndex = 20;
+            this.lblCurrentOrderCustomer.Text = "Kunde:";
+            // 
             // grpbxNewOrder
             // 
             this.grpbxNewOrder.Controls.Add(this.btnRemoveSelectedProducts);
@@ -109,6 +178,69 @@
             this.grpbxNewOrder.TabIndex = 12;
             this.grpbxNewOrder.TabStop = false;
             this.grpbxNewOrder.Text = "Neue Bestellung";
+            // 
+            // btnRemoveSelectedProducts
+            // 
+            this.btnRemoveSelectedProducts.Location = new System.Drawing.Point(259, 119);
+            this.btnRemoveSelectedProducts.Name = "btnRemoveSelectedProducts";
+            this.btnRemoveSelectedProducts.Size = new System.Drawing.Size(181, 37);
+            this.btnRemoveSelectedProducts.TabIndex = 17;
+            this.btnRemoveSelectedProducts.Text = "Ausgewählte Produkte entfernen";
+            this.btnRemoveSelectedProducts.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedProducts.Click += new System.EventHandler(this.btnRemoveSelectedProducts_Click);
+            // 
+            // clstbxShoppingCart
+            // 
+            this.clstbxShoppingCart.CheckOnClick = true;
+            this.clstbxShoppingCart.FormattingEnabled = true;
+            this.clstbxShoppingCart.Location = new System.Drawing.Point(259, 20);
+            this.clstbxShoppingCart.Name = "clstbxShoppingCart";
+            this.clstbxShoppingCart.Size = new System.Drawing.Size(181, 94);
+            this.clstbxShoppingCart.TabIndex = 16;
+            // 
+            // btnNewOrderAddProduct
+            // 
+            this.btnNewOrderAddProduct.Location = new System.Drawing.Point(9, 119);
+            this.btnNewOrderAddProduct.Name = "btnNewOrderAddProduct";
+            this.btnNewOrderAddProduct.Size = new System.Drawing.Size(243, 37);
+            this.btnNewOrderAddProduct.TabIndex = 15;
+            this.btnNewOrderAddProduct.Text = "Produkt zum Warenkorb hinzufügen";
+            this.btnNewOrderAddProduct.UseVisualStyleBackColor = true;
+            this.btnNewOrderAddProduct.Click += new System.EventHandler(this.btnNewOrderAddProduct_Click);
+            // 
+            // tbxNewOrderProductAmount
+            // 
+            this.tbxNewOrderProductAmount.Location = new System.Drawing.Point(59, 93);
+            this.tbxNewOrderProductAmount.Name = "tbxNewOrderProductAmount";
+            this.tbxNewOrderProductAmount.Size = new System.Drawing.Size(193, 20);
+            this.tbxNewOrderProductAmount.TabIndex = 14;
+            // 
+            // lblNewOrderProductAmount
+            // 
+            this.lblNewOrderProductAmount.AutoSize = true;
+            this.lblNewOrderProductAmount.Location = new System.Drawing.Point(6, 96);
+            this.lblNewOrderProductAmount.Name = "lblNewOrderProductAmount";
+            this.lblNewOrderProductAmount.Size = new System.Drawing.Size(42, 13);
+            this.lblNewOrderProductAmount.TabIndex = 13;
+            this.lblNewOrderProductAmount.Text = "Anzahl:";
+            // 
+            // cbxNewOrderCustomer
+            // 
+            this.cbxNewOrderCustomer.FormattingEnabled = true;
+            this.cbxNewOrderCustomer.Location = new System.Drawing.Point(59, 23);
+            this.cbxNewOrderCustomer.Name = "cbxNewOrderCustomer";
+            this.cbxNewOrderCustomer.Size = new System.Drawing.Size(193, 21);
+            this.cbxNewOrderCustomer.TabIndex = 12;
+            this.cbxNewOrderCustomer.Text = "<Bitte auswählen>";
+            // 
+            // lblNewOrderCustomer
+            // 
+            this.lblNewOrderCustomer.AutoSize = true;
+            this.lblNewOrderCustomer.Location = new System.Drawing.Point(6, 26);
+            this.lblNewOrderCustomer.Name = "lblNewOrderCustomer";
+            this.lblNewOrderCustomer.Size = new System.Drawing.Size(41, 13);
+            this.lblNewOrderCustomer.TabIndex = 11;
+            this.lblNewOrderCustomer.Text = "Kunde:";
             // 
             // lblNewOrderProduct
             // 
@@ -144,135 +276,7 @@
             this.lstbxOrders.Name = "lstbxOrders";
             this.lstbxOrders.Size = new System.Drawing.Size(260, 498);
             this.lstbxOrders.TabIndex = 11;
-            // 
-            // lblNewOrderCustomer
-            // 
-            this.lblNewOrderCustomer.AutoSize = true;
-            this.lblNewOrderCustomer.Location = new System.Drawing.Point(6, 26);
-            this.lblNewOrderCustomer.Name = "lblNewOrderCustomer";
-            this.lblNewOrderCustomer.Size = new System.Drawing.Size(41, 13);
-            this.lblNewOrderCustomer.TabIndex = 11;
-            this.lblNewOrderCustomer.Text = "Kunde:";
-            // 
-            // cbxNewOrderCustomer
-            // 
-            this.cbxNewOrderCustomer.FormattingEnabled = true;
-            this.cbxNewOrderCustomer.Location = new System.Drawing.Point(59, 23);
-            this.cbxNewOrderCustomer.Name = "cbxNewOrderCustomer";
-            this.cbxNewOrderCustomer.Size = new System.Drawing.Size(193, 21);
-            this.cbxNewOrderCustomer.TabIndex = 12;
-            this.cbxNewOrderCustomer.Text = "<Bitte auswählen>";
-            // 
-            // lblNewOrderProductAmount
-            // 
-            this.lblNewOrderProductAmount.AutoSize = true;
-            this.lblNewOrderProductAmount.Location = new System.Drawing.Point(6, 96);
-            this.lblNewOrderProductAmount.Name = "lblNewOrderProductAmount";
-            this.lblNewOrderProductAmount.Size = new System.Drawing.Size(42, 13);
-            this.lblNewOrderProductAmount.TabIndex = 13;
-            this.lblNewOrderProductAmount.Text = "Anzahl:";
-            // 
-            // tbxNewOrderProductAmount
-            // 
-            this.tbxNewOrderProductAmount.Location = new System.Drawing.Point(59, 93);
-            this.tbxNewOrderProductAmount.Name = "tbxNewOrderProductAmount";
-            this.tbxNewOrderProductAmount.Size = new System.Drawing.Size(193, 20);
-            this.tbxNewOrderProductAmount.TabIndex = 14;
-            // 
-            // btnNewOrderAddProduct
-            // 
-            this.btnNewOrderAddProduct.Location = new System.Drawing.Point(9, 119);
-            this.btnNewOrderAddProduct.Name = "btnNewOrderAddProduct";
-            this.btnNewOrderAddProduct.Size = new System.Drawing.Size(243, 37);
-            this.btnNewOrderAddProduct.TabIndex = 15;
-            this.btnNewOrderAddProduct.Text = "Produkt zum Warenkorb hinzufügen";
-            this.btnNewOrderAddProduct.UseVisualStyleBackColor = true;
-            // 
-            // clstbxShoppingCart
-            // 
-            this.clstbxShoppingCart.FormattingEnabled = true;
-            this.clstbxShoppingCart.Location = new System.Drawing.Point(259, 20);
-            this.clstbxShoppingCart.Name = "clstbxShoppingCart";
-            this.clstbxShoppingCart.Size = new System.Drawing.Size(181, 94);
-            this.clstbxShoppingCart.TabIndex = 16;
-            // 
-            // btnRemoveSelectedProducts
-            // 
-            this.btnRemoveSelectedProducts.Location = new System.Drawing.Point(259, 119);
-            this.btnRemoveSelectedProducts.Name = "btnRemoveSelectedProducts";
-            this.btnRemoveSelectedProducts.Size = new System.Drawing.Size(181, 37);
-            this.btnRemoveSelectedProducts.TabIndex = 17;
-            this.btnRemoveSelectedProducts.Text = "Ausgewählte Produkte entfernen";
-            this.btnRemoveSelectedProducts.UseVisualStyleBackColor = true;
-            // 
-            // clstbxCurrentOrderCart
-            // 
-            this.clstbxCurrentOrderCart.FormattingEnabled = true;
-            this.clstbxCurrentOrderCart.Location = new System.Drawing.Point(9, 76);
-            this.clstbxCurrentOrderCart.Name = "clstbxCurrentOrderCart";
-            this.clstbxCurrentOrderCart.Size = new System.Drawing.Size(431, 109);
-            this.clstbxCurrentOrderCart.TabIndex = 25;
-            // 
-            // lblCurrentOrderCustomer
-            // 
-            this.lblCurrentOrderCustomer.AutoSize = true;
-            this.lblCurrentOrderCustomer.Location = new System.Drawing.Point(6, 25);
-            this.lblCurrentOrderCustomer.Name = "lblCurrentOrderCustomer";
-            this.lblCurrentOrderCustomer.Size = new System.Drawing.Size(41, 13);
-            this.lblCurrentOrderCustomer.TabIndex = 20;
-            this.lblCurrentOrderCustomer.Text = "Kunde:";
-            // 
-            // tbxCurrentOrderCustomer
-            // 
-            this.tbxCurrentOrderCustomer.Location = new System.Drawing.Point(59, 22);
-            this.tbxCurrentOrderCustomer.Name = "tbxCurrentOrderCustomer";
-            this.tbxCurrentOrderCustomer.ReadOnly = true;
-            this.tbxCurrentOrderCustomer.Size = new System.Drawing.Size(381, 20);
-            this.tbxCurrentOrderCustomer.TabIndex = 28;
-            // 
-            // btnCurrentOrderRemoveProduct
-            // 
-            this.btnCurrentOrderRemoveProduct.Location = new System.Drawing.Point(9, 191);
-            this.btnCurrentOrderRemoveProduct.Name = "btnCurrentOrderRemoveProduct";
-            this.btnCurrentOrderRemoveProduct.Size = new System.Drawing.Size(148, 37);
-            this.btnCurrentOrderRemoveProduct.TabIndex = 29;
-            this.btnCurrentOrderRemoveProduct.Text = "Ausgewählte Produkte entfernen";
-            this.btnCurrentOrderRemoveProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnCurrentOrderDelete
-            // 
-            this.btnCurrentOrderDelete.Location = new System.Drawing.Point(163, 191);
-            this.btnCurrentOrderDelete.Name = "btnCurrentOrderDelete";
-            this.btnCurrentOrderDelete.Size = new System.Drawing.Size(143, 37);
-            this.btnCurrentOrderDelete.TabIndex = 30;
-            this.btnCurrentOrderDelete.Text = "Bestellung stornieren";
-            this.btnCurrentOrderDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnCurrentOrderClose
-            // 
-            this.btnCurrentOrderClose.Location = new System.Drawing.Point(312, 191);
-            this.btnCurrentOrderClose.Name = "btnCurrentOrderClose";
-            this.btnCurrentOrderClose.Size = new System.Drawing.Size(128, 37);
-            this.btnCurrentOrderClose.TabIndex = 31;
-            this.btnCurrentOrderClose.Text = "Bestellung abschließen";
-            this.btnCurrentOrderClose.UseVisualStyleBackColor = true;
-            // 
-            // lblCurrentOrderCreateTime
-            // 
-            this.lblCurrentOrderCreateTime.AutoSize = true;
-            this.lblCurrentOrderCreateTime.Location = new System.Drawing.Point(6, 51);
-            this.lblCurrentOrderCreateTime.Name = "lblCurrentOrderCreateTime";
-            this.lblCurrentOrderCreateTime.Size = new System.Drawing.Size(58, 13);
-            this.lblCurrentOrderCreateTime.TabIndex = 32;
-            this.lblCurrentOrderCreateTime.Text = "Erstellt am:";
-            // 
-            // tbxCurrentOrderCreateTime
-            // 
-            this.tbxCurrentOrderCreateTime.Location = new System.Drawing.Point(70, 48);
-            this.tbxCurrentOrderCreateTime.Name = "tbxCurrentOrderCreateTime";
-            this.tbxCurrentOrderCreateTime.ReadOnly = true;
-            this.tbxCurrentOrderCreateTime.Size = new System.Drawing.Size(98, 20);
-            this.tbxCurrentOrderCreateTime.TabIndex = 33;
+            this.lstbxOrders.SelectedIndexChanged += new System.EventHandler(this.lstbxOrders_SelectedIndexChanged);
             // 
             // WebShopForm_OpenOrders
             // 

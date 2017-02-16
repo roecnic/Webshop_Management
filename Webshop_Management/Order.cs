@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 namespace Webshop_Management {
     class Order {
 
+        private List<int> pProductID = new List<int>();
+
         private int pID;
 
         public int ID {
             get { return pID; }
-        }
-
-        private int pProductID;
-
-        public int ProductID {
-            get { return pProductID; }
         }
 
         private int pCustomerID;
@@ -53,7 +49,7 @@ namespace Webshop_Management {
 
         public Order(int fID, int fProductID, int fCustomerID, int fBillingNumber) {
             pID = fID;
-            pProductID = fProductID;
+            pProductID.Add(fProductID);
             pCustomerID = fCustomerID;
             pBillingNumber = fBillingNumber;
             pOrderDate = "" + DateTime.Now;

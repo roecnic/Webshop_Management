@@ -27,6 +27,11 @@ namespace Webshop_Management {
             FillItemList();
         }
 
+        /**
+         * ---------------------------------------------------------------------------------------------------
+         * STARTUP (FILL LISTS ETC.)
+         * ---------------------------------------------------------------------------------------------------
+         */
         private void FillItemList () {
             lstbxOrders.Items.Clear();
             openOrderList.Sort((x, y) => x.BillingNumber.CompareTo(y.BillingNumber));
@@ -51,6 +56,20 @@ namespace Webshop_Management {
             customerList.Add(new Customer(0, "Bernhard", "Hoecker", 48653, "Am Stockkamp 24a", 'M'));
             customerList.Add(new Customer(1, "Peter", "Sommer", 45612, "Vreden", 'M'));
         }
+
+
+        /**
+         * ------------------------------------------------------------------------------------------------- 
+         * HELPING METHODS
+         * --------------------------------------------------------------------------------------------------
+         */
+
+
+        /**
+         * -----------------------------------------------------------------------------------------------------------
+         * EVENTS
+         * -----------------------------------------------------------------------------------------------------------
+         */
 
         private void lstbxOrders_SelectedIndexChanged (object sender, EventArgs e) {
             var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);

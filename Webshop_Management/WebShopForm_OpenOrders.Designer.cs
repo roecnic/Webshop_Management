@@ -43,7 +43,7 @@
             this.cbxNewOrderCustomer = new System.Windows.Forms.ComboBox();
             this.lblNewOrderCustomer = new System.Windows.Forms.Label();
             this.lblNewOrderProduct = new System.Windows.Forms.Label();
-            this.cbbxNewOrderProduct = new System.Windows.Forms.ComboBox();
+            this.cbxNewOrderProduct = new System.Windows.Forms.ComboBox();
             this.btnCreateNewOrder = new System.Windows.Forms.Button();
             this.lstbxOrders = new System.Windows.Forms.ListBox();
             this.grpbxSelectedOrder.SuspendLayout();
@@ -96,7 +96,7 @@
             this.tbxCurrentOrderCreateTime.Location = new System.Drawing.Point(70, 48);
             this.tbxCurrentOrderCreateTime.Name = "tbxCurrentOrderCreateTime";
             this.tbxCurrentOrderCreateTime.ReadOnly = true;
-            this.tbxCurrentOrderCreateTime.Size = new System.Drawing.Size(98, 20);
+            this.tbxCurrentOrderCreateTime.Size = new System.Drawing.Size(157, 20);
             this.tbxCurrentOrderCreateTime.TabIndex = 33;
             // 
             // lblCurrentOrderCreateTime
@@ -170,7 +170,7 @@
             this.grpbxNewOrder.Controls.Add(this.cbxNewOrderCustomer);
             this.grpbxNewOrder.Controls.Add(this.lblNewOrderCustomer);
             this.grpbxNewOrder.Controls.Add(this.lblNewOrderProduct);
-            this.grpbxNewOrder.Controls.Add(this.cbbxNewOrderProduct);
+            this.grpbxNewOrder.Controls.Add(this.cbxNewOrderProduct);
             this.grpbxNewOrder.Controls.Add(this.btnCreateNewOrder);
             this.grpbxNewOrder.Location = new System.Drawing.Point(278, 58);
             this.grpbxNewOrder.Name = "grpbxNewOrder";
@@ -251,14 +251,14 @@
             this.lblNewOrderProduct.TabIndex = 10;
             this.lblNewOrderProduct.Text = "Produkt:";
             // 
-            // cbbxNewOrderProduct
+            // cbxNewOrderProduct
             // 
-            this.cbbxNewOrderProduct.FormattingEnabled = true;
-            this.cbbxNewOrderProduct.Location = new System.Drawing.Point(59, 59);
-            this.cbbxNewOrderProduct.Name = "cbbxNewOrderProduct";
-            this.cbbxNewOrderProduct.Size = new System.Drawing.Size(193, 21);
-            this.cbbxNewOrderProduct.TabIndex = 9;
-            this.cbbxNewOrderProduct.Text = "<Bitte auswählen>";
+            this.cbxNewOrderProduct.FormattingEnabled = true;
+            this.cbxNewOrderProduct.Location = new System.Drawing.Point(59, 59);
+            this.cbxNewOrderProduct.Name = "cbxNewOrderProduct";
+            this.cbxNewOrderProduct.Size = new System.Drawing.Size(193, 21);
+            this.cbxNewOrderProduct.TabIndex = 9;
+            this.cbxNewOrderProduct.Text = "<Bitte auswählen>";
             // 
             // btnCreateNewOrder
             // 
@@ -268,6 +268,7 @@
             this.btnCreateNewOrder.TabIndex = 5;
             this.btnCreateNewOrder.Text = "Neue Bestellung anlegen";
             this.btnCreateNewOrder.UseVisualStyleBackColor = true;
+            this.btnCreateNewOrder.Click += new System.EventHandler(this.btnCreateNewOrder_Click);
             // 
             // lstbxOrders
             // 
@@ -306,7 +307,7 @@
         private System.Windows.Forms.GroupBox grpbxSelectedOrder;
         private System.Windows.Forms.GroupBox grpbxNewOrder;
         private System.Windows.Forms.Label lblNewOrderProduct;
-        private System.Windows.Forms.ComboBox cbbxNewOrderProduct;
+        private System.Windows.Forms.ComboBox cbxNewOrderProduct;
         private System.Windows.Forms.Button btnCreateNewOrder;
         private System.Windows.Forms.ListBox lstbxOrders;
         private System.Windows.Forms.ComboBox cbxNewOrderCustomer;

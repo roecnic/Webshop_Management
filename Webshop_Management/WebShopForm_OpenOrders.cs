@@ -39,9 +39,9 @@ namespace Webshop_Management {
             foreach (var currentOrder in openOrderList)
                 lstbxOrders.Items.Add(currentOrder.BillingNumber);
 
-            cbbxNewOrderProduct.Items.Clear();
-            cbbxNewOrderProduct.Items.Add(productList.ElementAt(0).Name);
-            cbbxNewOrderProduct.Items.Add(productList.ElementAt(1).Name);
+            cbxNewOrderProduct.Items.Clear();
+            cbxNewOrderProduct.Items.Add(productList.ElementAt(0).Name);
+            cbxNewOrderProduct.Items.Add(productList.ElementAt(1).Name);
 
             cbxNewOrderCustomer.Items.Clear();
             cbxNewOrderCustomer.Items.Add(customerList.ElementAt(0).Lastname + ", " + customerList.ElementAt(0).Firstname);
@@ -85,8 +85,8 @@ namespace Webshop_Management {
             try {
                 var newOrderCustomerID = cbxNewOrderCustomer.SelectedIndex;
                 var newOrderCustomer = cbxNewOrderCustomer.Text;
-                var newOrderProductID = cbbxNewOrderProduct.SelectedIndex;
-                var newOrderProduct = cbbxNewOrderProduct.Text;
+                var newOrderProductID = (cbxNewOrderProduct.SelectedIndex + 1);
+                var newOrderProduct = cbxNewOrderProduct.Text;
                 var newOrderProductAmount = Convert.ToInt32(tbxNewOrderProductAmount.Text);
                 var currentProductAlreadyInCart = false;
 

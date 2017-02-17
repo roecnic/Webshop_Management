@@ -50,8 +50,8 @@ namespace Webshop_Management {
 
         private void LoadItemsFromSQL () {
             //LOAD ORDERS FROM SQL
-            productList.Add(new Product(0, "Obst", "Es ist Obst im Haus!", 5));
-            productList.Add(new Product(1, "Gemüse", "GRÜÜÜÜN", 4));
+            productList.Add(new Product(1, "Obst", "Es ist Obst im Haus!", 5));
+            productList.Add(new Product(2, "Gemüse", "GRÜÜÜÜN", 4));
 
             customerList.Add(new Customer(0, "Bernhard", "Hoecker", 48653, "Am Stockkamp 24a", 'M'));
             customerList.Add(new Customer(1, "Peter", "Sommer", 45612, "Vreden", 'M'));
@@ -63,6 +63,46 @@ namespace Webshop_Management {
          * HELPING METHODS
          * --------------------------------------------------------------------------------------------------
          */
+
+        private int GetProductIDByName(String pProductName) {
+            foreach(var currentProduct in productList) {
+                if (pProductName.Equals(currentProduct.Name))
+                    return currentProduct.ID;
+            }
+
+            return -1;
+        }
+
+        private String GetProductNameByID(int pID) {
+            foreach(var currentProduct in productList) {
+                if (currentProduct.ID == pID)
+                    return currentProduct.Name;
+            }
+
+            return "";
+        }
+
+        private int GetCustomerIDByName(String pCustomerName) {
+            var commataPosition = pCustomerName.IndexOf(',');
+            var lastname = pCustomerName.Substring(0, (pCustomerName.Length - commataPosition));
+            var firstname = pCustomerName.Substring((commataPosition + 1));
+
+            foreach(var currentCustomer in customerList) {
+                if (currentCustomer.Firstname.Equals(firstname) && currentCustomer.Lastname.Equals(lastname))
+                    return currentCustomer.ID;
+            }
+
+            return -1;
+        }
+
+        private String GetCustomerNameByID(int pID) {
+            foreach(var currentCustomer in customerList) {
+                if (currentCustomer.ID == pID)
+                    return currentCustomer.Lastname + ", " + currentCustomer.Firstname;
+            }
+
+            return "";
+        }
 
 
         /**

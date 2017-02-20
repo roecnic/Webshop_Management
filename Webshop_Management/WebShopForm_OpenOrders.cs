@@ -187,18 +187,15 @@ namespace Webshop_Management {
         }
 
         private void btnRemoveSelectedProducts_Click (object sender, EventArgs e) {
-            List<object> deleteList = new List<object>();
 
-            foreach (var checkedItem in clstbxShoppingCart.CheckedItems) {
-                deleteList.Add(checkedItem);
+            foreach(var currentItem in clstbxShoppingCart.CheckedItems) {
+                var currentItemID = GetProductIDByName(currentItem.ToString().Substring(0, (currentItem.ToString().IndexOf('-') - 1)));
+                shoppingCartProductList.RemoveAt(GetShoppingCartIndexForProductID(currentItemID));
             }
 
-            foreach (var checkedItem in deleteList) {
-                clstbxShoppingCart.Items.Remove(checkedItem);
-            }
+            RefreshShoppingCart();
+        }
 
-            deleteList = null;
-            clstbxShoppingCart.Refresh();
         }
     }
 }

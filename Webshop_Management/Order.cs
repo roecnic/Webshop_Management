@@ -65,5 +65,15 @@ namespace Webshop_Management {
         public int ProductListLength () {
             return productList.Count;
         }
+
+        public void RemoveProduct(int fProductID) {
+            var deleteIndex = 0;
+            foreach(var currentProduct in productList) {
+                if (currentProduct.ID == fProductID)
+                    deleteIndex = productList.IndexOf(currentProduct);
+            }
+
+            productList.RemoveAt(deleteIndex);
+        }
     }
 }

@@ -47,5 +47,11 @@ namespace Webshop_Management {
 
             pRemoved = false;
         }
+
+        public Product(int fID, String fName, int fAmount) {
+            pID = fID;
+            pName = fName;
+            pAmount = fAmount;
+        }
     }
 }

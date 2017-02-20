@@ -221,5 +221,22 @@ namespace Webshop_Management {
             }
         }
 
+        private void btnCurrentOrderRemoveProduct_Click (object sender, EventArgs e) {
+            var result = MessageBox.Show("Möchten Sie die ausgewählten Produkte wirklich aus der Bestellung entfernen?", "Hinweis", MessageBoxButtons.YesNo);
+            var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);
+
+            if (result == DialogResult.Yes) {
+                foreach(var currentItem in clstbxCurrentOrderCart.SelectedItems) {
+                    var currentItemID = GetProductIDByName(currentItem.ToString().Substring(0, (currentItem.ToString().IndexOf('-') - 1)));
+                    currentOrder.RemoveProduct(currentItemID);
+                }
+
+                clstbxCurrentOrderCart.Items.Clear();
+
+                for(int i = 0; i < currentOrder.ProductListLength(); i++) {
+                    clstbxCurrentOrderCart.Items.Add(currentOrder.GetProduct(i));
+                }
+            }
+        }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Webshop_Management {
     class Order {
 
-        private int[] pProductArray = new int[20];
-        private int[] pProductAmountArray = new int[20];
+        private List<Product> productList = new List<Product>();
 
         private int pID;
 
@@ -46,45 +47,23 @@ namespace Webshop_Management {
             set { pClosed = value; }
         }
 
-        //public Order(int fID, int fProductID, int fCustomerID, int fBillingNumber) {
-        //    pID = fID;
-        //    pProductIDList.Add(fProductID);
-        //    pCustomerID = fCustomerID;
-        //    pBillingNumber = fBillingNumber;
-        //    pOrderDate = "" + DateTime.Now;
-        //}
-
-        public Order (int fID) {
+        public Order (int fID, int fBillingNumber, int fCustomerID) {
             pID = fID;
+            pBillingNumber = fBillingNumber;
+            pCustomerID = fCustomerID;
             pOrderDate = "" + DateTime.Now;
         }
 
-        public int GetProductID (int fPosition) {
-            return pProductArray[fPosition];
+        public Product GetProduct (int fPosition) {
+            return productList.ElementAt(fPosition);
         }
 
-        public void NewProductID (int fID) {
-            var inserted = false;
-            for (int i = 0; i < pProductArray.Length && !inserted; i++) {
-                if(pProductArray[i] == 0)
-                    pProductArray[i] = fID;
-            }
+        public void NewProduct (Product fProduct) {
+            productList.Add(fProduct);
         }
 
-        public int GetProductAmount(int fPosition) {
-            return pProductAmountArray[fPosition];
-        }
-
-        public void NewProductAmount (int fAmount) {
-            var inserted = false;
-            for (int i = 0; i < pProductArray.Length && !inserted; i++) {
-                if (pProductAmountArray[i] == 0)
-                    pProductAmountArray[i] = fAmount;
-            }
-        }
-
-        public int ProductIDListLength () {
-            return pProductArray.Length;
+        public int ProductListLength () {
+            return productList.Count;
         }
     }
 }

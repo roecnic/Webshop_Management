@@ -82,8 +82,8 @@ namespace Webshop_Management {
 
         private int GetCustomerIDByName(String pCustomerName) {
             var commataPosition = pCustomerName.IndexOf(',');
-            var lastname = pCustomerName.Substring(0, (pCustomerName.Length - commataPosition));
-            var firstname = pCustomerName.Substring((commataPosition + 1));
+            var lastname = pCustomerName.Substring(0, commataPosition);
+            var firstname = pCustomerName.Substring((commataPosition + 2));
 
             foreach(var currentCustomer in customerList) {
                 if (currentCustomer.Firstname.Equals(firstname) && currentCustomer.Lastname.Equals(lastname))

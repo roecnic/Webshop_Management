@@ -245,10 +245,21 @@ namespace Webshop_Management {
 
                 clstbxCurrentOrderCart.Items.Clear();
 
-                for(int i = 0; i < currentOrder.ProductListLength(); i++) {
-                    clstbxCurrentOrderCart.Items.Add(currentOrder.GetProduct(i));
+                if (currentOrder.ProductListLength() > 0) {
+                    for (int i = 0; i < currentOrder.ProductListLength(); i++) {
+                        clstbxCurrentOrderCart.Items.Add(currentOrder.GetProduct(i));
+                    }
+                } else {
+                    var deleteOrderResult = MessageBox.Show("Das war das letzte Produkt in der Bestellung. Soll die Bestellung gelöscht werden?", "Hinweis", MessageBoxButtons.YesNo);
+                    if(deleteOrderResult == DialogResult.Yes) {
+                        openOrderList.Remove(currentOrder);
+                    }
                 }
+
+                RefreshOrderList();
+                lstbxOrders.SelectedIndex = lstbxOrders.Items.Count - 1;
             }
         }
+
     }
 }

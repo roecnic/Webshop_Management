@@ -96,7 +96,7 @@
             this.tbxCurrentOrderCreateTime.Location = new System.Drawing.Point(70, 48);
             this.tbxCurrentOrderCreateTime.Name = "tbxCurrentOrderCreateTime";
             this.tbxCurrentOrderCreateTime.ReadOnly = true;
-            this.tbxCurrentOrderCreateTime.Size = new System.Drawing.Size(157, 20);
+            this.tbxCurrentOrderCreateTime.Size = new System.Drawing.Size(182, 20);
             this.tbxCurrentOrderCreateTime.TabIndex = 33;
             // 
             // lblCurrentOrderCreateTime

@@ -196,6 +196,29 @@ namespace Webshop_Management {
             RefreshShoppingCart();
         }
 
+        private void btnCreateNewOrder_Click (object sender, EventArgs e) {
+            if (cbxNewOrderCustomer.Text.Equals("<Bitte auswählen>") || clstbxShoppingCart.Items.Count == 0)
+                MessageBox.Show("Bitte einen Kunden auswählen und Produkte in den Einkaufswagen legen!", "Hinweis", MessageBoxButtons.OK);
+            else {
+                var newOrderCustomerID = GetCustomerIDByName(cbxNewOrderCustomer.Text);
+
+                var newBillingNumber = (100000 + openOrderList.Count);
+                var newOrder = new Order(openOrderList.Count, newBillingNumber, newOrderCustomerID);
+
+                foreach (var currentProduct in shoppingCartProductList) {
+                    newOrder.NewProduct(currentProduct);
+                }
+
+                openOrderList.Add(newOrder);
+                RefreshOrderList();
+
+                cbxNewOrderCustomer.ResetText();
+                cbxNewOrderProduct.ResetText();
+
+                shoppingCartProductList.Clear();
+                RefreshShoppingCart();
+            }
         }
+
     }
 }

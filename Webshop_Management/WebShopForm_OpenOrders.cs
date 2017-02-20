@@ -115,6 +115,16 @@ namespace Webshop_Management {
                 lstbxOrders.Items.Add(currentOrder.BillingNumber + '\t' + GetCustomerNameByID(currentOrder.CustomerID));
         }
 
+        private int GetShoppingCartIndexForProductID(int fID) {
+            for(int i = 0; i < shoppingCartProductList.Count; i++) {
+                if (shoppingCartProductList.ElementAt(i).ID == fID)
+                    return i;
+            }
+
+            return -1;
+        }
+
+
         /**
          * -----------------------------------------------------------------------------------------------------------
          * EVENTS

@@ -132,12 +132,16 @@ namespace Webshop_Management {
          */
 
         private void lstbxOrders_SelectedIndexChanged (object sender, EventArgs e) {
+            clstbxCurrentOrderCart.Items.Clear();
+
             var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);
-            tbxCurrentOrderCustomer.Text = "" + currentOrder.CustomerID; //Replace with Customer Name from SQL
+            tbxCurrentOrderCustomer.Text = GetCustomerNameByID(currentOrder.CustomerID); //Replace with Customer Name from SQL
             tbxCurrentOrderCreateTime.Text = currentOrder.OrderDate;
 
-            for (int i = 0; i < currentOrder.ProductIDListLength(); i++) {
-                clstbxCurrentOrderCart.Items.Add(currentOrder.GetProductID(i)); //Replace with Product Name from SQL
+            for (int i = 0; i < currentOrder.ProductListLength(); i++) {
+                if(currentOrder.GetProduct(i).ID > 0)
+                clstbxCurrentOrderCart.Items.Add(currentOrder.GetProduct(i).ID + " - " + currentOrder.GetProduct(i).Name +
+                    '\t' + currentOrder.GetProduct(i).Amount + " Einheiten"); //Replace with Product Name from SQL
             }
         }
 

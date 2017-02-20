@@ -116,6 +116,7 @@
             this.btnCurrentOrderClose.TabIndex = 31;
             this.btnCurrentOrderClose.Text = "Bestellung abschließen";
             this.btnCurrentOrderClose.UseVisualStyleBackColor = true;
+            this.btnCurrentOrderClose.Click += new System.EventHandler(this.btnCurrentOrderClose_Click);
             // 
             // btnCurrentOrderDelete
             // 

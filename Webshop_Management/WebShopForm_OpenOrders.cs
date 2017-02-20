@@ -103,6 +103,17 @@ namespace Webshop_Management {
             return "";
         }
 
+        private void RefreshShoppingCart () {
+            clstbxShoppingCart.Items.Clear();
+            foreach (var currentItem in shoppingCartProductList)
+                clstbxShoppingCart.Items.Add(currentItem.Name + " - " + currentItem.Amount);
+        }
+
+        private void RefreshOrderList () {
+            lstbxOrders.Items.Clear();
+            foreach (var currentOrder in openOrderList)
+                lstbxOrders.Items.Add(currentOrder.BillingNumber + '\t' + GetCustomerNameByID(currentOrder.CustomerID));
+        }
 
         /**
          * -----------------------------------------------------------------------------------------------------------

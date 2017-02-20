@@ -147,43 +147,33 @@ namespace Webshop_Management {
 
         private void btnNewOrderAddProduct_Click (object sender, EventArgs e) {
             try {
-                var newOrderCustomerID = cbxNewOrderCustomer.SelectedIndex;
-                var newOrderCustomer = cbxNewOrderCustomer.Text;
-                var newOrderProductID = (cbxNewOrderProduct.SelectedIndex + 1);
-                var newOrderProduct = cbxNewOrderProduct.Text;
+                var newOrderProductID = cbxNewOrderProduct.SelectedIndex + 1;
+                var newOrderProduct = GetProductNameByID(newOrderProductID);
+
                 var newOrderProductAmount = Convert.ToInt32(tbxNewOrderProductAmount.Text);
-                var currentProductAlreadyInCart = false;
+                var inserted = false;
 
-                if (!newOrderCustomer.Equals("<Bitte auswählen>") && !newOrderProduct.Equals("<Bitte auswählen>")) {
-                    for (int i = 0; i < clstbxShoppingCart.Items.Count; i++) {
-                        clstbxShoppingCart.SelectedIndex = i;
-                        var currentEntry = clstbxShoppingCart.SelectedItem;
-                        var currentEntryString = currentEntry.ToString();
+                if (!cbxNewOrderCustomer.Text.Equals("<Bitte auswählen>") && !newOrderProduct.Equals("<Bitte auswählen>")) {
+                    var newProduct = new Product(newOrderProductID, newOrderProduct, newOrderProductAmount);
 
-                        if (currentEntryString.StartsWith(newOrderProduct)) {
-                            var subStringStart = currentEntryString.LastIndexOf(' ');
-                            var currentEntryAmount = Convert.ToInt32(currentEntryString.Substring(subStringStart));
-
-                            var result = MessageBox.Show("Das Produkt ist bereits " + currentEntryAmount + " Mal im Warenkorb. Möchten Sie die Anzahl addieren?",
+                    foreach (var currentProduct in shoppingCartProductList) {
+                        if (currentProduct.ID == newProduct.ID) {
+                            var result = MessageBox.Show("Das Produkt ist bereits " + currentProduct.Amount + " Mal im Warenkorb. Möchten Sie die Anzahl addieren?", 
                                 "Hinweis", MessageBoxButtons.YesNo);
 
                             if (result == DialogResult.Yes) {
-                                newOrderProductAmount += currentEntryAmount;
-                                clstbxShoppingCart.Items.RemoveAt(i);
-
-                                clstbxShoppingCart.Refresh();
-
-                                clstbxShoppingCart.Items.Insert(i, newOrderProduct + " - " + newOrderProductAmount);
-                                currentProductAlreadyInCart = true;
+                                currentProduct.Amount += newProduct.Amount;
+                                RefreshShoppingCart();
                             }
+
+                            inserted = true;
                         }
                     }
 
-                    if (clstbxShoppingCart.Items.Count == 0 || currentProductAlreadyInCart == false) {
-                        clstbxShoppingCart.Items.Add(newOrderProduct + " - " + newOrderProductAmount);
+                    if (clstbxShoppingCart.Items.Count == 0 || !inserted) {
+                        shoppingCartProductList.Add(newProduct);
+                        RefreshShoppingCart();
                     }
-
-                    //var newOrder = new Order(openOrderList.Count, newOrderProduct, newOrderCustomer, 100002);
 
                     tbxNewOrderProductAmount.Text = "";
 

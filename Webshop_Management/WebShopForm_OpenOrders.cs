@@ -276,5 +276,20 @@ namespace Webshop_Management {
                 clstbxCurrentOrderCart.Items.Clear();
             }
         }
+
+        private void btnCurrentOrderClose_Click (object sender, EventArgs e) {
+            var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);
+            var result = MessageBox.Show("Soll die Bestellung wirklich abgeschlossen werden?", "Hinweis", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes) {
+                currentOrder.Closed = 'Y';
+                RefreshOrderList();
+                lstbxOrders.SelectedIndex = lstbxOrders.Items.Count - 1;
+
+                tbxCurrentOrderCustomer.ResetText();
+                tbxCurrentOrderCreateTime.ResetText();
+                clstbxCurrentOrderCart.Items.Clear();
+            }
+        }
     }
 }

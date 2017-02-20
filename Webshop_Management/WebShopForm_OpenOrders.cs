@@ -124,6 +124,15 @@ namespace Webshop_Management {
             return -1;
         }
 
+        private bool BillingNumberIsAlreadyInUse(int fBillingNumber) {
+            foreach(var currentOrder in openOrderList) {
+                if (currentOrder.BillingNumber == fBillingNumber)
+                    return true;
+            }
+
+            return false;
+        }
+
 
         /**
          * -----------------------------------------------------------------------------------------------------------
@@ -202,6 +211,9 @@ namespace Webshop_Management {
                 var newOrderCustomerID = GetCustomerIDByName(cbxNewOrderCustomer.Text);
 
                 var newBillingNumber = (100000 + openOrderList.Count);
+                while (BillingNumberIsAlreadyInUse(newBillingNumber))
+                    newBillingNumber++;
+
                 var newOrder = new Order(openOrderList.Count, newBillingNumber, newOrderCustomerID);
 
                 foreach (var currentProduct in shoppingCartProductList) {

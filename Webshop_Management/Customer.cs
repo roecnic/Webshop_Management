@@ -6,7 +6,7 @@ namespace Webshop_Management {
         private int pID;
 
         public int ID {
-            get { return ID; }
+            get { return pID; }
         }
 
         private String pFirstname;

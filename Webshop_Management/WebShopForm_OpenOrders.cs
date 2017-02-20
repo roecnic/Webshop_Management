@@ -187,7 +187,6 @@ namespace Webshop_Management {
         }
 
         private void btnRemoveSelectedProducts_Click (object sender, EventArgs e) {
-
             foreach(var currentItem in clstbxShoppingCart.CheckedItems) {
                 var currentItemID = GetProductIDByName(currentItem.ToString().Substring(0, (currentItem.ToString().IndexOf('-') - 1)));
                 shoppingCartProductList.RemoveAt(GetShoppingCartIndexForProductID(currentItemID));
@@ -217,6 +216,8 @@ namespace Webshop_Management {
 
                 shoppingCartProductList.Clear();
                 RefreshShoppingCart();
+
+                lstbxOrders.SelectedIndex = lstbxOrders.Items.Count - 1;
             }
         }
 

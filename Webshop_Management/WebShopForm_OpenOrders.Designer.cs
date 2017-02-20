@@ -146,6 +146,7 @@
             // 
             // clstbxCurrentOrderCart
             // 
+            this.clstbxCurrentOrderCart.CheckOnClick = true;
             this.clstbxCurrentOrderCart.FormattingEnabled = true;
             this.clstbxCurrentOrderCart.Location = new System.Drawing.Point(9, 76);
             this.clstbxCurrentOrderCart.Name = "clstbxCurrentOrderCart";

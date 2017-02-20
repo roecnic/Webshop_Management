@@ -134,6 +134,7 @@
             this.btnCurrentOrderRemoveProduct.TabIndex = 29;
             this.btnCurrentOrderRemoveProduct.Text = "Ausgewählte Produkte entfernen";
             this.btnCurrentOrderRemoveProduct.UseVisualStyleBackColor = true;
+            this.btnCurrentOrderRemoveProduct.Click += new System.EventHandler(this.btnCurrentOrderRemoveProduct_Click);
             // 
             // tbxCurrentOrderCustomer
             // 

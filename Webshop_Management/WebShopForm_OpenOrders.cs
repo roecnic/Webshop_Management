@@ -62,8 +62,8 @@ namespace Webshop_Management {
          * --------------------------------------------------------------------------------------------------
          */
 
-        private int GetProductIDByName(String pProductName) {
-            foreach(var currentProduct in productList) {
+        private int GetProductIDByName (String pProductName) {
+            foreach (var currentProduct in productList) {
                 if (pProductName.Equals(currentProduct.Name))
                     return currentProduct.ID;
             }
@@ -71,8 +71,8 @@ namespace Webshop_Management {
             return -1;
         }
 
-        private String GetProductNameByID(int pID) {
-            foreach(var currentProduct in productList) {
+        private String GetProductNameByID (int pID) {
+            foreach (var currentProduct in productList) {
                 if (currentProduct.ID == pID)
                     return currentProduct.Name;
             }
@@ -80,12 +80,12 @@ namespace Webshop_Management {
             return "";
         }
 
-        private int GetCustomerIDByName(String pCustomerName) {
+        private int GetCustomerIDByName (String pCustomerName) {
             var commataPosition = pCustomerName.IndexOf(',');
             var lastname = pCustomerName.Substring(0, commataPosition);
             var firstname = pCustomerName.Substring((commataPosition + 2));
 
-            foreach(var currentCustomer in customerList) {
+            foreach (var currentCustomer in customerList) {
                 if (currentCustomer.Firstname.Equals(firstname) && currentCustomer.Lastname.Equals(lastname))
                     return currentCustomer.ID;
             }
@@ -93,9 +93,9 @@ namespace Webshop_Management {
             return -1;
         }
 
-        private String GetCustomerNameByID(int pID) {
-            foreach(var currentCustomer in customerList) {
-                if(currentCustomer.ID == pID) {
+        private String GetCustomerNameByID (int pID) {
+            foreach (var currentCustomer in customerList) {
+                if (currentCustomer.ID == pID) {
                     return currentCustomer.Lastname + ", " + currentCustomer.Firstname;
                 }
             }
@@ -112,11 +112,12 @@ namespace Webshop_Management {
         private void RefreshOrderList () {
             lstbxOrders.Items.Clear();
             foreach (var currentOrder in openOrderList)
-                lstbxOrders.Items.Add(currentOrder.BillingNumber + '\t' + GetCustomerNameByID(currentOrder.CustomerID));
+                if (currentOrder.Closed != 'Y')
+                    lstbxOrders.Items.Add(currentOrder.BillingNumber + '\t' + GetCustomerNameByID(currentOrder.CustomerID));
         }
 
-        private int GetShoppingCartIndexForProductID(int fID) {
-            for(int i = 0; i < shoppingCartProductList.Count; i++) {
+        private int GetShoppingCartIndexForProductID (int fID) {
+            for (int i = 0; i < shoppingCartProductList.Count; i++) {
                 if (shoppingCartProductList.ElementAt(i).ID == fID)
                     return i;
             }
@@ -124,8 +125,8 @@ namespace Webshop_Management {
             return -1;
         }
 
-        private bool BillingNumberIsAlreadyInUse(int fBillingNumber) {
-            foreach(var currentOrder in openOrderList) {
+        private bool BillingNumberIsAlreadyInUse (int fBillingNumber) {
+            foreach (var currentOrder in openOrderList) {
                 if (currentOrder.BillingNumber == fBillingNumber)
                     return true;
             }
@@ -148,9 +149,9 @@ namespace Webshop_Management {
             tbxCurrentOrderCreateTime.Text = currentOrder.OrderDate;
 
             for (int i = 0; i < currentOrder.ProductListLength(); i++) {
-                if(currentOrder.GetProduct(i).ID > 0)
-                clstbxCurrentOrderCart.Items.Add(currentOrder.GetProduct(i).ID + " - " + currentOrder.GetProduct(i).Name +
-                    '\t' + currentOrder.GetProduct(i).Amount + " Einheiten"); //Replace with Product Name from SQL
+                if (currentOrder.GetProduct(i).ID > 0)
+                    clstbxCurrentOrderCart.Items.Add(currentOrder.GetProduct(i).ID + " - " + currentOrder.GetProduct(i).Name +
+                        '\t' + currentOrder.GetProduct(i).Amount + " Einheiten"); //Replace with Product Name from SQL
             }
         }
 
@@ -167,7 +168,7 @@ namespace Webshop_Management {
 
                     foreach (var currentProduct in shoppingCartProductList) {
                         if (currentProduct.ID == newProduct.ID) {
-                            var result = MessageBox.Show("Das Produkt ist bereits " + currentProduct.Amount + " Mal im Warenkorb. Möchten Sie die Anzahl addieren?", 
+                            var result = MessageBox.Show("Das Produkt ist bereits " + currentProduct.Amount + " Mal im Warenkorb. Möchten Sie die Anzahl addieren?",
                                 "Hinweis", MessageBoxButtons.YesNo);
 
                             if (result == DialogResult.Yes) {
@@ -196,7 +197,7 @@ namespace Webshop_Management {
         }
 
         private void btnRemoveSelectedProducts_Click (object sender, EventArgs e) {
-            foreach(var currentItem in clstbxShoppingCart.CheckedItems) {
+            foreach (var currentItem in clstbxShoppingCart.CheckedItems) {
                 var currentItemID = GetProductIDByName(currentItem.ToString().Substring(0, (currentItem.ToString().IndexOf('-') - 1)));
                 shoppingCartProductList.RemoveAt(GetShoppingCartIndexForProductID(currentItemID));
             }
@@ -238,7 +239,7 @@ namespace Webshop_Management {
             var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);
 
             if (result == DialogResult.Yes) {
-                foreach(var currentItem in clstbxCurrentOrderCart.SelectedItems) {
+                foreach (var currentItem in clstbxCurrentOrderCart.SelectedItems) {
                     var currentItemID = GetProductIDByName(currentItem.ToString().Substring(0, (currentItem.ToString().IndexOf('-') - 1)));
                     currentOrder.RemoveProduct(currentItemID);
                 }
@@ -251,7 +252,7 @@ namespace Webshop_Management {
                     }
                 } else {
                     var deleteOrderResult = MessageBox.Show("Das war das letzte Produkt in der Bestellung. Soll die Bestellung gelöscht werden?", "Hinweis", MessageBoxButtons.YesNo);
-                    if(deleteOrderResult == DialogResult.Yes) {
+                    if (deleteOrderResult == DialogResult.Yes) {
                         openOrderList.Remove(currentOrder);
                     }
                 }
@@ -265,7 +266,7 @@ namespace Webshop_Management {
             var result = MessageBox.Show("Soll die Bestellung wirklich storniert werden?", "Hinweis", MessageBoxButtons.YesNo);
             var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);
 
-            if(result == DialogResult.Yes) {
+            if (result == DialogResult.Yes) {
                 openOrderList.Remove(currentOrder);
                 RefreshOrderList();
                 lstbxOrders.SelectedIndex = lstbxOrders.Items.Count - 1;

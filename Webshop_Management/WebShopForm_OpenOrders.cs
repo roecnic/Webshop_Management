@@ -261,5 +261,19 @@ namespace Webshop_Management {
             }
         }
 
+        private void btnCurrentOrderDelete_Click (object sender, EventArgs e) {
+            var result = MessageBox.Show("Soll die Bestellung wirklich storniert werden?", "Hinweis", MessageBoxButtons.YesNo);
+            var currentOrder = openOrderList.ElementAt(lstbxOrders.SelectedIndex);
+
+            if(result == DialogResult.Yes) {
+                openOrderList.Remove(currentOrder);
+                RefreshOrderList();
+                lstbxOrders.SelectedIndex = lstbxOrders.Items.Count - 1;
+
+                tbxCurrentOrderCustomer.ResetText();
+                tbxCurrentOrderCreateTime.ResetText();
+                clstbxCurrentOrderCart.Items.Clear();
+            }
+        }
     }
 }

@@ -95,8 +95,9 @@ namespace Webshop_Management {
 
         private String GetCustomerNameByID(int pID) {
             foreach(var currentCustomer in customerList) {
-                if (currentCustomer.ID == pID)
+                if(currentCustomer.ID == pID) {
                     return currentCustomer.Lastname + ", " + currentCustomer.Firstname;
+                }
             }
 
             return "";

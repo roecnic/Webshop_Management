@@ -125,6 +125,7 @@
             this.btnCurrentOrderDelete.TabIndex = 30;
             this.btnCurrentOrderDelete.Text = "Bestellung stornieren";
             this.btnCurrentOrderDelete.UseVisualStyleBackColor = true;
+            this.btnCurrentOrderDelete.Click += new System.EventHandler(this.btnCurrentOrderDelete_Click);
             // 
             // btnCurrentOrderRemoveProduct
             // 

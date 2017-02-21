@@ -148,5 +148,21 @@ namespace Webshop_Management {
                 MessageBox.Show("Bitte vorher einen Lieferanten auswählen!", "Hinweis", MessageBoxButtons.OK);
             }
         }
+
+        private void btnSaveNewCustomer_Click (object sender, EventArgs e) {
+            var newSupplier = new Supplier(supplierList.Count, tbxNewSupplierName.Text, tbxNewSupplierContact.Text,
+                tbxNewSupplierStreet.Text, Convert.ToInt32(tbxNewSupplierPLZ.Text), tbxNewSupplierPhoneNumber.Text);
+
+            supplierList.Add(newSupplier);
+
+            tbxNewSupplierName.Text = "";
+            tbxNewSupplierContact.Text = "";
+            tbxNewSupplierPLZ.Text = "";
+            tbxNewSupplierStreet.Text = "";
+            tbxNewSupplierPhoneNumber.Text = "";
+
+            FillItemList();
+            lstbxSuppliers.SelectedIndex = supplierList.IndexOf(newSupplier);
+        }
     }
 }

@@ -310,6 +310,7 @@
             this.btnSaveNewCustomer.TabIndex = 5;
             this.btnSaveNewCustomer.Text = "Neuen Lieferanten anlegen";
             this.btnSaveNewCustomer.UseVisualStyleBackColor = true;
+            this.btnSaveNewCustomer.Click += new System.EventHandler(this.btnSaveNewCustomer_Click);
             // 
             // tbxNewSupplierName
             // 

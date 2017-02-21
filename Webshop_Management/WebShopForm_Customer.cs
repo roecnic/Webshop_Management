@@ -122,5 +122,15 @@ namespace Webshop_Management {
                 tbxCurrentCustomerSex.Text = "Weiblich";
         }
 
+        private void btnSortLastname_Click (object sender, EventArgs e) {
+            sortAlgorithm = "Lastname";
+            FillItemList();
+        }
+
+        private void btnSortID_Click (object sender, EventArgs e) {
+            sortAlgorithm = "ID";
+            FillItemList();
+        }
+
     }
 }

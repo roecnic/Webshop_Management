@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Webshop_Management {
@@ -13,7 +10,7 @@ namespace Webshop_Management {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new From_Management());
+            Application.Run(new WebShopForm_Products());
         }
     }
 }

@@ -20,6 +20,13 @@ namespace Webshop_Management {
             set { pDescription = value; }
         }
 
+        private String pContact;
+
+        public String Contact {
+            get { return pContact; }
+            set { pContact = value; }
+        }
+
         private String pAddress;
 
         public String Address {
@@ -42,9 +49,10 @@ namespace Webshop_Management {
         }
 
 
-        public Supplier(int fID, String fDescription, String fAddress, int fPLZ) {
+        public Supplier(int fID, String fDescription, String fContact, String fAddress, int fPLZ) {
             pID = fID;
             pDescription = fDescription;
+            pContact = fContact;
             pAddress = fAddress;
             pPLZ = fPLZ;
         }

@@ -38,6 +38,14 @@ namespace Webshop_Management {
             customerList.Add(new Customer(2, "Tobias", "Groten", 48683, "Ahaus", 'M'));
         }
 
+
+
+        /**
+         * ---------------------------------------------------------------
+         * HELPING METHODS
+         * ---------------------------------------------------------------
+         */
+
         private void FillItemList () {
             lstbxCustomers.Items.Clear();
             if (sortAlgorithm.Equals("Lastname"))
@@ -48,27 +56,6 @@ namespace Webshop_Management {
             foreach (var currentCustomer in customerList)
                 lstbxCustomers.Items.Add(currentCustomer.ID + " - " + currentCustomer.Lastname + ", " + currentCustomer.Firstname);
         }
-
-        /**
-         * ---------------------------------------------------------------
-         * HELPING METHODS
-         * ---------------------------------------------------------------
-         */
-
-        private Customer GetCustomerFromName (String fName) {
-            var commataIndex = fName.IndexOf(',');
-            var IDEndIndex = fName.IndexOf('-');
-            var customerLastname = fName.Substring(IDEndIndex + 2, (commataIndex - IDEndIndex) - 2);
-            var customerFirstname = fName.Substring(commataIndex + 2);
-
-            foreach (var currentCustomer in customerList) {
-                if (currentCustomer.Lastname.Equals(customerLastname) && currentCustomer.Firstname.Equals(customerFirstname))
-                    return currentCustomer;
-            }
-
-            return null;
-        }
-
 
         /**
          * ---------------------------------------------------------------
@@ -109,7 +96,7 @@ namespace Webshop_Management {
         }
 
         private void lstbxCustomers_SelectedIndexChanged (object sender, EventArgs e) {
-            var currentCustomer = GetCustomerFromName(lstbxCustomers.SelectedItem.ToString());
+            var currentCustomer = customerList.ElementAt(lstbxCustomers.SelectedIndex);
 
             tbxCurrentCustomerID.Text = "" + currentCustomer.ID;
             tbxCurrentCustomerFirstname.Text = currentCustomer.Firstname;
@@ -177,7 +164,7 @@ namespace Webshop_Management {
                     if (customerList.Count > 0)
                         lstbxCustomers.SelectedIndex = 0;
                 }
-                    
+
             }
             catch (FormatException) {
                 MessageBox.Show("Bitte eine gültige Postleitzahl eingeben!");

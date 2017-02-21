@@ -41,6 +41,13 @@ namespace Webshop_Management {
             set { pPLZ = value; }
         }
 
+        private String pPhoneNumber;
+
+        public String PhoneNumber {
+            get { return pPhoneNumber; }
+            set { pPhoneNumber = value; }
+        }
+
         private int pCreditHistory;
 
         public int CreditHistory {

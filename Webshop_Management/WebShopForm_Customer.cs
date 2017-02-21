@@ -157,7 +157,7 @@ namespace Webshop_Management {
 
         private void tbnCurrentCustomerSave_Click (object sender, EventArgs e) {
             try {
-                var currentCustomer = GetCustomerFromName(lstbxCustomers.SelectedItem.ToString());
+                var currentCustomer = customerList.ElementAt(lstbxCustomers.SelectedIndex);
                 var removed = false;
 
                 if (rbtnCurrentCustomerSaveChanges.Checked) {

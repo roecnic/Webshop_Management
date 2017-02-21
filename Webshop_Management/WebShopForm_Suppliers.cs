@@ -33,8 +33,8 @@ namespace Webshop_Management {
 
         private void LoadItemsFromSQL () {
             //LOAD SUPPLIERS FROM SQL
-            supplierList.Add(new Supplier(0, "Mindfactory AG", "Irgendwasstraße 5", 456123));
-            supplierList.Add(new Supplier(1, "Amazon DACH", "Uhm... Bonn?", 4556987));
+            supplierList.Add(new Supplier(0, "Mindfactory AG", "Herr Konrad Zuse", "Irgendwasstraße 5", 456123));
+            supplierList.Add(new Supplier(1, "Amazon DACH", "Frau Braun", "Uhm... Bonn?", 4556987));
         }
 
         private void FillItemList () {

@@ -132,5 +132,14 @@ namespace Webshop_Management {
             FillItemList();
         }
 
+        private void btnSaveNewCustomer_Click (object sender, EventArgs e) {
+            var newCustomer = new Customer(customerList.Count, tbxNewCustomerFirstname.Text, tbxNewCustomerLastname.Text,
+                Convert.ToInt32(tbxNewCustomerPLZ.Text), tbxNewCustomerStreet.Text, cbbxNewCustomerSex.Text.ElementAt(0));
+            customerList.Add(newCustomer);
+
+            FillItemList();
+            lstbxCustomers.SelectedIndex = customerList.IndexOf(newCustomer);
+        }
+
     }
 }

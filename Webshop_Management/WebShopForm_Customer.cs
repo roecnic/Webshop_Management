@@ -49,5 +49,26 @@ namespace Webshop_Management {
                 lstbxCustomers.Items.Add(currentCustomer.ID + " - " + currentCustomer.Lastname + ", " + currentCustomer.Firstname);
         }
 
+        /**
+         * ---------------------------------------------------------------
+         * HELPING METHODS
+         * ---------------------------------------------------------------
+         */
+
+        private Customer GetCustomerFromName (String fName) {
+            var commataIndex = fName.IndexOf(',');
+            var IDEndIndex = fName.IndexOf('-');
+            var customerLastname = fName.Substring(IDEndIndex + 2, (commataIndex - IDEndIndex) - 2);
+            var customerFirstname = fName.Substring(commataIndex + 2);
+
+            foreach (var currentCustomer in customerList) {
+                if (currentCustomer.Lastname.Equals(customerLastname) && currentCustomer.Firstname.Equals(customerFirstname))
+                    return currentCustomer;
+            }
+
+            return null;
+        }
+
+
     }
 }

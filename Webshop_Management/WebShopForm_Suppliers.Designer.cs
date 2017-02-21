@@ -85,6 +85,7 @@
             this.cbbxDatabase.Size = new System.Drawing.Size(525, 21);
             this.cbbxDatabase.TabIndex = 14;
             this.cbbxDatabase.Text = "Lieferanten";
+            this.cbbxDatabase.SelectedIndexChanged += new System.EventHandler(this.cbbxDatabase_SelectedIndexChanged);
             // 
             // grpbxSelectedSupplier
             // 

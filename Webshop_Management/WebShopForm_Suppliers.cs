@@ -166,5 +166,37 @@ namespace Webshop_Management {
             FillItemList();
             lstbxSuppliers.SelectedIndex = supplierList.IndexOf(newSupplier);
         }
+
+        private void cbbxDatabase_SelectedIndexChanged (object sender, EventArgs e) {
+            switch (cbbxDatabase.SelectedIndex) {
+                case 0:
+                    var newForm_Products = new WebShopForm_Products();
+                    this.Hide();
+                    newForm_Products.ShowDialog();
+                    this.Close();
+                    break;
+                case 1:
+                    var newForm_Customers = new WebShopForm_Customer();
+                    this.Hide();
+                    newForm_Customers.ShowDialog();
+                    this.Close();
+                    break;
+                case 2:
+                    var newForm_OpenOrders = new WebShopForm_OpenOrders();
+                    this.Hide();
+                    newForm_OpenOrders.ShowDialog();
+                    this.Close();
+                    break;
+                case 3:
+                    var newForm_ClosedOrders = new WebShopForm_ClosedOrders();
+                    this.Hide();
+                    newForm_ClosedOrders.ShowDialog();
+                    this.Close();
+                    break;
+                case 4:
+                    //THIS FORM
+                    break;
+            }
+        }
     }
 }

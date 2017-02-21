@@ -102,15 +102,18 @@ namespace Webshop_Management {
                     currentSupplier.Address = tbxCurrentSupplierAddress.Text;
                     currentSupplier.PhoneNumber = tbxCurrentSupplierPhoneNumber.Text;
                 } else if (rbtnCurrentSupplierRemove.Checked) {
-                    supplierList.Remove(currentSupplier);
-                    removed = true;
+                    var result = MessageBox.Show("Soll der Eintrag wirklich gelöscht werden?", "Warnung", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes) {
+                        supplierList.Remove(currentSupplier);
+                        removed = true;
+                    }
                 }
 
                 FillItemList();
                 if (!removed)
                     lstbxSuppliers.SelectedIndex = supplierList.IndexOf(currentSupplier);
                 else {
-                    if (supplierList.Count > 0) {
+                    if (!(supplierList.Count > 0)) {
                         lstbxSuppliers.SelectedIndex = 0;
                         tbxCurrentSupplierAddress.Text = "";
                         tbxCurrentSupplierContact.Text = "";
@@ -118,7 +121,8 @@ namespace Webshop_Management {
                         tbxCurrentSupplierName.Text = "";
                         tbxCurrentSupplierPhoneNumber.Text = "";
                         tbxCurrentSupplierPLZ.Text = "";
-                    }
+                    } else
+                        lstbxSuppliers.SelectedIndex = 0;
                 }
             }
             catch (FormatException) {

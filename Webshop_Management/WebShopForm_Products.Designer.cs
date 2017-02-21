@@ -242,7 +242,7 @@
             this.lblSelectDatabase.TabIndex = 5;
             this.lblSelectDatabase.Text = "Zu ändernde Datenbank";
             // 
-            // Form_Management
+            // WebShopForm_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -252,8 +252,8 @@
             this.Controls.Add(this.grpbxSelectedItem);
             this.Controls.Add(this.grpbxNewItem);
             this.Controls.Add(this.lstbxProducts);
-            this.Name = "Form_Management";
-            this.Text = "Shopmanagement";
+            this.Name = "WebShopForm_Products";
+            this.Text = "Produktübersicht";
             this.grpbxNewItem.ResumeLayout(false);
             this.grpbxNewItem.PerformLayout();
             this.grpbxSelectedItem.ResumeLayout(false);

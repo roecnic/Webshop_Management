@@ -26,14 +26,14 @@
             this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.cbbxDatabase = new System.Windows.Forms.ComboBox();
             this.grpbxSelectedOrder = new System.Windows.Forms.GroupBox();
+            this.tbxCompletedOrdersBillingNumber = new System.Windows.Forms.TextBox();
+            this.lblCompletedOrdersBillingNumber = new System.Windows.Forms.Label();
             this.tbxCurrentCompletedOrderDate = new System.Windows.Forms.TextBox();
             this.lblCurrentCompletedOrderDate = new System.Windows.Forms.Label();
             this.lstbxCurrentCompletedOrder = new System.Windows.Forms.ListBox();
             this.tbxCurrentCompletedOrderCustomer = new System.Windows.Forms.TextBox();
             this.lblCurrentCompletedOrderCustomer = new System.Windows.Forms.Label();
             this.lstbxCompletedOrders = new System.Windows.Forms.ListBox();
-            this.lblCompletedOrdersBillingNumber = new System.Windows.Forms.Label();
-            this.tbxCompletedOrdersBillingNumber = new System.Windows.Forms.TextBox();
             this.grpbxSelectedOrder.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,23 @@
             this.grpbxSelectedOrder.TabIndex = 18;
             this.grpbxSelectedOrder.TabStop = false;
             this.grpbxSelectedOrder.Text = "Aktuelle Bestellung";
+            // 
+            // tbxCompletedOrdersBillingNumber
+            // 
+            this.tbxCompletedOrdersBillingNumber.Location = new System.Drawing.Point(111, 73);
+            this.tbxCompletedOrdersBillingNumber.Name = "tbxCompletedOrdersBillingNumber";
+            this.tbxCompletedOrdersBillingNumber.ReadOnly = true;
+            this.tbxCompletedOrdersBillingNumber.Size = new System.Drawing.Size(87, 20);
+            this.tbxCompletedOrdersBillingNumber.TabIndex = 33;
+            // 
+            // lblCompletedOrdersBillingNumber
+            // 
+            this.lblCompletedOrdersBillingNumber.AutoSize = true;
+            this.lblCompletedOrdersBillingNumber.Location = new System.Drawing.Point(6, 76);
+            this.lblCompletedOrdersBillingNumber.Name = "lblCompletedOrdersBillingNumber";
+            this.lblCompletedOrdersBillingNumber.Size = new System.Drawing.Size(74, 13);
+            this.lblCompletedOrdersBillingNumber.TabIndex = 32;
+            this.lblCompletedOrdersBillingNumber.Text = "Belegnummer:";
             // 
             // tbxCurrentCompletedOrderDate
             // 
@@ -129,23 +146,6 @@
             this.lstbxCompletedOrders.TabIndex = 16;
             this.lstbxCompletedOrders.SelectedIndexChanged += new System.EventHandler(this.lstbxCompletedOrders_SelectedIndexChanged);
             // 
-            // lblCompletedOrdersBillingNumber
-            // 
-            this.lblCompletedOrdersBillingNumber.AutoSize = true;
-            this.lblCompletedOrdersBillingNumber.Location = new System.Drawing.Point(6, 76);
-            this.lblCompletedOrdersBillingNumber.Name = "lblCompletedOrdersBillingNumber";
-            this.lblCompletedOrdersBillingNumber.Size = new System.Drawing.Size(74, 13);
-            this.lblCompletedOrdersBillingNumber.TabIndex = 32;
-            this.lblCompletedOrdersBillingNumber.Text = "Belegnummer:";
-            // 
-            // tbxCompletedOrdersBillingNumber
-            // 
-            this.tbxCompletedOrdersBillingNumber.Location = new System.Drawing.Point(111, 73);
-            this.tbxCompletedOrdersBillingNumber.Name = "tbxCompletedOrdersBillingNumber";
-            this.tbxCompletedOrdersBillingNumber.ReadOnly = true;
-            this.tbxCompletedOrdersBillingNumber.Size = new System.Drawing.Size(87, 20);
-            this.tbxCompletedOrdersBillingNumber.TabIndex = 33;
-            // 
             // WebShopForm_ClosedOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,7 +156,7 @@
             this.Controls.Add(this.grpbxSelectedOrder);
             this.Controls.Add(this.lstbxCompletedOrders);
             this.Name = "WebShopForm_ClosedOrders";
-            this.Text = "WebShopForm_ClosedOrders";
+            this.Text = "Abgeschlossene Bestellung";
             this.grpbxSelectedOrder.ResumeLayout(false);
             this.grpbxSelectedOrder.PerformLayout();
             this.ResumeLayout(false);

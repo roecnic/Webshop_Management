@@ -108,5 +108,19 @@ namespace Webshop_Management {
             }
         }
 
+        private void lstbxCustomers_SelectedIndexChanged (object sender, EventArgs e) {
+            var currentCustomer = GetCustomerFromName(lstbxCustomers.SelectedItem.ToString());
+
+            tbxCurrentCustomerID.Text = "" + currentCustomer.ID;
+            tbxCurrentCustomerFirstname.Text = currentCustomer.Firstname;
+            tbxCurrentCustomerLastname.Text = currentCustomer.Lastname;
+            tbxCurrentCustomerPLZ.Text = "" + currentCustomer.PLZ;
+            tbxCurrentCustomerAddress.Text = currentCustomer.Address;
+            if (currentCustomer.Sex == 'M')
+                tbxCurrentCustomerSex.Text = "Männlich";
+            else
+                tbxCurrentCustomerSex.Text = "Weiblich";
+        }
+
     }
 }

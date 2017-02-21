@@ -115,7 +115,27 @@ namespace Webshop_Management {
                 }
             }
             catch (FormatException) {
-                MessageBox.Show("Bitte eine gültige PLZ eingeben!");
+                MessageBox.Show("Bitte eine gültige PLZ eingeben!", "Hinweis", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnIncreaseCreditHistory_Click (object sender, EventArgs e) {
+            try {
+                var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
+                currentSupplier.CreditHistory += 100;
+            }
+            catch (ArgumentOutOfRangeException) {
+                MessageBox.Show("Bitte vorher einen Lieferanten auswählen!", "Hinweis", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnDecreaseCreditHistory_Click (object sender, EventArgs e) {
+            try {
+                var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
+                currentSupplier.CreditHistory -= 100;
+            }
+            catch (ArgumentOutOfRangeException) {
+                MessageBox.Show("Bitte vorher einen Lieferanten auswählen!", "Hinweis", MessageBoxButtons.OK);
             }
         }
     }

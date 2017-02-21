@@ -390,6 +390,7 @@
             this.btnDecreaseCreditHistory.TabIndex = 25;
             this.btnDecreaseCreditHistory.Text = "Bonität verringern";
             this.btnDecreaseCreditHistory.UseVisualStyleBackColor = true;
+            this.btnDecreaseCreditHistory.Click += new System.EventHandler(this.btnDecreaseCreditHistory_Click);
             // 
             // btnIncreaseCreditHistory
             // 
@@ -399,6 +400,7 @@
             this.btnIncreaseCreditHistory.TabIndex = 26;
             this.btnIncreaseCreditHistory.Text = "Bonität erhöhen";
             this.btnIncreaseCreditHistory.UseVisualStyleBackColor = true;
+            this.btnIncreaseCreditHistory.Click += new System.EventHandler(this.btnIncreaseCreditHistory_Click);
             // 
             // WebShopForm_Suppliers
             // 

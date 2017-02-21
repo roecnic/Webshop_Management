@@ -47,5 +47,22 @@ namespace Webshop_Management {
             foreach (var currentSupplier in supplierList)
                 lstbxSuppliers.Items.Add(currentSupplier.ID + " - " + currentSupplier.Description);
         }
+
+
+        /**
+         * ---------------------------------------------------------
+         * EVENT TRIGGERS
+         * ---------------------------------------------------------
+         */
+
+        private void btnSortLastname_Click (object sender, EventArgs e) {
+            sortAlgorithm = "Description";
+            FillItemList();
+        }
+
+        private void btnSortID_Click (object sender, EventArgs e) {
+            sortAlgorithm = "ID";
+            FillItemList();
+        }
     }
 }

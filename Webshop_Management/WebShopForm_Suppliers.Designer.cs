@@ -341,6 +341,7 @@
             this.btnSortLastname.TabIndex = 25;
             this.btnSortLastname.Text = "Nach Name sortieren";
             this.btnSortLastname.UseVisualStyleBackColor = true;
+            this.btnSortLastname.Click += new System.EventHandler(this.btnSortLastname_Click);
             // 
             // btnSortID
             // 
@@ -350,6 +351,7 @@
             this.btnSortID.TabIndex = 26;
             this.btnSortID.Text = "Nach ID sortieren";
             this.btnSortID.UseVisualStyleBackColor = true;
+            this.btnSortID.Click += new System.EventHandler(this.btnSortID_Click);
             // 
             // WebShopForm_Suppliers
             // 

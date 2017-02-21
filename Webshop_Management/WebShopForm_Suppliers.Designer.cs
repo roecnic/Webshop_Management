@@ -51,7 +51,9 @@
             this.tbxNewSupplierName = new System.Windows.Forms.TextBox();
             this.lblNewSupplierContact = new System.Windows.Forms.Label();
             this.lblNewSupplierName = new System.Windows.Forms.Label();
-            this.lstbxOrders = new System.Windows.Forms.ListBox();
+            this.lstbxSuppliers = new System.Windows.Forms.ListBox();
+            this.btnSortLastname = new System.Windows.Forms.Button();
+            this.btnSortID = new System.Windows.Forms.Button();
             this.grpbxSelectedSupplier.SuspendLayout();
             this.grpbxNewSupplier.SuspendLayout();
             this.SuspendLayout();
@@ -323,24 +325,44 @@
             this.lblNewSupplierName.TabIndex = 0;
             this.lblNewSupplierName.Text = "Name:";
             // 
-            // lstbxOrders
+            // lstbxSuppliers
             // 
-            this.lstbxOrders.FormattingEnabled = true;
-            this.lstbxOrders.Location = new System.Drawing.Point(12, 58);
-            this.lstbxOrders.Name = "lstbxOrders";
-            this.lstbxOrders.Size = new System.Drawing.Size(260, 511);
-            this.lstbxOrders.TabIndex = 11;
+            this.lstbxSuppliers.FormattingEnabled = true;
+            this.lstbxSuppliers.Location = new System.Drawing.Point(12, 58);
+            this.lstbxSuppliers.Name = "lstbxSuppliers";
+            this.lstbxSuppliers.Size = new System.Drawing.Size(260, 459);
+            this.lstbxSuppliers.TabIndex = 11;
+            // 
+            // btnSortLastname
+            // 
+            this.btnSortLastname.Location = new System.Drawing.Point(12, 534);
+            this.btnSortLastname.Name = "btnSortLastname";
+            this.btnSortLastname.Size = new System.Drawing.Size(124, 35);
+            this.btnSortLastname.TabIndex = 25;
+            this.btnSortLastname.Text = "Nach Name sortieren";
+            this.btnSortLastname.UseVisualStyleBackColor = true;
+            // 
+            // btnSortID
+            // 
+            this.btnSortID.Location = new System.Drawing.Point(148, 534);
+            this.btnSortID.Name = "btnSortID";
+            this.btnSortID.Size = new System.Drawing.Size(124, 35);
+            this.btnSortID.TabIndex = 26;
+            this.btnSortID.Text = "Nach ID sortieren";
+            this.btnSortID.UseVisualStyleBackColor = true;
             // 
             // WebShopForm_Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 581);
+            this.Controls.Add(this.btnSortID);
+            this.Controls.Add(this.btnSortLastname);
             this.Controls.Add(this.lblSelectDatabase);
             this.Controls.Add(this.cbbxDatabase);
             this.Controls.Add(this.grpbxSelectedSupplier);
             this.Controls.Add(this.grpbxNewSupplier);
-            this.Controls.Add(this.lstbxOrders);
+            this.Controls.Add(this.lstbxSuppliers);
             this.Name = "WebShopForm_Suppliers";
             this.Text = "WebShopForm_Suppliers";
             this.grpbxSelectedSupplier.ResumeLayout(false);
@@ -380,8 +402,10 @@
         private System.Windows.Forms.TextBox tbxNewSupplierName;
         private System.Windows.Forms.Label lblNewSupplierContact;
         private System.Windows.Forms.Label lblNewSupplierName;
-        private System.Windows.Forms.ListBox lstbxOrders;
+        private System.Windows.Forms.ListBox lstbxSuppliers;
         private System.Windows.Forms.TextBox tbxNewSupplierPhoneNumber;
         private System.Windows.Forms.TextBox tbxCurrentSupplierPhoneNumber;
+        private System.Windows.Forms.Button btnSortLastname;
+        private System.Windows.Forms.Button btnSortID;
     }
 }

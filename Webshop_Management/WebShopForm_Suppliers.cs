@@ -33,8 +33,8 @@ namespace Webshop_Management {
 
         private void LoadItemsFromSQL () {
             //LOAD SUPPLIERS FROM SQL
-            supplierList.Add(new Supplier(0, "Mindfactory AG", "Herr Konrad Zuse", "Irgendwasstraße 5", 456123));
-            supplierList.Add(new Supplier(1, "Amazon DACH", "Frau Braun", "Uhm... Bonn?", 4556987));
+            supplierList.Add(new Supplier(0, "Mindfactory AG", "Herr Konrad Zuse", "Irgendwasstraße 5", 456123, "0256+4013132"));
+            supplierList.Add(new Supplier(1, "Amazon DACH", "Frau Braun", "Uhm... Bonn?", 4556987, "54654651432123"));
         }
 
         private void FillItemList () {
@@ -124,7 +124,7 @@ namespace Webshop_Management {
             catch (FormatException) {
                 MessageBox.Show("Bitte eine gültige PLZ eingeben!", "Hinweis", MessageBoxButtons.OK);
             }
-            catch (ArgumentOutOfRangeException){
+            catch (ArgumentOutOfRangeException) {
                 MessageBox.Show("Bitte einen Lieferanten aus der Liste auswählen!", "Hinweis", MessageBoxButtons.OK);
             }
         }

@@ -54,6 +54,10 @@
             this.lstbxSuppliers = new System.Windows.Forms.ListBox();
             this.btnSortLastname = new System.Windows.Forms.Button();
             this.btnSortID = new System.Windows.Forms.Button();
+            this.lblCurrentSupplierCredithistory = new System.Windows.Forms.Label();
+            this.tbxCurrentSupplierCreditHistory = new System.Windows.Forms.TextBox();
+            this.btnDecreaseCreditHistory = new System.Windows.Forms.Button();
+            this.btnIncreaseCreditHistory = new System.Windows.Forms.Button();
             this.grpbxSelectedSupplier.SuspendLayout();
             this.grpbxNewSupplier.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +88,10 @@
             // 
             // grpbxSelectedSupplier
             // 
+            this.grpbxSelectedSupplier.Controls.Add(this.btnIncreaseCreditHistory);
+            this.grpbxSelectedSupplier.Controls.Add(this.btnDecreaseCreditHistory);
+            this.grpbxSelectedSupplier.Controls.Add(this.tbxCurrentSupplierCreditHistory);
+            this.grpbxSelectedSupplier.Controls.Add(this.lblCurrentSupplierCredithistory);
             this.grpbxSelectedSupplier.Controls.Add(this.tbxCurrentSupplierPhoneNumber);
             this.grpbxSelectedSupplier.Controls.Add(this.lblCurrentSupplierPhoneNumber);
             this.grpbxSelectedSupplier.Controls.Add(this.tbxCurrentSupplierAddress);
@@ -99,7 +107,7 @@
             this.grpbxSelectedSupplier.Controls.Add(this.rbtnCurrentSupplierSaveChanges);
             this.grpbxSelectedSupplier.Location = new System.Drawing.Point(278, 315);
             this.grpbxSelectedSupplier.Name = "grpbxSelectedSupplier";
-            this.grpbxSelectedSupplier.Size = new System.Drawing.Size(258, 254);
+            this.grpbxSelectedSupplier.Size = new System.Drawing.Size(258, 294);
             this.grpbxSelectedSupplier.TabIndex = 13;
             this.grpbxSelectedSupplier.TabStop = false;
             this.grpbxSelectedSupplier.Text = "Aktueller Lieferant";
@@ -186,7 +194,7 @@
             // 
             // tbnCurrentCustomerSave
             // 
-            this.tbnCurrentCustomerSave.Location = new System.Drawing.Point(150, 203);
+            this.tbnCurrentCustomerSave.Location = new System.Drawing.Point(150, 244);
             this.tbnCurrentCustomerSave.Name = "tbnCurrentCustomerSave";
             this.tbnCurrentCustomerSave.Size = new System.Drawing.Size(99, 35);
             this.tbnCurrentCustomerSave.TabIndex = 11;
@@ -196,7 +204,7 @@
             // rbtnCurrentSupplierRemove
             // 
             this.rbtnCurrentSupplierRemove.AutoSize = true;
-            this.rbtnCurrentSupplierRemove.Location = new System.Drawing.Point(9, 221);
+            this.rbtnCurrentSupplierRemove.Location = new System.Drawing.Point(9, 262);
             this.rbtnCurrentSupplierRemove.Name = "rbtnCurrentSupplierRemove";
             this.rbtnCurrentSupplierRemove.Size = new System.Drawing.Size(126, 17);
             this.rbtnCurrentSupplierRemove.TabIndex = 10;
@@ -208,7 +216,7 @@
             // 
             this.rbtnCurrentSupplierSaveChanges.AutoSize = true;
             this.rbtnCurrentSupplierSaveChanges.Checked = true;
-            this.rbtnCurrentSupplierSaveChanges.Location = new System.Drawing.Point(9, 202);
+            this.rbtnCurrentSupplierSaveChanges.Location = new System.Drawing.Point(9, 243);
             this.rbtnCurrentSupplierSaveChanges.Name = "rbtnCurrentSupplierSaveChanges";
             this.rbtnCurrentSupplierSaveChanges.Size = new System.Drawing.Size(134, 17);
             this.rbtnCurrentSupplierSaveChanges.TabIndex = 9;
@@ -330,12 +338,12 @@
             this.lstbxSuppliers.FormattingEnabled = true;
             this.lstbxSuppliers.Location = new System.Drawing.Point(12, 58);
             this.lstbxSuppliers.Name = "lstbxSuppliers";
-            this.lstbxSuppliers.Size = new System.Drawing.Size(260, 459);
+            this.lstbxSuppliers.Size = new System.Drawing.Size(260, 511);
             this.lstbxSuppliers.TabIndex = 11;
             // 
             // btnSortLastname
             // 
-            this.btnSortLastname.Location = new System.Drawing.Point(12, 534);
+            this.btnSortLastname.Location = new System.Drawing.Point(12, 574);
             this.btnSortLastname.Name = "btnSortLastname";
             this.btnSortLastname.Size = new System.Drawing.Size(124, 35);
             this.btnSortLastname.TabIndex = 25;
@@ -345,7 +353,7 @@
             // 
             // btnSortID
             // 
-            this.btnSortID.Location = new System.Drawing.Point(148, 534);
+            this.btnSortID.Location = new System.Drawing.Point(148, 574);
             this.btnSortID.Name = "btnSortID";
             this.btnSortID.Size = new System.Drawing.Size(124, 35);
             this.btnSortID.TabIndex = 26;
@@ -353,11 +361,46 @@
             this.btnSortID.UseVisualStyleBackColor = true;
             this.btnSortID.Click += new System.EventHandler(this.btnSortID_Click);
             // 
+            // lblCurrentSupplierCredithistory
+            // 
+            this.lblCurrentSupplierCredithistory.AutoSize = true;
+            this.lblCurrentSupplierCredithistory.Location = new System.Drawing.Point(6, 193);
+            this.lblCurrentSupplierCredithistory.Name = "lblCurrentSupplierCredithistory";
+            this.lblCurrentSupplierCredithistory.Size = new System.Drawing.Size(43, 13);
+            this.lblCurrentSupplierCredithistory.TabIndex = 23;
+            this.lblCurrentSupplierCredithistory.Text = "Bonität:";
+            // 
+            // tbxCurrentSupplierCreditHistory
+            // 
+            this.tbxCurrentSupplierCreditHistory.Location = new System.Drawing.Point(58, 190);
+            this.tbxCurrentSupplierCreditHistory.Name = "tbxCurrentSupplierCreditHistory";
+            this.tbxCurrentSupplierCreditHistory.ReadOnly = true;
+            this.tbxCurrentSupplierCreditHistory.Size = new System.Drawing.Size(191, 20);
+            this.tbxCurrentSupplierCreditHistory.TabIndex = 24;
+            // 
+            // btnDecreaseCreditHistory
+            // 
+            this.btnDecreaseCreditHistory.Location = new System.Drawing.Point(150, 216);
+            this.btnDecreaseCreditHistory.Name = "btnDecreaseCreditHistory";
+            this.btnDecreaseCreditHistory.Size = new System.Drawing.Size(99, 21);
+            this.btnDecreaseCreditHistory.TabIndex = 25;
+            this.btnDecreaseCreditHistory.Text = "Bonität verringern";
+            this.btnDecreaseCreditHistory.UseVisualStyleBackColor = true;
+            // 
+            // btnIncreaseCreditHistory
+            // 
+            this.btnIncreaseCreditHistory.Location = new System.Drawing.Point(34, 216);
+            this.btnIncreaseCreditHistory.Name = "btnIncreaseCreditHistory";
+            this.btnIncreaseCreditHistory.Size = new System.Drawing.Size(109, 21);
+            this.btnIncreaseCreditHistory.TabIndex = 26;
+            this.btnIncreaseCreditHistory.Text = "Bonität erhöhen";
+            this.btnIncreaseCreditHistory.UseVisualStyleBackColor = true;
+            // 
             // WebShopForm_Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 581);
+            this.ClientSize = new System.Drawing.Size(541, 621);
             this.Controls.Add(this.btnSortID);
             this.Controls.Add(this.btnSortLastname);
             this.Controls.Add(this.lblSelectDatabase);
@@ -409,5 +452,9 @@
         private System.Windows.Forms.TextBox tbxCurrentSupplierPhoneNumber;
         private System.Windows.Forms.Button btnSortLastname;
         private System.Windows.Forms.Button btnSortID;
+        private System.Windows.Forms.Button btnIncreaseCreditHistory;
+        private System.Windows.Forms.Button btnDecreaseCreditHistory;
+        private System.Windows.Forms.TextBox tbxCurrentSupplierCreditHistory;
+        private System.Windows.Forms.Label lblCurrentSupplierCredithistory;
     }
 }

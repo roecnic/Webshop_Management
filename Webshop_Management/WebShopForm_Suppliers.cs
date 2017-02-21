@@ -89,5 +89,34 @@ namespace Webshop_Management {
                 rbtnCurrentSupplierRemove.Checked = true;
             }
         }
+
+        private void tbnCurrentCustomerSave_Click (object sender, EventArgs e) {
+            try {
+                var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
+                var removed = false;
+
+                if (rbtnCurrentSupplierSaveChanges.Checked) {
+                    currentSupplier.Description = tbxCurrentSupplierName.Text;
+                    currentSupplier.Contact = tbxCurrentSupplierContact.Text;
+                    currentSupplier.PLZ = Convert.ToInt32(tbxCurrentSupplierPLZ.Text);
+                    currentSupplier.Address = tbxCurrentSupplierAddress.Text;
+                    currentSupplier.PhoneNumber = tbxCurrentSupplierPhoneNumber.Text;
+                } else if (rbtnCurrentSupplierRemove.Checked) {
+                    supplierList.Remove(currentSupplier);
+                    removed = true;
+                }
+
+                FillItemList();
+                if (!removed)
+                    lstbxSuppliers.SelectedIndex = supplierList.IndexOf(currentSupplier);
+                else {
+                    if (supplierList.Count > 0)
+                        lstbxSuppliers.SelectedIndex = 0;
+                }
+            }
+            catch (FormatException) {
+                MessageBox.Show("Bitte eine gültige PLZ eingeben!");
+            }
+        }
     }
 }

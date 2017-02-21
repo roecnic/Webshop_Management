@@ -200,6 +200,7 @@
             this.tbnCurrentCustomerSave.TabIndex = 11;
             this.tbnCurrentCustomerSave.Text = "Anwenden";
             this.tbnCurrentCustomerSave.UseVisualStyleBackColor = true;
+            this.tbnCurrentCustomerSave.Click += new System.EventHandler(this.tbnCurrentCustomerSave_Click);
             // 
             // rbtnCurrentSupplierRemove
             // 

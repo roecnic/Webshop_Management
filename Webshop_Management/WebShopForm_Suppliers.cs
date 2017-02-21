@@ -64,5 +64,16 @@ namespace Webshop_Management {
             sortAlgorithm = "ID";
             FillItemList();
         }
+
+        private void lstbxSuppliers_SelectedIndexChanged (object sender, EventArgs e) {
+            var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
+
+            tbxCurrentSupplierName.Text = currentSupplier.Description;
+            tbxCurrentSupplierContact.Text = currentSupplier.Contact;
+            tbxCurrentSupplierPLZ.Text = "" + currentSupplier.PLZ;
+            tbxCurrentSupplierAddress.Text = "" + currentSupplier.Address;
+            tbxCurrentSupplierPhoneNumber.Text = currentSupplier.PhoneNumber;
+            tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory;
+        }
     }
 }

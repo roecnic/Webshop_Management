@@ -340,6 +340,7 @@
             this.lstbxSuppliers.Name = "lstbxSuppliers";
             this.lstbxSuppliers.Size = new System.Drawing.Size(260, 511);
             this.lstbxSuppliers.TabIndex = 11;
+            this.lstbxSuppliers.SelectedIndexChanged += new System.EventHandler(this.lstbxSuppliers_SelectedIndexChanged);
             // 
             // btnSortLastname
             // 

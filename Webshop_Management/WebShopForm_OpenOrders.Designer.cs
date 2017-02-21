@@ -295,7 +295,7 @@
             this.Controls.Add(this.grpbxNewOrder);
             this.Controls.Add(this.lstbxOrders);
             this.Name = "WebShopForm_OpenOrders";
-            this.Text = "WebShopForm_OpenOrders";
+            this.Text = "Offene Bestellungen";
             this.grpbxSelectedOrder.ResumeLayout(false);
             this.grpbxSelectedOrder.PerformLayout();
             this.grpbxNewOrder.ResumeLayout(false);

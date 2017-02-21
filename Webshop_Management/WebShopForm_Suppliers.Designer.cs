@@ -26,6 +26,10 @@
             this.lblSelectDatabase = new System.Windows.Forms.Label();
             this.cbbxDatabase = new System.Windows.Forms.ComboBox();
             this.grpbxSelectedSupplier = new System.Windows.Forms.GroupBox();
+            this.btnIncreaseCreditHistory = new System.Windows.Forms.Button();
+            this.btnDecreaseCreditHistory = new System.Windows.Forms.Button();
+            this.tbxCurrentSupplierCreditHistory = new System.Windows.Forms.TextBox();
+            this.lblCurrentSupplierCredithistory = new System.Windows.Forms.Label();
             this.tbxCurrentSupplierPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblCurrentSupplierPhoneNumber = new System.Windows.Forms.Label();
             this.tbxCurrentSupplierAddress = new System.Windows.Forms.TextBox();
@@ -54,10 +58,6 @@
             this.lstbxSuppliers = new System.Windows.Forms.ListBox();
             this.btnSortLastname = new System.Windows.Forms.Button();
             this.btnSortID = new System.Windows.Forms.Button();
-            this.lblCurrentSupplierCredithistory = new System.Windows.Forms.Label();
-            this.tbxCurrentSupplierCreditHistory = new System.Windows.Forms.TextBox();
-            this.btnDecreaseCreditHistory = new System.Windows.Forms.Button();
-            this.btnIncreaseCreditHistory = new System.Windows.Forms.Button();
             this.grpbxSelectedSupplier.SuspendLayout();
             this.grpbxNewSupplier.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,43 @@
             this.grpbxSelectedSupplier.TabIndex = 13;
             this.grpbxSelectedSupplier.TabStop = false;
             this.grpbxSelectedSupplier.Text = "Aktueller Lieferant";
+            // 
+            // btnIncreaseCreditHistory
+            // 
+            this.btnIncreaseCreditHistory.Location = new System.Drawing.Point(34, 216);
+            this.btnIncreaseCreditHistory.Name = "btnIncreaseCreditHistory";
+            this.btnIncreaseCreditHistory.Size = new System.Drawing.Size(109, 21);
+            this.btnIncreaseCreditHistory.TabIndex = 26;
+            this.btnIncreaseCreditHistory.Text = "Bonität erhöhen";
+            this.btnIncreaseCreditHistory.UseVisualStyleBackColor = true;
+            this.btnIncreaseCreditHistory.Click += new System.EventHandler(this.btnIncreaseCreditHistory_Click);
+            // 
+            // btnDecreaseCreditHistory
+            // 
+            this.btnDecreaseCreditHistory.Location = new System.Drawing.Point(150, 216);
+            this.btnDecreaseCreditHistory.Name = "btnDecreaseCreditHistory";
+            this.btnDecreaseCreditHistory.Size = new System.Drawing.Size(99, 21);
+            this.btnDecreaseCreditHistory.TabIndex = 25;
+            this.btnDecreaseCreditHistory.Text = "Bonität verringern";
+            this.btnDecreaseCreditHistory.UseVisualStyleBackColor = true;
+            this.btnDecreaseCreditHistory.Click += new System.EventHandler(this.btnDecreaseCreditHistory_Click);
+            // 
+            // tbxCurrentSupplierCreditHistory
+            // 
+            this.tbxCurrentSupplierCreditHistory.Location = new System.Drawing.Point(58, 190);
+            this.tbxCurrentSupplierCreditHistory.Name = "tbxCurrentSupplierCreditHistory";
+            this.tbxCurrentSupplierCreditHistory.ReadOnly = true;
+            this.tbxCurrentSupplierCreditHistory.Size = new System.Drawing.Size(191, 20);
+            this.tbxCurrentSupplierCreditHistory.TabIndex = 24;
+            // 
+            // lblCurrentSupplierCredithistory
+            // 
+            this.lblCurrentSupplierCredithistory.AutoSize = true;
+            this.lblCurrentSupplierCredithistory.Location = new System.Drawing.Point(6, 193);
+            this.lblCurrentSupplierCredithistory.Name = "lblCurrentSupplierCredithistory";
+            this.lblCurrentSupplierCredithistory.Size = new System.Drawing.Size(43, 13);
+            this.lblCurrentSupplierCredithistory.TabIndex = 23;
+            this.lblCurrentSupplierCredithistory.Text = "Bonität:";
             // 
             // tbxCurrentSupplierPhoneNumber
             // 
@@ -367,43 +404,6 @@
             this.btnSortID.UseVisualStyleBackColor = true;
             this.btnSortID.Click += new System.EventHandler(this.btnSortID_Click);
             // 
-            // lblCurrentSupplierCredithistory
-            // 
-            this.lblCurrentSupplierCredithistory.AutoSize = true;
-            this.lblCurrentSupplierCredithistory.Location = new System.Drawing.Point(6, 193);
-            this.lblCurrentSupplierCredithistory.Name = "lblCurrentSupplierCredithistory";
-            this.lblCurrentSupplierCredithistory.Size = new System.Drawing.Size(43, 13);
-            this.lblCurrentSupplierCredithistory.TabIndex = 23;
-            this.lblCurrentSupplierCredithistory.Text = "Bonität:";
-            // 
-            // tbxCurrentSupplierCreditHistory
-            // 
-            this.tbxCurrentSupplierCreditHistory.Location = new System.Drawing.Point(58, 190);
-            this.tbxCurrentSupplierCreditHistory.Name = "tbxCurrentSupplierCreditHistory";
-            this.tbxCurrentSupplierCreditHistory.ReadOnly = true;
-            this.tbxCurrentSupplierCreditHistory.Size = new System.Drawing.Size(191, 20);
-            this.tbxCurrentSupplierCreditHistory.TabIndex = 24;
-            // 
-            // btnDecreaseCreditHistory
-            // 
-            this.btnDecreaseCreditHistory.Location = new System.Drawing.Point(150, 216);
-            this.btnDecreaseCreditHistory.Name = "btnDecreaseCreditHistory";
-            this.btnDecreaseCreditHistory.Size = new System.Drawing.Size(99, 21);
-            this.btnDecreaseCreditHistory.TabIndex = 25;
-            this.btnDecreaseCreditHistory.Text = "Bonität verringern";
-            this.btnDecreaseCreditHistory.UseVisualStyleBackColor = true;
-            this.btnDecreaseCreditHistory.Click += new System.EventHandler(this.btnDecreaseCreditHistory_Click);
-            // 
-            // btnIncreaseCreditHistory
-            // 
-            this.btnIncreaseCreditHistory.Location = new System.Drawing.Point(34, 216);
-            this.btnIncreaseCreditHistory.Name = "btnIncreaseCreditHistory";
-            this.btnIncreaseCreditHistory.Size = new System.Drawing.Size(109, 21);
-            this.btnIncreaseCreditHistory.TabIndex = 26;
-            this.btnIncreaseCreditHistory.Text = "Bonität erhöhen";
-            this.btnIncreaseCreditHistory.UseVisualStyleBackColor = true;
-            this.btnIncreaseCreditHistory.Click += new System.EventHandler(this.btnIncreaseCreditHistory_Click);
-            // 
             // WebShopForm_Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,7 +417,7 @@
             this.Controls.Add(this.grpbxNewSupplier);
             this.Controls.Add(this.lstbxSuppliers);
             this.Name = "WebShopForm_Suppliers";
-            this.Text = "WebShopForm_Suppliers";
+            this.Text = "Lieferantenübersicht";
             this.grpbxSelectedSupplier.ResumeLayout(false);
             this.grpbxSelectedSupplier.PerformLayout();
             this.grpbxNewSupplier.ResumeLayout(false);

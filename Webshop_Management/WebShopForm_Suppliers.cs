@@ -133,7 +133,7 @@ namespace Webshop_Management {
             try {
                 var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
                 currentSupplier.CreditHistory += 100;
-                tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory;
+                tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory + '\t' + "GESPEICHERT";
             }
             catch (ArgumentOutOfRangeException) {
                 MessageBox.Show("Bitte vorher einen Lieferanten auswählen!", "Hinweis", MessageBoxButtons.OK);
@@ -143,8 +143,11 @@ namespace Webshop_Management {
         private void btnDecreaseCreditHistory_Click (object sender, EventArgs e) {
             try {
                 var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
-                currentSupplier.CreditHistory -= 100;
-                tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory;
+                if (currentSupplier.CreditHistory != 0) {
+                    currentSupplier.CreditHistory -= 100;
+                    tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory + '\t' + "GESPEICHERT";
+                } else
+                    MessageBox.Show("Die Bonität darf nicht kleiner als 0 sein!", "Hinweis", MessageBoxButtons.OK);
             }
             catch (ArgumentOutOfRangeException) {
                 MessageBox.Show("Bitte vorher einen Lieferanten auswählen!", "Hinweis", MessageBoxButtons.OK);

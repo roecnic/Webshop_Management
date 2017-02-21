@@ -155,5 +155,33 @@ namespace Webshop_Management {
             }
         }
 
+        private void tbnCurrentCustomerSave_Click (object sender, EventArgs e) {
+            try {
+                var currentCustomer = GetCustomerFromName(lstbxCustomers.SelectedItem.ToString());
+                var removed = false;
+
+                if (rbtnCurrentCustomerSaveChanges.Checked) {
+                    currentCustomer.Firstname = tbxCurrentCustomerFirstname.Text;
+                    currentCustomer.Lastname = tbxCurrentCustomerLastname.Text;
+                    currentCustomer.PLZ = Convert.ToInt32(tbxCurrentCustomerPLZ.Text);
+                    currentCustomer.Address = tbxCurrentCustomerAddress.Text;
+                } else if (rbtnCurrentCustomerRemove.Checked) {
+                    customerList.Remove(currentCustomer);
+                    removed = true;
+                }
+
+                FillItemList();
+                if (!removed)
+                    lstbxCustomers.SelectedIndex = customerList.IndexOf(currentCustomer);
+                else {
+                    if (customerList.Count > 0)
+                        lstbxCustomers.SelectedIndex = 0;
+                }
+                    
+            }
+            catch (FormatException) {
+                MessageBox.Show("Bitte eine gültige Postleitzahl eingeben!");
+            }
+        }
     }
 }

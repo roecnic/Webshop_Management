@@ -141,5 +141,19 @@ namespace Webshop_Management {
             lstbxCustomers.SelectedIndex = customerList.IndexOf(newCustomer);
         }
 
+        private void rbtnCurrentCustomerSaveChanges_CheckedChanged (object sender, EventArgs e) {
+            if (rbtnCurrentCustomerRemove.Checked) {
+                rbtnCurrentCustomerRemove.Checked = false;
+                rbtnCurrentCustomerSaveChanges.Checked = true;
+            }
+        }
+
+        private void rbtnCurrentCustomerRemove_CheckedChanged (object sender, EventArgs e) {
+            if (rbtnCurrentCustomerSaveChanges.Checked) {
+                rbtnCurrentCustomerSaveChanges.Checked = false;
+                rbtnCurrentCustomerRemove.Checked = true;
+            }
+        }
+
     }
 }

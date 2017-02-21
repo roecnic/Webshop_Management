@@ -133,6 +133,7 @@ namespace Webshop_Management {
             try {
                 var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
                 currentSupplier.CreditHistory += 100;
+                tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory;
             }
             catch (ArgumentOutOfRangeException) {
                 MessageBox.Show("Bitte vorher einen Lieferanten auswählen!", "Hinweis", MessageBoxButtons.OK);
@@ -143,6 +144,7 @@ namespace Webshop_Management {
             try {
                 var currentSupplier = supplierList.ElementAt(lstbxSuppliers.SelectedIndex);
                 currentSupplier.CreditHistory -= 100;
+                tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory;
             }
             catch (ArgumentOutOfRangeException) {
                 MessageBox.Show("Bitte vorher einen Lieferanten auswählen!", "Hinweis", MessageBoxButtons.OK);

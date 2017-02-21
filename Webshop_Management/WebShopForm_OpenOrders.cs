@@ -291,5 +291,37 @@ namespace Webshop_Management {
                 clstbxCurrentOrderCart.Items.Clear();
             }
         }
+
+        private void cbbxDatabase_SelectedIndexChanged (object sender, EventArgs e) {
+            switch (cbbxDatabase.SelectedIndex) {
+                case 0:
+                    var newForm_Products = new WebShopForm_Products();
+                    this.Hide();
+                    newForm_Products.ShowDialog();
+                    this.Close();
+                    break;
+                case 1:
+                    var newForm_Customers = new WebShopForm_Customer();
+                    this.Hide();
+                    newForm_Customers.ShowDialog();
+                    this.Close();
+                    break;
+                case 2:
+                    //THIS FORM
+                    break;
+                case 3:
+                    var newForm_ClosedOrders = new WebShopForm_ClosedOrders();
+                    this.Hide();
+                    newForm_ClosedOrders.ShowDialog();
+                    this.Close();
+                    break;
+                case 4:
+                    var newForm_Suppliers = new WebShopForm_Suppliers();
+                    this.Hide();
+                    newForm_Suppliers.ShowDialog();
+                    this.Close();
+                    break;
+            }
+        }
     }
 }

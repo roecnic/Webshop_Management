@@ -110,12 +110,22 @@ namespace Webshop_Management {
                 if (!removed)
                     lstbxSuppliers.SelectedIndex = supplierList.IndexOf(currentSupplier);
                 else {
-                    if (supplierList.Count > 0)
+                    if (supplierList.Count > 0) {
                         lstbxSuppliers.SelectedIndex = 0;
+                        tbxCurrentSupplierAddress.Text = "";
+                        tbxCurrentSupplierContact.Text = "";
+                        tbxCurrentSupplierCreditHistory.Text = "";
+                        tbxCurrentSupplierName.Text = "";
+                        tbxCurrentSupplierPhoneNumber.Text = "";
+                        tbxCurrentSupplierPLZ.Text = "";
+                    }
                 }
             }
             catch (FormatException) {
                 MessageBox.Show("Bitte eine gültige PLZ eingeben!", "Hinweis", MessageBoxButtons.OK);
+            }
+            catch (ArgumentOutOfRangeException){
+                MessageBox.Show("Bitte einen Lieferanten aus der Liste auswählen!", "Hinweis", MessageBoxButtons.OK);
             }
         }
 

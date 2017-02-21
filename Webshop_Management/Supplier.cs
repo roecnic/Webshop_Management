@@ -56,12 +56,13 @@ namespace Webshop_Management {
         }
 
 
-        public Supplier(int fID, String fDescription, String fContact, String fAddress, int fPLZ) {
+        public Supplier(int fID, String fDescription, String fContact, String fAddress, int fPLZ, String fPhoneNumber) {
             pID = fID;
             pDescription = fDescription;
             pContact = fContact;
             pAddress = fAddress;
             pPLZ = fPLZ;
+            pPhoneNumber = fPhoneNumber;
         }
     }
 }

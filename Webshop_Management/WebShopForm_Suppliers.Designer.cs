@@ -211,6 +211,7 @@
             this.rbtnCurrentSupplierRemove.TabStop = true;
             this.rbtnCurrentSupplierRemove.Text = "Lieferanten entfernen";
             this.rbtnCurrentSupplierRemove.UseVisualStyleBackColor = true;
+            this.rbtnCurrentSupplierRemove.CheckedChanged += new System.EventHandler(this.rbtnCurrentSupplierRemove_CheckedChanged);
             // 
             // rbtnCurrentSupplierSaveChanges
             // 
@@ -223,6 +224,7 @@
             this.rbtnCurrentSupplierSaveChanges.TabStop = true;
             this.rbtnCurrentSupplierSaveChanges.Text = "Änderungen Speichern";
             this.rbtnCurrentSupplierSaveChanges.UseVisualStyleBackColor = true;
+            this.rbtnCurrentSupplierSaveChanges.CheckedChanged += new System.EventHandler(this.rbtnCurrentSupplierSaveChanges_CheckedChanged);
             // 
             // grpbxNewSupplier
             // 

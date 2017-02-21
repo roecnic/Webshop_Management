@@ -75,5 +75,19 @@ namespace Webshop_Management {
             tbxCurrentSupplierPhoneNumber.Text = currentSupplier.PhoneNumber;
             tbxCurrentSupplierCreditHistory.Text = "" + currentSupplier.CreditHistory;
         }
+
+        private void rbtnCurrentSupplierSaveChanges_CheckedChanged (object sender, EventArgs e) {
+            if (rbtnCurrentSupplierRemove.Checked) {
+                rbtnCurrentSupplierRemove.Checked = false;
+                rbtnCurrentSupplierSaveChanges.Checked = true;
+            }
+        }
+
+        private void rbtnCurrentSupplierRemove_CheckedChanged (object sender, EventArgs e) {
+            if (rbtnCurrentSupplierSaveChanges.Checked) {
+                rbtnCurrentSupplierSaveChanges.Checked = false;
+                rbtnCurrentSupplierRemove.Checked = true;
+            }
+        }
     }
 }
